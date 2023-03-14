@@ -1,6 +1,6 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +12,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,11 +28,12 @@ import java.util.Set;
 public class Orders  implements java.io.Serializable {
 
 
-     private Integer orderId;
-     private User user;
-     private String address;
-     private String status;
-     private Set<OrderDetails> orderDetailses = new HashSet(0);
+    private Integer orderId;
+    private User user;
+    private Timestamp orderDate;
+    private String address;
+    private String status;
+    private Set<OrderDetails> orderDetailses = new HashSet(0);
 
     public Orders() {
     }
@@ -38,14 +42,17 @@ public class Orders  implements java.io.Serializable {
     public Orders(User user) {
         this.user = user;
     }
-    public Orders(User user, String address, String status, Set<OrderDetails> orderDetailses) {
+    public Orders(User user, Timestamp orderDate, String address, String status, Set<OrderDetails> orderDetailses) {
        this.user = user;
+       this.orderDate = orderDate;
        this.address = address;
        this.status = status;
        this.orderDetailses = orderDetailses;
     }
    
-    @Id @GeneratedValue(strategy=IDENTITY)
+     @Id @GeneratedValue(strategy=IDENTITY)
+
+    
     @Column(name="order_id", unique=true, nullable=false)
     public Integer getOrderId() {
         return this.orderId;
@@ -55,7 +62,7 @@ public class Orders  implements java.io.Serializable {
         this.orderId = orderId;
     }
 
-    @ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id", nullable=false)
     public User getUser() {
         return this.user;
@@ -63,6 +70,16 @@ public class Orders  implements java.io.Serializable {
     
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="order_date", length=19)
+    public Timestamp getOrderDate() {
+        return this.orderDate;
+    }
+    
+    public void setOrderDate(Timestamp orderDate) {
+        this.orderDate = orderDate;
     }
 
     
@@ -85,7 +102,7 @@ public class Orders  implements java.io.Serializable {
         this.status = status;
     }
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="orders")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="orders")
     public Set<OrderDetails> getOrderDetailses() {
         return this.orderDetailses;
     }

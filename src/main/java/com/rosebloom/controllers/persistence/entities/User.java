@@ -1,14 +1,22 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import static jakarta.persistence.GenerationType.IDENTITY;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,27 +31,26 @@ import java.util.Set;
 public class User  implements java.io.Serializable {
 
 
-     private int id;
+     private Integer id;
      private String name;
      private String password;
      private String email;
      private String address;
-     private String birthdate;
+     private Date birthdate;
      private String phone;
      private int creditLimit;
-     private String intrest;
      private String job;
      private int isAdmin;
+     private Integer isDeleted;
      private Set<Cart> carts = new HashSet(0);
      private Set<Orders> orderses = new HashSet(0);
-     private Set<UserInterest> userInterests = new HashSet(0);
+     private Set<Category> categories = new HashSet(0);
 
     public User() {
     }
 
 	
-    public User(int id, String name, String password, String email, String address, String birthdate, String phone, int creditLimit, int isAdmin) {
-        this.id = id;
+    public User(String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, int isAdmin) {
         this.name = name;
         this.password = password;
         this.email = email;
@@ -53,8 +60,7 @@ public class User  implements java.io.Serializable {
         this.creditLimit = creditLimit;
         this.isAdmin = isAdmin;
     }
-    public User(int id, String name, String password, String email, String address, String birthdate, String phone, int creditLimit, String intrest, String job, int isAdmin, Set<Cart> carts, Set<Orders> orderses, Set<UserInterest> userInterests) {
-       this.id = id;
+    public User(String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, int isAdmin, Integer isDeleted, Set<Cart> carts, Set<Orders> orderses, Set<Category> categories) {
        this.name = name;
        this.password = password;
        this.email = email;
@@ -62,23 +68,23 @@ public class User  implements java.io.Serializable {
        this.birthdate = birthdate;
        this.phone = phone;
        this.creditLimit = creditLimit;
-       this.intrest = intrest;
        this.job = job;
        this.isAdmin = isAdmin;
+       this.isDeleted = isDeleted;
        this.carts = carts;
        this.orderses = orderses;
-       this.userInterests = userInterests;
+       this.categories = categories;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="id", unique=true, nullable=false)
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -122,13 +128,13 @@ public class User  implements java.io.Serializable {
         this.address = address;
     }
 
-    
-    @Column(name="birthdate", nullable=false, length=45)
-    public String getBirthdate() {
+    @Temporal(TemporalType.DATE)
+    @Column(name="birthdate", nullable=false, length=10)
+    public Date getBirthdate() {
         return this.birthdate;
     }
     
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -152,17 +158,6 @@ public class User  implements java.io.Serializable {
         this.creditLimit = creditLimit;
     }
 
-    
-    @Column(name="intrest", length=45)
-    public String getIntrest() {
-        return this.intrest;
-    }
-    
-    public void setIntrest(String intrest) {
-        this.intrest = intrest;
-    }
-
-    
     @Column(name="job", length=45)
     public String getJob() {
         return this.job;
@@ -180,6 +175,16 @@ public class User  implements java.io.Serializable {
     
     public void setIsAdmin(int isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    
+    @Column(name="isDeleted")
+    public Integer getIsDeleted() {
+        return this.isDeleted;
+    }
+    
+    public void setIsDeleted(Integer isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="user")
@@ -200,13 +205,16 @@ public class User  implements java.io.Serializable {
         this.orderses = orderses;
     }
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="user")
-    public Set<UserInterest> getUserInterests() {
-        return this.userInterests;
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(name="user_interest", catalog="rosebloom", joinColumns = { 
+    @JoinColumn(name="user_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
+    @JoinColumn(name="interest_category_id", nullable=false, updatable=false) })
+    public Set<Category> getCategories() {
+        return this.categories;
     }
     
-    public void setUserInterests(Set<UserInterest> userInterests) {
-        this.userInterests = userInterests;
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
 
 

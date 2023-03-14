@@ -1,6 +1,8 @@
+package com.rosebloom.controllers.persistence.entities;
+
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
@@ -22,10 +24,10 @@ import jakarta.persistence.Table;
 public class Cart  implements java.io.Serializable {
 
 
-     private CartId id;
-     private Product product;
-     private User user;
-     private Integer isDeleted;
+    private CartId id;
+    private Product product;
+    private User user;
+    private Integer isDeleted;
 
     public Cart() {
     }
@@ -43,9 +45,7 @@ public class Cart  implements java.io.Serializable {
        this.isDeleted = isDeleted;
     }
    
-     @EmbeddedId
-
-    
+    @EmbeddedId
     @AttributeOverrides( {
         @AttributeOverride(name="productId", column=@Column(name="product_id", nullable=false) ), 
         @AttributeOverride(name="userId", column=@Column(name="user_id", nullable=false) ) } )
@@ -57,7 +57,7 @@ public class Cart  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="product_id", nullable=false, insertable=false, updatable=false)
     public Product getProduct() {
         return this.product;
@@ -67,7 +67,7 @@ public class Cart  implements java.io.Serializable {
         this.product = product;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id", nullable=false, insertable=false, updatable=false)
     public User getUser() {
         return this.user;
@@ -86,9 +86,6 @@ public class Cart  implements java.io.Serializable {
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
     }
-
-
-
 
 }
 

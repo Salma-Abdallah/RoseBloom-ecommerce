@@ -1,6 +1,6 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
@@ -22,9 +22,9 @@ import jakarta.persistence.Table;
 public class ProductImage  implements java.io.Serializable {
 
 
-     private ProductImageId id;
-     private Product product;
-     private byte[] image;
+    private ProductImageId id;
+    private Product product;
+    private byte[] image;
 
     public ProductImage() {
     }
@@ -49,7 +49,7 @@ public class ProductImage  implements java.io.Serializable {
         this.id = id;
     }
 
-    @ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="product_id", nullable=false, insertable=false, updatable=false)
     public Product getProduct() {
         return this.product;

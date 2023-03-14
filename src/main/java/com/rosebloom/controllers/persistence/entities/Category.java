@@ -1,6 +1,6 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,9 +28,10 @@ public class Category  implements java.io.Serializable {
 
 
     private Integer categoryId;
-    private Category parentCategory;
+    private Category category;
     private String categoryName;
     private Integer isDeleted;
+    private Set<User> users = new HashSet(0);
     private Set<Category> categories = new HashSet(0);
     private Set<Product> products = new HashSet(0);
 
@@ -38,14 +39,14 @@ public class Category  implements java.io.Serializable {
     }
 
 	
-    public Category(Category category, String categoryName) {
-        this.parentCategory = category;
+    public Category(String categoryName) {
         this.categoryName = categoryName;
     }
-    public Category(Category category, String categoryName, Integer isDeleted, Set<Category> categories, Set<Product> products) {
-       this.parentCategory = category;
+    public Category(Category category, String categoryName, Integer isDeleted, Set<User> users, Set<Category> categories, Set<Product> products) {
+       this.category = category;
        this.categoryName = categoryName;
        this.isDeleted = isDeleted;
+       this.users = users;
        this.categories = categories;
        this.products = products;
     }
@@ -61,13 +62,13 @@ public class Category  implements java.io.Serializable {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="parent_id", nullable=false)
-    public Category getParentCategory() {
-        return this.parentCategory;
+    @JoinColumn(name="parent_id")
+    public Category getCategory() {
+        return this.category;
     }
     
-    public void setParentCategory(Category category) {
-        this.parentCategory = category;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     
@@ -90,6 +91,18 @@ public class Category  implements java.io.Serializable {
         this.isDeleted = isDeleted;
     }
 
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(name="user_interest", catalog="rosebloom", joinColumns = { 
+    @JoinColumn(name="interest_category_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
+    @JoinColumn(name="user_id", nullable=false, updatable=false) })
+    public Set<User> getUsers() {
+        return this.users;
+    }
+    
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
     @OneToMany(fetch=FetchType.LAZY, mappedBy="category")
     public Set<Category> getCategories() {
         return this.categories;
@@ -101,8 +114,8 @@ public class Category  implements java.io.Serializable {
 
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name="product_category", catalog="rosebloom", joinColumns = { 
-        @JoinColumn(name="category_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
-        @JoinColumn(name="product_id", nullable=false, updatable=false) })
+    @JoinColumn(name="category_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
+    @JoinColumn(name="product_id", nullable=false, updatable=false) })
     public Set<Product> getProducts() {
         return this.products;
     }

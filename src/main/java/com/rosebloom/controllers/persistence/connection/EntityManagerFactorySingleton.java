@@ -1,4 +1,4 @@
-package com.rosebloom.controllers.repository.connection;
+package com.rosebloom.controllers.persistence.connection;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

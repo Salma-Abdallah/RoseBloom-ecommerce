@@ -1,6 +1,6 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -12,8 +12,8 @@ import jakarta.persistence.Embeddable;
 public class ProductImageId  implements java.io.Serializable {
 
 
-     private int imgId;
-     private int productId;
+    private int imgId;
+    private int productId;
 
     public ProductImageId() {
     }

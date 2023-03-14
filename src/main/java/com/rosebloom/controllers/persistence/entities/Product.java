@@ -1,6 +1,6 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +14,9 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,6 +40,8 @@ public class Product  implements java.io.Serializable {
     private String color;
     private Integer size;
     private Integer isDeleted;
+    private Integer oldPrice;
+    private Timestamp createdAt;
     private Plantdescription plantdescription;
     private Set<Cart> carts = new HashSet(0);
     private Set<OrderDetails> orderDetailses = new HashSet(0);
@@ -47,15 +52,16 @@ public class Product  implements java.io.Serializable {
     }
 
 	
-    public Product(int price, String name, int quantity, String type, String category, String description) {
+    public Product(int price, String name, int quantity, String type, String category, String description, Timestamp createdAt) {
         this.price = price;
         this.name = name;
         this.quantity = quantity;
         this.type = type;
         this.category = category;
         this.description = description;
+        this.createdAt = createdAt;
     }
-    public Product(int price, String name, int quantity, String type, String category, String description, String color, Integer size, Integer isDeleted, Plantdescription plantdescription, Set<Cart> carts, Set<OrderDetails> orderDetailses, Set<ProductImage> productImages, Set<Category> categories) {
+    public Product(int price, String name, int quantity, String type, String category, String description, String color, Integer size, Integer isDeleted, Integer oldPrice, Timestamp createdAt, Plantdescription plantdescription, Set<Cart> carts, Set<OrderDetails> orderDetailses, Set<ProductImage> productImages, Set<Category> categories) {
        this.price = price;
        this.name = name;
        this.quantity = quantity;
@@ -65,6 +71,8 @@ public class Product  implements java.io.Serializable {
        this.color = color;
        this.size = size;
        this.isDeleted = isDeleted;
+       this.oldPrice = oldPrice;
+       this.createdAt = createdAt;
        this.plantdescription = plantdescription;
        this.carts = carts;
        this.orderDetailses = orderDetailses;
@@ -72,7 +80,9 @@ public class Product  implements java.io.Serializable {
        this.categories = categories;
     }
    
-    @Id @GeneratedValue(strategy=IDENTITY)
+     @Id @GeneratedValue(strategy=IDENTITY)
+
+    
     @Column(name="id", unique=true, nullable=false)
     public Integer getId() {
         return this.id;
@@ -170,6 +180,26 @@ public class Product  implements java.io.Serializable {
     
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    
+    @Column(name="old_price")
+    public Integer getOldPrice() {
+        return this.oldPrice;
+    }
+    
+    public void setOldPrice(Integer oldPrice) {
+        this.oldPrice = oldPrice;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="created_at", nullable=false, length=19)
+    public Timestamp getCreatedAt() {
+        return this.createdAt;
+    }
+    
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
     @OneToOne(fetch=FetchType.LAZY, mappedBy="product")

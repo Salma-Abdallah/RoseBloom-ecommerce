@@ -10,7 +10,7 @@
   <version>1.0</version>
   <packaging>war</packaging>
   <name>roseBloom</name>
-  <!-- FIXME change it to the project's website -->
+  <!-- FIXME change it to the project's wáebsite -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -19,6 +19,13 @@
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>1.5.3.Final</version>
+    </dependency>
+
     <dependency>
       <groupId>jakarta.platform</groupId>
       <artifactId>jakarta.jakartaee-api</artifactId>

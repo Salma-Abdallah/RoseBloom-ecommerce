@@ -1,6 +1,6 @@
 // default package
-// Generated 13 Mar 2023, 17:56:20 by Hibernate Tools 6.1.7.Final
-package com.rosebloom.models.entities;
+// Generated 14 Mar 2023, 16:06:02 by Hibernate Tools 6.1.7.Final
+package com.rosebloom.controllers.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,14 +23,14 @@ import org.hibernate.annotations.Parameter;
 public class Plantdescription  implements java.io.Serializable {
 
 
-     private int productId;
-     private Product product;
-     private String sun;
-     private String soil;
-     private String growthCycle;
-     private String growthRate;
-     private String maintenance;
-     private String water;
+    private int productId;
+    private Product product;
+    private String sun;
+    private String soil;
+    private String growthCycle;
+    private String growthRate;
+    private String maintenance;
+    private String water;
 
     public Plantdescription() {
     }
@@ -48,8 +48,10 @@ public class Plantdescription  implements java.io.Serializable {
        this.maintenance = maintenance;
        this.water = water;
     }
+   
+     @GenericGenerator(name="PlantdescriptionIdGenerator", strategy="foreign", parameters=@Parameter(name="property", value="product"))@Id @GeneratedValue(generator="PlantdescriptionIdGenerator")
+
     
-    @GenericGenerator(name="PlantdescriptionIdGenerator", strategy="foreign", parameters=@Parameter(name="property", value="product"))@Id @GeneratedValue(generator="PlantdescriptionIdGenerator")
     @Column(name="product_id", unique=true, nullable=false)
     public int getProductId() {
         return this.productId;
