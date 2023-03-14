@@ -93,7 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<label for="drop-2" class="toggle toggle-drop">Plants <span
 												class="fa fa-angle-down" aria-hidden="true"></span>
 										</label>
-										<a href="view/html/product_grid.html">Plants <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+										<a href="view/html/product_grid.jsp">Plants <span class="fa fa-angle-down" aria-hidden="true"></span></a>
 										<input type="checkbox" id="drop-2" />
 										<ul class="list-unstyled">
 											<li><a href="#why" class="drop-text">Outdoor</a></li>
