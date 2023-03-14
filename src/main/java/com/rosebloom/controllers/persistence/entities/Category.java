@@ -35,6 +35,14 @@ public class Category  implements java.io.Serializable {
     private Set<Category> categories = new HashSet(0);
     private Set<Product> products = new HashSet(0);
 
+    public Category(Integer categoryId, String categoryName, Integer isDeleted) {
+        this.categoryId = categoryId;
+       
+        this.categoryName = categoryName;
+        this.isDeleted = isDeleted;
+    }
+
+
     public Category() {
     }
 
