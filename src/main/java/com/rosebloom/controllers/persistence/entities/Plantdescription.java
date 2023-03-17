@@ -32,6 +32,30 @@ public class Plantdescription  implements java.io.Serializable {
     private String maintenance;
     private String water;
 
+    public Plantdescription(String sun, String soil, String growthCycle, String growthRate, String maintenance,
+            String water) {
+        this.sun = sun;
+        this.soil = soil;
+        this.growthCycle = growthCycle;
+        this.growthRate = growthRate;
+        this.maintenance = maintenance;
+        this.water = water;
+    }
+
+
+    public Plantdescription(int productId, Product product, String sun, String soil, String growthCycle,
+            String growthRate, String maintenance, String water) {
+        this.productId = productId;
+        this.product = product;
+        this.sun = sun;
+        this.soil = soil;
+        this.growthCycle = growthCycle;
+        this.growthRate = growthRate;
+        this.maintenance = maintenance;
+        this.water = water;
+    }
+
+
     public Plantdescription() {
     }
 

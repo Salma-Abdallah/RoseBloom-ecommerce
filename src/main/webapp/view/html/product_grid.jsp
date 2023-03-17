@@ -320,7 +320,7 @@
                                                 <!-- End image -->
                                                 <!-- Hover image -->
                                                 <img class="hover blur-up lazyload"
-                                                    data-src="images/LAVENDER2.jpg"
+                                                    data-src="../images/LAVENDER2.jpg"
                                                     src="../images/LAVENDER2.jpg" alt="image"
                                                     title="product">
                                                 <!-- End hover image -->

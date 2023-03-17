@@ -48,6 +48,25 @@ public class Product  implements java.io.Serializable {
     private Set<ProductImage> productImages = new HashSet(0);
     private Set<Category> categories = new HashSet(0);
 
+    public Product(Integer id, int price, String name, int quantity, String type, String category, String description,
+            String color, Integer size, Integer oldPrice, Timestamp createdAt, Plantdescription plantdescription,
+            Set<ProductImage> productImages) {
+        this.id = id;
+        this.price = price;
+        this.name = name;
+        this.quantity = quantity;
+        this.type = type;
+        this.category = category;
+        this.description = description;
+        this.color = color;
+        this.size = size;
+        this.oldPrice = oldPrice;
+        this.createdAt = createdAt;
+        this.plantdescription = plantdescription;
+        this.productImages = productImages;
+    }
+
+
     public Product() {
     }
 
