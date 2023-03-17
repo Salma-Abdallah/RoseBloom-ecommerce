@@ -56,7 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //Web-Fonts -->
 </head>
 
-<body>
+<body onload="HomePage">
 	<div id="home">
 		<!-- header -->
 		

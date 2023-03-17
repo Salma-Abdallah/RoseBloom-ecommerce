@@ -4,5 +4,23 @@
     version="5.0"
     metadata-complete="true">
 
+    <servlet>
+        <servlet-name>HomePage</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomePage</servlet-name>
+        <url-pattern>/HomePage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginPage</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPage</servlet-name>
+        <url-pattern>/LoginPage</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
