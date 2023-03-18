@@ -62,8 +62,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		<header style="text-align: center; height: 100px;">
 			<div class="container-menu-desktop">
-				<a href="view/html/login.html">login</a>
-				<a href="view/html/signup.html">SignUp</a>
+				<!-- <a href="view/html/login.html">login</a> -->
+				<!-- <a href="view/html/signup.html">SignUp</a> -->
+				<a href="login2.html">login</a>
+				<a href="signup2.html">SignUp</a>
+
 				
 			</div>
 			<!-- fixed top -->
