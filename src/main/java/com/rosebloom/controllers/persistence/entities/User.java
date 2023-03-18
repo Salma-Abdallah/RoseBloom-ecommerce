@@ -42,9 +42,9 @@ public class User  implements java.io.Serializable {
      private String job;
      private int isAdmin;
      private Integer isDeleted;
-     private Set<Cart> carts = new HashSet(0);
-     private Set<Orders> orderses = new HashSet(0);
-     private Set<Category> categories = new HashSet(0);
+     private Set<Cart> carts = new HashSet<>();
+     private Set<Orders> orderses = new HashSet<>();
+     private Set<Category> categories = new HashSet<>();
 
     public User() {
     }
