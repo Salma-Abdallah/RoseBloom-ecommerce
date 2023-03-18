@@ -1,26 +1,47 @@
 package com.rosebloom.controllers.mappers;
 
-import com.rosebloom.dtos.UserDto;
 import com.rosebloom.controllers.persistence.entities.User;
-import org.mapstruct.*;
-import org.mapstruct.Mapper;
+import com.rosebloom.dtos.UserDto;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.CDI)
-public interface UserMapper {
-    User toEntity(UserDto userDto);
+public class UserMapper{
+    public UserDto toDto(User user){
+        UserDto userDto = new UserDto(user.getId(),user.getName(), user.getPassword(), user.getEmail(), user.getAddress(), user.getBirthdate(), user.getPhone(), user.getCreditLimit(), user.getJob(), user.getIsAdmin(), user.getIsDeleted(), null, null, null);
 
-    UserDto toDto(User user);
-
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    User partialUpdate(UserDto userDto, @MappingTarget User user);
-
-    @AfterMapping
-    default void linkCarts(@MappingTarget User user) {
-        user.getCarts().forEach(cart -> cart.setUser(user));
+        return userDto;
     }
 
-    @AfterMapping
-    default void linkOrderses(@MappingTarget User user) {
-        user.getOrderses().forEach(orders -> orders.setUser(user));
+    public User toEntity(UserDto userDto){
+        User user= new User(userDto.getName(), userDto.getPassword(), userDto.getEmail(), userDto.getAddress(), userDto.getBirthdate(), userDto.getPhone(), userDto.getCreditLimit(), userDto.getJob(),userDto.getIsAdmin(), userDto.getIsDeleted(), null,null,null );
+
+        return user;
     }
 }
+
+
+
+
+
+// import com.rosebloom.dtos.UserDto;
+// import com.rosebloom.controllers.persistence.entities.User;
+// import org.mapstruct.*;
+// import org.mapstruct.Mapper;
+
+// @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.CDI)
+// public interface UserMapper {
+//     User toEntity(UserDto userDto);
+
+//     UserDto toDto(User user);
+
+//     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+//     User partialUpdate(UserDto userDto, @MappingTarget User user);
+
+//     @AfterMapping
+//     default void linkCarts(@MappingTarget User user) {
+//         user.getCarts().forEach(cart -> cart.setUser(user));
+//     }
+
+//     @AfterMapping
+//     default void linkOrderses(@MappingTarget User user) {
+//         user.getOrderses().forEach(orders -> orders.setUser(user));
+//     }
+// }
