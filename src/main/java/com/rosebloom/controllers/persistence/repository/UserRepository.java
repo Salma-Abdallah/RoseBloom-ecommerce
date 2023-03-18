@@ -20,26 +20,38 @@ public class UserRepository {
         entityManager.persist(user);
         entityManager.getTransaction().commit();
     }
-    public User searchByEmail(String email) {
-        String query="from User u where u.email like ?1";
-        Query q = entityManager.createQuery(query).setParameter(1,email);
+    public User getUserByEmail(String email , String password) {
+        String query="from User u where u.email like ?1 and u.password like ?2";
+        Query q = entityManager.createQuery(query).setParameter(1,email).setParameter(2,password);
         User user =(User) q.getSingleResult();
 
         return user;
     }
-    public boolean checkByEmailIfValid(String email) {
+    public Boolean checkIfUserIsValid(String email , String password) {
+        String query = "from User u where u.email like ?1 and u.password like ?2";
+        Query q = entityManager.createQuery(query).setParameter(1, email).setParameter(2, password);
+        List list = q.getResultList();
+//        Boolean result= list.size()>0;
+        if(list.size()>0){
+            return true;
+        }
+
+        return false;
+    }
+
+    public Boolean checkByEmailIfValid(String email) {
         String query="from User u where u.email like ?1";
         Query q = entityManager.createQuery(query).setParameter(1,email);
 
         List list = q.getResultList();
-        boolean result= list.size()>0;
+        Boolean result= list.size()>0;
 
         return result;
     }
 
 
     //Want to Check it by real data
-    public void UpdateInUserDetails(User user) {
+    public void UpdateUserDetails(User user) {
         entityManager.getTransaction().begin();
         User newUser = entityManager.find(User.class,user.getId());
 //        newUser = user;
@@ -48,12 +60,14 @@ public class UserRepository {
 
     }
 
-    public List<User> returnAllUsers() {
+    public List<User> getAllUsers() {
         String query ="from User u ";
         Query q = entityManager.createQuery(query);
         List<User> users =(List<User>) q.getResultList();
 
         return users;
     }
+
+
 
 }
