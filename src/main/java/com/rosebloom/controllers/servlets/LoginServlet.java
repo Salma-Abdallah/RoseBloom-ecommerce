@@ -1,10 +1,13 @@
 package com.rosebloom.controllers.servlets;
 
+import com.rosebloom.controllers.services.UserServices;
+import com.rosebloom.dtos.UserDto;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,10 +22,31 @@ public class LoginServlet extends HttpServlet {
         System.out.println("Login page");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        System.out.println("email : "+email +"\n password : "+password);
+//        System.out.println("email : "+email +"\n password : "+password);
 
-//        RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-//        rd.forward(request, response);
+        UserServices userServices = new UserServices();
+        if(userServices.checkIfUserIsValid(email,password)) {
+            System.out.println("valid User ;)");
+
+            UserDto user = userServices.getUserByEmail(email , password);
+
+            HttpSession session = request.getSession(true);
+            session.setAttribute("loggedIn", new String("true"));
+            session.setAttribute("User",user);
+
+            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+            rd.forward(request, response);
+
+        }else{
+            System.out.println("invalid User  :(");
+            RequestDispatcher rd = request.getRequestDispatcher("/login2.html");
+            rd.forward(request, response);
+        }
+
+
+
+
+
     }
 
 
