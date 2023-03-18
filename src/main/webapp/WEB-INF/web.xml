@@ -3,6 +3,14 @@
     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
     version="5.0"
     metadata-complete="true">
-
+    
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.ProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>

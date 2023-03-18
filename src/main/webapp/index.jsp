@@ -90,21 +90,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li><a href="#team">Our Team</a></li> -->
 									<li>
 										<!-- First Tier Drop Down -->
-										<label for="drop-2" class="toggle toggle-drop">Plants <span
+										<label for="drop-2" class="toggle toggle-drop">Plants<span
 												class="fa fa-angle-down" aria-hidden="true"></span>
 										</label>
-										<a href="view/html/product_grid.jsp">Plants <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+
+										<a onclick="getProducts(event);">Plants<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+
 										<input type="checkbox" id="drop-2" />
+
 										<ul class="list-unstyled">
-											<li><a href="#why" class="drop-text">Outdoor</a></li>
-											<li class="my-2"><a href="#partners" class="drop-text">Indoors</a></li>
-											<li><a href="#testi" class="drop-text">Trees</a></li>
-											<li><a href="#testi" class="drop-text">Cacti & succulents</a></li>
+											<li><a onclick="getProducts(event);" class="drop-text" >Outdoors</a></li>
+											<li class="my-2"><a onclick="getProducts(event); " class="drop-text" >Indoors</a></li>
+											<li><a onclick="getProducts(event);" class="drop-text">Trees</a></li>
+											<li><a onclick="getProducts(event);" class="drop-text">Cacti & succulents</a></li>
 										</ul>
 									</li>
-									<li><a href="#services">Pots</a></li>
-									<li><a href="#blog">supplies</a></li>
-									<li><a href="#gallery">Gifts</a></li>
+									<li><a onclick="getProducts(event); "  href="">Pots</a></li>
+									<li><a onclick="getProducts(event); ">supplies</a></li>
+									<li><a onclick="getProducts(event); ">Gifts</a></li>
 									<li><a href="#gallery">Guides</a></li>
 									<li class="mr-0"><a href="#contact">Contact Us</a></li>
 								</ul>
@@ -861,6 +864,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 
 	<script src="view/scripts/main.js"></script>
+	<script src="view/scripts/product.js"></script>
 
 </body>
 

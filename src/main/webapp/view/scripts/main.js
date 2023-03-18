@@ -219,7 +219,7 @@
 	  10.1 Homepage Slideshow -----------------
 	  -----------------------------------------*/
 	  function home_slider(){
-		 $('.home-slideshow').slick({
+		 $('.home-slideshow').click({
 			dots: false,
 			infinite: true,
 			slidesToShow: 1,
@@ -243,7 +243,7 @@
 	  10.2 Product Slider Slick ---------------
 	  -----------------------------------------*/
 	function product_slider(){
-	 $('.productSlider').slick({
+	 $('.productSlider').click({
 		dots: false,
 		infinite: true,
 		slidesToShow: 4,

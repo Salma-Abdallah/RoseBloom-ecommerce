@@ -260,7 +260,7 @@
                     <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col shop-grid-5">
                         <div class="productList">
                             <div class="category-description">
-                                <h3>Plants</h3>
+                                <h3> plants</h3>
 
                             </div>
                             <hr>
