@@ -6,11 +6,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Women &ndash; Belle Multipurpose Bootstrap 4 Template</title>
+    <title>RoseBloom</title>
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="shortcut icon" href="../images/rosebloom.png" />
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="../style/plugins.css">
     <!-- Bootstap CSS -->
@@ -20,23 +20,23 @@
     <link rel="stylesheet" href="../style/responsive.css">
 </head>
 
-<body class="template-collection belle">
+<body class="template-collection belle"  onload="getProducts(event);">
     <div class="pageWrapper">
 
+<!--
 
-        <!--Body Content-->
         <div id="page-content">
-            <!--Collection Banner-->
+
             <div class="collection-header">
                 <div class="collection-hero">
                     <div class="collection-hero__image"><img class="blur-up lazyload" data-src="plants.jpg"
-                            src="../images/plants.jpg" alt="Women" title="Women" /></div>
+                            src="view/images/plants.jpg" alt="Women" title="Women" /></div>
                     <div class="collection-hero__title-wrapper">
                         <h1 class="collection-hero__title page-width">Shop Grid 5 Column</h1>
                     </div>
                 </div>
             </div>
-            <!--End Collection Banner-->
+            -->
 
             <div class="container">
                 <div class="row">
@@ -52,16 +52,16 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="sidebar_categories">
-                                        <li class="level1 sub-level"><a href="#;" class="site-nav">Clothing</a>
+                                        <li class="level1 sub-level"><a href="#;" class="site-nav">Plants</a>
                                             <ul class="sublinks">
-                                                <li class="level2"><a href="#;" class="site-nav">Men</a></li>
-                                                <li class="level2"><a href="#;" class="site-nav">Women</a></li>
-                                                <li class="level2"><a href="#;" class="site-nav">Child</a></li>
-                                                <li class="level2"><a href="#;" class="site-nav">View All Clothing</a>
+                                                <li class="level2"><a href="#;" class="site-nav">Outdoors</a></li>
+                                                <li class="level2"><a href="#;" class="site-nav">Indoors</a></li>
+                                                <li class="level2"><a href="#;" class="site-nav">Trees</a></li>
+                                                <li class="level2"><a href="#;" class="site-nav">Cacti & succulents</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="level1 sub-level"><a href="#;" class="site-nav">Jewellery</a>
+                                        <li class="level1 sub-level"><a href="#;" class="site-nav">Pots</a>
                                             <ul class="sublinks">
                                                 <li class="level2"><a href="#;" class="site-nav">Ring</a></li>
                                                 <li class="level2"><a href="#;" class="site-nav">Neckalses</a></li>
@@ -70,11 +70,9 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="lvl-1"><a href="#;" class="site-nav">Shoes</a></li>
-                                        <li class="lvl-1"><a href="#;" class="site-nav">Accessories</a></li>
-                                        <li class="lvl-1"><a href="#;" class="site-nav">Collections</a></li>
-                                        <li class="lvl-1"><a href="#;" class="site-nav">Sale</a></li>
-                                        <li class="lvl-1"><a href="#;" class="site-nav">Page</a></li>
+                                        <li class="lvl-1"><a href="#;" class="site-nav">supplies</a></li>
+                                        <li class="lvl-1"><a href="#;" class="site-nav">Gifts</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -124,6 +122,7 @@
                                 </div>
                             </div>
                             <!--End Size Swatches-->
+
                             <!--Color Swatches-->
                             <div class="sidebar_widget filterBox filter-widget">
                                 <div class="widget-title">
@@ -191,7 +190,7 @@
                                                     <div class="mini-view_image">
                                                         <a class="grid-view-item__link" href="#">
                                                             <img class="grid-view-item__image"
-                                                                src="../images/product-images/mini-product-img.jpg"
+                                                                src="view/images/product-images/mini-product-img.jpg"
                                                                 alt="" />
                                                         </a>
                                                     </div>
@@ -199,7 +198,7 @@
                                                             Skirt</a>
                                                         <div class="grid-view-item__meta"><span
                                                                 class="product-price__price"><span
-                                                                    class="money">$173.60</span></span></div>
+                                                                    class="money">EGP 173.60</span></span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -207,13 +206,13 @@
                                                 <div class="mini-list-item">
                                                     <div class="mini-view_image"> <a class="grid-view-item__link"
                                                             href="#"><img class="grid-view-item__image"
-                                                                src="../images/product-images/mini-product-img1.jpg"
+                                                                src="view/images/product-images/mini-product-img1.jpg"
                                                                 alt="" /></a> </div>
                                                     <div class="details"> <a class="grid-view-item__title"
                                                             href="#">Block Button Up</a>
                                                         <div class="grid-view-item__meta"><span
                                                                 class="product-price__price"><span
-                                                                    class="money">$378.00</span></span></div>
+                                                                    class="money">EGP 378.00</span></span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,13 +220,13 @@
                                                 <div class="mini-list-item">
                                                     <div class="mini-view_image"> <a class="grid-view-item__link"
                                                             href="#"><img class="grid-view-item__image"
-                                                                src="../images/product-images/mini-product-img2.jpg"
+                                                                src="view/images/product-images/mini-product-img2.jpg"
                                                                 alt="" /></a> </div>
                                                     <div class="details"> <a class="grid-view-item__title"
                                                             href="#">Balda Button Pant</a>
                                                         <div class="grid-view-item__meta"><span
                                                                 class="product-price__price"><span
-                                                                    class="money">$278.60</span></span></div>
+                                                                    class="money">EGP 278.60</span></span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -235,13 +234,13 @@
                                                 <div class="mini-list-item">
                                                     <div class="mini-view_image"> <a class="grid-view-item__link"
                                                             href="#"><img class="grid-view-item__image"
-                                                                src="../images/product-images/mini-product-img3.jpg"
+                                                                src="view/images/product-images/mini-product-img3.jpg"
                                                                 alt="" /></a> </div>
                                                     <div class="details"> <a class="grid-view-item__title"
                                                             href="#">Border Dress in Black/Silver</a>
                                                         <div class="grid-view-item__meta"><span
                                                                 class="product-price__price"><span
-                                                                    class="money">$228.00</span></span></div>
+                                                                    class="money">EGP 228.00</span></span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -257,10 +256,11 @@
                     </div>
                     <!--End Sidebar-->
                     <!--Main Content-->
+                    <jsp:useBean id = "category" class = "com.rosebloom.dtos.CategoryDto" scope = "session" />
                     <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col shop-grid-5">
                         <div class="productList">
                             <div class="category-description">
-                                <h3> plants</h3>
+                                <h3 id="categoryName"><jsp:getProperty name = "category" property = "categoryName"/></h3>
 
                             </div>
                             <hr>
@@ -271,7 +271,7 @@
                                 <div class="filters-toolbar-wrapper">
                                     <div class="row">
                                         <div
-                                            class="col-4 col-md-4 col-lg-4 filters-toolbar__item collection-view-as d-flex justify-content-start align-items-center">
+                                            class="col-4 col-md-4 col-lg-4 filters-toolbar__item collection-..-as d-flex justify-content-start align-items-center">
                                             <a href="shop-left-sidebar.html" title="Grid View"
                                                 class="change-view change-view--active">
                                                 <img src="../images/grid.jpg" alt="Grid" />
@@ -305,7 +305,7 @@
                             </div>
                             <!--End Toolbar-->
                             <div class="grid-products grid--view-items">
-                                <div class="row">
+                                <div class="row" id="grid--view-items" >
                                     <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
                                         <!-- start product image -->
                                         <div class="product-image" id="gallery">
@@ -385,6 +385,7 @@
                     </div>
                 </div>
             </div>
+
             <!--End Quick View popup-->
 
             <!-- Including Jquery -->
@@ -398,7 +399,9 @@
             <script src="../scripts/popper.min.js"></script>
             <script src="../scripts/lazysizes.js"></script>
             <script src="../scripts/main.js"></script>
+            <script src="../scripts/product.js"></script>
         </div>
+
 </body>
 
 <!-- belle/shop-grid-5.html   11 Nov 2019 12:39:07 GMT -->

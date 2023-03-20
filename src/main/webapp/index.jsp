@@ -80,6 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</h1>
 						<!-- //logo -->
 						<!-- nav -->
+						
 						<div class="nav_w3ls">
 							<nav>
 								<label for="drop" class="toggle toogle-2">Menu</label>
@@ -94,8 +95,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												class="fa fa-angle-down" aria-hidden="true"></span>
 										</label>
 
-										<a onclick="getProducts(event);">Plants<span class="fa fa-angle-down" aria-hidden="true"></span></a>
-
+										<a  href="view/html/product_grid.jsp">Plants  
+											<jsp:useBean id = "category" class = "com.rosebloom.dtos.CategoryDto" scope = "session" >
+											<jsp:setProperty name = "category" property = "categoryName"  
+											value = "Plants"/>
+											
+										</jsp:useBean>
+											<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+										
 										<input type="checkbox" id="drop-2" />
 
 										<ul class="list-unstyled">
@@ -105,7 +112,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><a onclick="getProducts(event);" class="drop-text">Cacti & succulents</a></li>
 										</ul>
 									</li>
-									<li><a onclick="getProducts(event); "  href="">Pots</a></li>
+									<li><a onclick="getProducts(event); " >Pots</a></li>
 									<li><a onclick="getProducts(event); ">supplies</a></li>
 									<li><a onclick="getProducts(event); ">Gifts</a></li>
 									<li><a href="#gallery">Guides</a></li>

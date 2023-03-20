@@ -18,16 +18,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class ProductServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
 
         // String categoryName = "";
         // if (br != null) {
-            String  categoryName = br.readLine();
-           
-            System.out.println(categoryName.substring(1, categoryName.length() - 1));
-       // }
+            String  categoryName =request.getParameter("categoryName");
         
         
         ProductServices productServices=new ProductServices();
@@ -35,9 +32,10 @@ public class ProductServlet extends HttpServlet {
        
         JSONObject productsJson = new JSONObject();
         productsJson.put("productsJson", products);
-        productsJson.put("categoryName", categoryName);
+      //  productsJson.put("categoryName", categoryName);
         System.out.println(productsJson);
         PrintWriter out = response.getWriter();
+
 
 
 
