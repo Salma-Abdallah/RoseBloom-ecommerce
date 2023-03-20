@@ -20,6 +20,8 @@ public class UserDto implements Serializable {
     private String phone;
     private int creditLimit;
     private String job;
+    private int isAdmin;
+    private Integer isDeleted;
     private Set<CartDto> carts;
     private Set<OrdersDto> orderses;
     private Set<CategoryDto> categories;
@@ -27,7 +29,7 @@ public class UserDto implements Serializable {
     public UserDto() {
     }
 
-    public UserDto(Integer id, String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, Set<CartDto> carts, Set<OrdersDto> orderses, Set<CategoryDto> categories) {
+    public UserDto(Integer id, String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, int isAdmin, Integer isDeleted, Set<CartDto> carts, Set<OrdersDto> orderses, Set<CategoryDto> categories) {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -37,9 +39,21 @@ public class UserDto implements Serializable {
         this.phone = phone;
         this.creditLimit = creditLimit;
         this.job = job;
+        this.isAdmin = isAdmin;
+        this.isDeleted = isDeleted;
         this.carts = carts;
         this.orderses = orderses;
         this.categories = categories;
+    }
+
+    public UserDto(String name, String password, String email, String address, Date birthdate, String phone, int creditLimit) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.address = address;
+        this.birthdate = birthdate;
+        this.phone = phone;
+        this.creditLimit = creditLimit;
     }
 
     public Integer getId() {
@@ -157,6 +171,22 @@ public class UserDto implements Serializable {
                 Objects.equals(this.categories, entity.categories);
     }
 
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public Integer getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(Integer isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, password, email, address, birthdate, phone, creditLimit, job, carts, orderses, categories);
@@ -164,18 +194,21 @@ public class UserDto implements Serializable {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "name = " + name + ", " +
-                "password = " + password + ", " +
-                "email = " + email + ", " +
-                "address = " + address + ", " +
-                "birthdate = " + birthdate + ", " +
-                "phone = " + phone + ", " +
-                "creditLimit = " + creditLimit + ", " +
-                "job = " + job + ", " +
-                "carts = " + carts + ", " +
-                "orderses = " + orderses + ", " +
-                "categories = " + categories + ")";
+        return "UserDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", birthdate=" + birthdate +
+                ", phone='" + phone + '\'' +
+                ", creditLimit=" + creditLimit +
+                ", job='" + job + '\'' +
+                ", isAdmin=" + isAdmin +
+                ", isDeleted=" + isDeleted +
+                ", carts=" + carts +
+                ", orderses=" + orderses +
+                ", categories=" + categories +
+                '}';
     }
 }

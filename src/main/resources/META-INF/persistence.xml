@@ -15,12 +15,17 @@
         <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/roseBloom"/>
         <property name="jakarta.persistence.jdbc.user" value="root"/>
         <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
         <property name="jakarta.persistence.jdbc.password" value=""/>
+
         <property name="hibernate.show_sql" value="true"/>
         <property name="hibernate.format_sql" value="true"/>
         <property name="hibernate.connection.pool_size" value="1000"/>
         <property name="hibernate.connection.timeout" value="1500"/>
-        <!-- <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" /> -->
+
+        <property name="jakarta.persistence.lock.timeout" value="100"/>
+        <property name="jakarta.persistence.query.timeout" value="100"/>
+
     </properties>
     </persistence-unit>
 </persistence>
