@@ -1,5 +1,5 @@
 <!------ Include the above in your HEAD tag ---------->
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,7 @@
         id="bootstrap-css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="../style/product_style.css">
+    <link rel="stylesheet" href="view/style/product_style.css">
  
 </head>
 
@@ -28,22 +28,25 @@
                     <div class="preview col-md-6">
 
                         <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1"><img src="../images/LAVENDER.jpg" /></div>
-                            <div class="tab-pane" id="pic-2"><img src="../images/LAVENDER2.jpg" /></div>
-                            <div class="tab-pane" id="pic-3"><img src="../images/LAVENDER3.jpg" /></div>
+                         
+                           
 
+                            <div class="tab-pane active" id="pic-1"><img src="view/images/${product.productImages.get(0).image}" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="view/images/${product.productImages.get(1).image}" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="../images/LAVENDER3.jpg" /></div>
+                       
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                        src="../images/LAVENDER.jpg" /></a></li>
-                            <li><a data-target="#pic-2" data-toggle="tab"><img src="../images/LAVENDER2.jpg" /></a></li>
+                                        src="view/images/${product.productImages.get(0).image}" /></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="view/images/${product.productImages.get(1).image}" /></a></li>
                             <li><a data-target="#pic-3" data-toggle="tab"><img src="../images/LAVENDER3.jpg" /></a></li>
 
                         </ul>
 
                     </div>
                     <div class="details col-md-6">
-                        <h3 class="product-title">LAVENDER</h3>
+                        <h3 class="product-title">${product.name}</h3>
                         <div class="rating">
                             <div class="stars">
                                 <span class="fa fa-star checked"></span>
@@ -54,9 +57,8 @@
                             </div>
                             <span class="review-no">41 reviews</span>
                         </div>
-                        <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium
-                            cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                        <h4 class="price">Price: <span>EGP 40</span></h4>
+                        <p class="product-description">${product.description}</p>
+                        <h4 class="price">Price: <span>EGP ${product.price}</span></h4>
                         <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong>
                         </p>
                         <h5 class="sizes">sizes:
@@ -81,11 +83,14 @@
                                     class="fa fa-heart"></span></button>
                         </div>
                     </div>
+
+
+
                 </div>
             </div>
             <div class=" mt-5 text-center">
 
-                <img src="../images/leaves1.PNG" />
+                <img src="view/images/leaves1.PNG" />
 
                 <div>
                     <table class=" table">
@@ -130,7 +135,7 @@
                         </tbody>
                     </table>
                 </div>
-                <img src="../images/leaves1.PNG" />
+                <img src="view/images/leaves1.PNG" />
             </div>
         </div>
     </div>
@@ -140,7 +145,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="../scripts/productsScript.js"></script>
+    <script src="view/scripts/productsScript.js"></script>
 </body>
 
 </html>

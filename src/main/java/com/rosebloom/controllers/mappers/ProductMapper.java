@@ -4,7 +4,9 @@ import com.rosebloom.dtos.PlantdescriptionDto;
 import com.rosebloom.dtos.ProductDto;
 import com.rosebloom.dtos.ProductImageDto;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.rosebloom.controllers.persistence.entities.Plantdescription;
@@ -23,11 +25,11 @@ public class ProductMapper {
         for (ProductImage productImg : productImage) {
             productImageDto.add(productImageMapper.toDto(productImg));
         }
-
+        List<ProductImageDto> productImageDto2=new ArrayList<ProductImageDto>(productImageDto);
         ProductDto productDto = new ProductDto(product.getId(), product.getPrice(), product.getName(),
                 product.getQuantity(), product.getType(), product.getCategory(), product.getDescription(),
                 product.getColor(),
-                product.getSize(), product.getOldPrice(), product.getCreatedAt(), PlantdescriptionDto, productImageDto);
+                product.getSize(), product.getOldPrice(), product.getCreatedAt(), PlantdescriptionDto, productImageDto2);
 
         return productDto;
     }

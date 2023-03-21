@@ -26,11 +26,13 @@ public class ProductRepository  {
         return result;
     }
 
-    // @Override
-    // public void getProductById(int id) {
-    //     // TODO Auto-generated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'getProductById'");
-    // }
+   
+    public Product getProductById(int id) {
+        Query query = entityManager.createQuery("from Product p where id=?1").setParameter(1, id);
+       
+        List<Product> result = (List<Product>) query.getResultList();
+        return result.get(0);
+    }
 
     // @Override
     // public void addProduct(Product product) {
