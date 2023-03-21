@@ -33,4 +33,11 @@ public class ProductServices {
       }
       return productDto;
    }
+   public ProductDto getProductDetails(int id){
+      ProductRepository productRepository = new ProductRepository();
+
+      Product result = productRepository.getProductById(id);
+      ProductMapper mapper = new ProductMapper();
+      return mapper.toDto(result);
+   }
 }

@@ -4,6 +4,7 @@ import com.rosebloom.controllers.persistence.entities.Product;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,12 +24,12 @@ public class ProductDto implements Serializable {
     private Integer oldPrice;
     private Timestamp createdAt;
     private PlantdescriptionDto plantdescription;
-    private Set<ProductImageDto> productImages;
+    private List<ProductImageDto> productImages;
 
     public ProductDto() {
     }
 
-    public ProductDto(Integer id, int price, String name, int quantity, String type, String category, String description, String color, Integer size, Integer oldPrice, Timestamp createdAt, PlantdescriptionDto plantdescription, Set<ProductImageDto> productImages) {
+    public ProductDto(Integer id, int price, String name, int quantity, String type, String category, String description, String color, Integer size, Integer oldPrice, Timestamp createdAt, PlantdescriptionDto plantdescription, List<ProductImageDto> productImages) {
         this.id = id;
         this.price = price;
         this.name = name;
@@ -140,11 +141,11 @@ public class ProductDto implements Serializable {
         this.plantdescription = plantdescription;
     }
 
-    public Set<ProductImageDto> getProductImages() {
+    public List<ProductImageDto> getProductImages() {
         return productImages;
     }
 
-    public void setProductImages(Set<ProductImageDto> productImages) {
+    public void setProductImages(List<ProductImageDto> productImages) {
         this.productImages = productImages;
     }
 

@@ -12,5 +12,13 @@
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/ProductServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>productDetails</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.ProductDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productDetails</servlet-name>
+        <url-pattern>/productDetails</url-pattern>
+    </servlet-mapping>
 
 </web-app>
