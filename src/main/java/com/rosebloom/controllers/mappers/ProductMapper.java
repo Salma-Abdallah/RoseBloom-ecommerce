@@ -39,9 +39,10 @@ public class ProductMapper {
         PlantdescriptionDto plantdescriptionDto = productDto.getPlantdescription();
         Plantdescription Plantdescription = plantdescriptionMapper.toEntity(plantdescriptionDto);
         ProductImageMapper productImageMapper = new ProductImageMapper();
-        Set<ProductImageDto> productImageDto = productDto.getProductImages();
+        List<ProductImageDto> productImageDto = productDto.getProductImages();
+        HashSet<ProductImageDto> productImageDto2 = new HashSet<>(productImageDto);
         Set<ProductImage> productImage = new HashSet<>();
-        for (ProductImageDto productImg : productImageDto) {
+        for (ProductImageDto productImg : productImageDto2) {
             productImage.add(productImageMapper.toEntity(productImg));
         }
 
