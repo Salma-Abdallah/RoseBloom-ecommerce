@@ -21,8 +21,8 @@ function getProducts(event) {
                    ' <jsp:useBean id="category" class="com.rosebloom.dtos.CategoryDto" scope="session" >'+
                         '<jsp:setProperty name="category" property="categoryId"'+
                            ' value='+dataa.productsJson[i].id+'/>'+
-                        '<div class="product-image" >' +
-                     '   <%request.setAttribute("productId",'+dataa.productsJson[i].id+');%>'+
+                        '<div class="product-image"  style="height:200px">' +
+                     
                             ' <a href="../../productDetails?productId='+dataa.productsJson[i].id+'">' +
 
                                 '<img class="primary blur-up lazyload" data-src="' + dataa.productsJson[i].productImages[0].image + '"' +

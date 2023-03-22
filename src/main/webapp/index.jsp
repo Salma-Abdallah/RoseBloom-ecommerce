@@ -98,8 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												class="fa fa-angle-down" aria-hidden="true"></span>
 										</label>
 
-										<a  href="view/html/product_grid.jsp">Plants  
-											<jsp:useBean id = "category" class = "com.rosebloom.dtos.CategoryDto" scope = "session" >
+										<a  href="view/html/product_grid.jsp">Plants<jsp:useBean id = "category" class = "com.rosebloom.dtos.CategoryDto" scope = "session" >
 											<jsp:setProperty name = "category" property = "categoryName"  
 											value = "Plants"/>
 											
