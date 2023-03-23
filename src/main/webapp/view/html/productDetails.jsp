@@ -31,15 +31,15 @@
                          
                            
 
-                            <div class="tab-pane active" id="pic-1"><img src="view/images/${product.productImages.get(0).image}" /></div>
-                            <div class="tab-pane" id="pic-2"><img src="view/images/${product.productImages.get(1).image}" /></div>
+                            <div class="tab-pane active" id="pic-1"><img src="${product.productImages.get(0).image}" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="${product.productImages.get(1).image}" /></div>
                             <div class="tab-pane" id="pic-3"><img src="../images/LAVENDER3.jpg" /></div>
                        
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                        src="view/images/${product.productImages.get(0).image}" /></a></li>
-                            <li><a data-target="#pic-2" data-toggle="tab"><img src="view/images/${product.productImages.get(1).image}" /></a></li>
+                                        src="${product.productImages.get(0).image}" /></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="${product.productImages.get(1).image}" /></a></li>
                             <li><a data-target="#pic-3" data-toggle="tab"><img src="../images/LAVENDER3.jpg" /></a></li>
 
                         </ul>

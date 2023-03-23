@@ -33,6 +33,12 @@ public class ProductRepository  {
         List<Product> result = (List<Product>) query.getResultList();
         return result.get(0);
     }
+    public List<Product> getAllProduct() {
+        Query query = entityManager.createQuery("from Product p ");
+       
+        List<Product> result = (List<Product>) query.getResultList();
+        return result;
+    }
 
     // @Override
     // public void addProduct(Product product) {
@@ -40,11 +46,6 @@ public class ProductRepository  {
     //     throw new UnsupportedOperationException("Unimplemented method 'addProduct'");
     // }
 
-    // @Override
-    // public List<Product> getAllProducts() {
-    //     // TODO Auto-generated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'getAllProducts'");
-    // }
 
     // @Override
     // public void editProduct(Product product) {

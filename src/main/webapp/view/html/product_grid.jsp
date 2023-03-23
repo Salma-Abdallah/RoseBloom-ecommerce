@@ -324,7 +324,7 @@
 
                                                 <div class="product-image" style="height:200px">
 
-                                                    <a href="view/productDetails?productId='${current.id}">
+                                                    <a href="productDetails?productId=${current.id}">
 
                                                         <img class="primary blur-up lazyload"
                                                             data-src="${current.productImages[0].image}"

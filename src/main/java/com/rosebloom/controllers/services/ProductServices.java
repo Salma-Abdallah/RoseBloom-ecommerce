@@ -10,13 +10,15 @@ import com.rosebloom.controllers.persistence.repository.ProductRepository;
 import com.rosebloom.dtos.ProductDto;
 
 public class ProductServices {
+   CategoryRepository categoryRepository;
+   ProductRepository productRepository;
 
    public List<ProductDto> getProducts(String categoryName) {
       System.out.println(categoryName);
-      CategoryRepository categoryRepository = new CategoryRepository();
+      categoryRepository = new CategoryRepository();
       int categoryId = categoryRepository.getCategoryIdByname(categoryName);
       System.out.println(categoryId);
-      ProductRepository productRepository = new ProductRepository();
+      productRepository = new ProductRepository();
 
       List<Product> result = productRepository.getProductByCategoryId(categoryId);
       for (Product p : result) {
@@ -33,11 +35,29 @@ public class ProductServices {
       }
       return productDto;
    }
-   public ProductDto getProductDetails(int id){
+
+   public ProductDto getProductDetails(int id) {
       ProductRepository productRepository = new ProductRepository();
 
       Product result = productRepository.getProductById(id);
       ProductMapper mapper = new ProductMapper();
       return mapper.toDto(result);
+   }
+
+   public List<ProductDto> getAllProducts() {
+      productRepository = new ProductRepository();
+
+      List<Product> result = productRepository.getAllProduct();
+     
+      
+      List<ProductDto> productDto = new ArrayList<>();
+      ProductMapper mapper = new ProductMapper();
+      for (Product product : result) {
+         productDto.add(mapper.toDto(product));
+      }
+      for (ProductDto product : productDto) {
+         System.out.println(product);
+      }
+      return productDto;
    }
 }

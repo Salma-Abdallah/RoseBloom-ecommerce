@@ -14,11 +14,12 @@ public class CategoryRepository {
     EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     public int getCategoryIdByname(String CategoryName) {
-System.out.println(CategoryName+"*");
-        Query query = entityManager.createQuery("select c.categoryId from Category c where c.categoryName =?1").setParameter(1,
-                CategoryName);
+        System.out.println(CategoryName + "*");
+        Query query = entityManager.createQuery("select c.categoryId from Category c where c.categoryName =?1")
+                .setParameter(1,
+                        CategoryName);
 
-        List<Integer> result =query.getResultList();
+        List<Integer> result = query.getResultList();
         return result.get(0);
     }
 }

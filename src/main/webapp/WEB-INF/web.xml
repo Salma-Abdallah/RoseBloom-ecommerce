@@ -47,6 +47,14 @@
         <servlet-name>Signup</servlet-name>
         <url-pattern>/Signup</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ViewProductsServlet</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.ViewProductsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewProductsServlet</servlet-name>
+        <url-pattern>/ViewProductsServlet</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
