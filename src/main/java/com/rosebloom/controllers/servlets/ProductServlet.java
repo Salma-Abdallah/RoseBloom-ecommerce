@@ -25,20 +25,22 @@ public class ProductServlet extends HttpServlet {
         // String categoryName = "";
         // if (br != null) {
             String  categoryName =request.getParameter("categoryName");
-        
+        System.out.println(request.getAttribute("categoryName"));
         
         ProductServices productServices=new ProductServices();
-        List<ProductDto> products=productServices.getProducts(categoryName.substring(1, categoryName.length() - 1));
+        List<ProductDto> products=productServices.getProducts(categoryName);
        
-        JSONObject productsJson = new JSONObject();
-        productsJson.put("productsJson", products);
+        // JSONObject productsJson = new JSONObject();
+        // productsJson.put("productsJson", products);
       //  productsJson.put("categoryName", categoryName);
-        System.out.println(productsJson);
-        PrintWriter out = response.getWriter();
+        // System.out.println(productsJson);
+        // PrintWriter out = response.getWriter();
 
 
 
 
-        out.println(productsJson);
+        request.setAttribute("products", products);
+       
+        request.getRequestDispatcher("view/html/product_grid.jsp").forward(request, response);
     }
 }
