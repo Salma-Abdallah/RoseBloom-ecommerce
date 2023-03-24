@@ -1654,11 +1654,197 @@ body.home15-funiture-template { font-size:14px; }
 .footer-bottom span { letter-spacing:1px; }
 .footer-bottom .payment-icons .icon { font-size:25px; }
 
-#site-scroll { color:#fff; line-height:38px; cursor:pointer; font-size:20px; height:40px; right:30px; position:fixed; border-radius:3px; text-align:center; transition:all 0.3s ease 0s; -moz-transition:all 0.3s ease 0s; -webkit-transition:all 0.3s ease 0s; width:40px; bottom:50px; z-index:444; display:none; background:#000; }
-#site-scroll i { line-height:40px; }
+/* #site-scroll { color:#fff; line-height:38px; cursor:pointer; font-size:20px; height:40px; right:30px; position:fixed; border-radius:3px; text-align:center; transition:all 0.3s ease 0s; -moz-transition:all 0.3s ease 0s; -webkit-transition:all 0.3s ease 0s; width:40px; bottom:50px; z-index:444; display:none; background:#000; } */
+#site-scroll {
+  width: 34px;
+  height: 34px;
+  background: url(../images/move-top.png) no-repeat;
+  display: inline-block;
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  z-index: 0;
+}
+/* #site-scroll i { line-height:40px; } */
 /*---------------------------------------
   End Footer ----------------------------
   ---------------------------------------*/
 
 .blur-up.lazyloaded { -webkit-filter:blur(0); filter:blur(0); }
 .blur-up { -webkit-filter:blur(5px); filter:blur(5px); transition:filter 400ms, -webkit-filter 400ms; -webkit-transition:filter 400ms, -webkit-filter 400ms; }
+
+/* =================================================================
+=====================================================================
+=====================================================================
+===================================================================== */
+
+
+
+/* testimonials */
+.clients {
+  background: url(../images/bg1.jpg) no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+}
+
+.feedback-top p {
+  color: #333;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.feedback-top p i {
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+.carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  background-color: #909090;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #FF5722;
+}
+
+ol.carousel-indicators {
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  margin: 0;
+}
+
+/* //testimonials */
+
+/* contact */
+.contact {
+  background: url(view/images/images/bg.jpg) no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+}
+
+button.btn.btn-block {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: #44AA2F;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 0px;
+  margin-top: 2rem;
+}
+
+.contact-top1 .form-group label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: .5rem;
+  letter-spacing: 1px;
+}
+
+form.f-color .form-control {
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding: 13px;
+  border: none;
+  border-radius: 0px;
+}
+
+legend {
+  max-width: 50%;
+  background: transparent;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 27px;
+  font-family: 'Niconne', cursive;
+}
+
+fieldset.contact-top1 {
+  padding: 3rem;
+  border: 1px solid #fff;
+}
+
+/* contact address */
+.address {
+  padding: 3.5em;
+  margin-top: 4em;
+}
+
+.address-right p,
+.address-right p a {
+  color: #000;
+}
+
+.address-grid i {
+  font-size: 40px;
+  color: #FF5722;
+}
+
+/* //contact address */
+/* //contact */
+
+
+/* footer */
+footer {
+  background: url(../images/footer.jpg) no-repeat bottom;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+}
+
+p.footer-para {
+  max-width: 650px;
+  font-size: 15px;
+}
+
+/* footer logo */
+.logo2 {
+  position: relative;
+}
+
+.logo2 a {
+  font-size: 50px;
+  color: #FF5722;
+  font-family: 'Niconne', cursive;
+  letter-spacing: 1px;
+}
+
+.logo2 i {
+  font-size: 26px;
+  bottom: 31px;
+  left: 43.69%;
+  color: #FF5722;
+  position: absolute;
+  transform: rotate(-71deg);
+}
+
+/* //footer logo */
+
+/* bottom-to-top */
+a.move-top {
+  width: 34px;
+  height: 34px;
+  background: url(view/images/move-top.png) no-repeat;
+  display: inline-block;
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  z-index: 0;
+}
+
+/* //bottom-to-top */

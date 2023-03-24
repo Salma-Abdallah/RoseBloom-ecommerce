@@ -53,7 +53,20 @@ public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
-        System.out.println("GetMethod");
+        System.out.println("loginServlet");
+
+        String email = request.getParameter("userEmail");
+
+        UserServices userServices = new UserServices();
+
+        if(userServices.checkByEmailIfValid(email)) {
+            out.print("<font color=GREEN>Valid email </font>");
+        } else
+            out.print("<font color=RED>Invalid email </font>");
+
+
     }
 }
