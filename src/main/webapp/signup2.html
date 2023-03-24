@@ -3,11 +3,17 @@
 
 <head>
 	<title>Registration Form</title>
+    <link rel="shortcut icon" href="view/images/leaf2.png" />
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
 	<meta name="keywords" content="RoseBloom Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	<script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-bera1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -48,7 +54,7 @@
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
-                    <input type="text" name="userName" placeholder="Enter your name" required>
+                    <input type="text" name="userName" placeholder="Enter your name" onblur="nameValidate()" required>
                     <label name="msgUsername" id="msgUsername"></label>
                 </div>
                 <div class="input-box">
@@ -63,18 +69,19 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Phone Number</span>
-                    <input type="tel" name="phoneNo" placeholder="(01) 555-5555"  required>
+                    <input type="tel" name="phoneNo" placeholder="(01) 555-5555" onblur="phoneValidate()" required>
                     <label name="msgPhoneNo" id="msgPhoneNo"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" name="password" placeholder="Enter your Password" required>
+                    <input type="password" name="password" placeholder="Enter your Password" onblur="passwordValidate()" required>
                     <label name="msgPassword" id="msgPassword"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
-                    <label name="msgConfirmPass" id="msgConfirmPass"></label>
+                    <input type="password" name="confirmPassword" placeholder="Confirm your password" onblur="cofirmPasswordValidate()" required>
+                    <label name="msgConfirmPass" id="msgConfirmPass" ></label>
+                    
                 </div>
                 <div class="input-box">
                     <span class="details">Address</span>
@@ -83,7 +90,7 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Credit Limit  </span>
-                    <input type="text" name="creditLimit" placeholder="Enter your credit limit" required>
+                    <input type="number" name="creditLimit" placeholder="Enter your credit limit" required>
                     <label name="msgCredit" id="msgCredit"></label>
                 </div>
             </div>
@@ -93,15 +100,42 @@
                 <span class="details">Remember me</span>
             </div>
             <div class="button">
-                <input type="submit" value="Submit">
+                <input type="button"  data-bs-toggle="modal" data-target="#myModal" value="Submit">
             </div>
             <div class="have-account">
                 <a href="login2.html" style="color:  #FF5722;">
                     <span class="details">Have an account</span>
                 </a>
             </div>
+
+
+            <!-- Modal-->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </form>
     </div>
+
+    <script  src="view/scripts/login.js"></script>
+    <script src="view/scripts/validation.js"></script>
+
 </body>
 
 </html>

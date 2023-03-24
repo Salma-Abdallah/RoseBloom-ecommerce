@@ -48,5 +48,14 @@
         <url-pattern>/Signup</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>userProfile</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.userProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userProfile</servlet-name>
+        <url-pattern>/userProfile</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

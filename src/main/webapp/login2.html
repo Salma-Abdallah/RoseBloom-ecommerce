@@ -3,6 +3,7 @@
 
 <head>
 	<title>login</title>
+    <link rel="shortcut icon" href="view/images/leaf2.png" />
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -50,7 +51,7 @@
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" name="email"  id="email" placeholder="Enter your email" onblur="submitForm()" required>
                     <label name="msgEmail" id="msgEmail"></label>
                 </div>
                 <div>
@@ -78,6 +79,9 @@
             </div>
         </form>
     </div>
+
+    <script  src="view/scripts/login.js"></script>
+    <script src="view/scripts/validation.js"></script>
 </body>
 
 </html>

@@ -39,6 +39,13 @@ public class UserServices {
     }
 
     // UpdateUserDetails
+    public void UpdateUserDetails(UserDto userDto){
+        UserRepository userRepository = new UserRepository();
+        UserMapper userMapper= new UserMapper();
+        User userEntity= userMapper.toEntity(userDto);
+
+        userRepository.UpdateUserDetails(userEntity);
+    }
 
     //getAllUsers
 }
