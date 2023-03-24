@@ -53,10 +53,13 @@ public class UserRepository {
     //Want to Check it by real data
     public void UpdateUserDetails(User user) {
         entityManager.getTransaction().begin();
-        User newUser = entityManager.find(User.class,user.getId());
-//        newUser = user;
+        Integer pk = user.getId();
+        User newUser = entityManager.find(User.class,pk);
+        newUser.setPassword(user.getPassword());
         entityManager.persist(newUser);
         entityManager.getTransaction().commit();
+
+        System.out.println(pk);
 
     }
 
