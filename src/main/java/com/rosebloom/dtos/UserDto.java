@@ -56,6 +56,18 @@ public class UserDto implements Serializable {
         this.creditLimit = creditLimit;
     }
 
+    public UserDto(Integer id,String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.address = address;
+        this.birthdate = birthdate;
+        this.phone = phone;
+        this.creditLimit = creditLimit;
+        this.job = job;
+    }
+
     public Integer getId() {
         return id;
     }
