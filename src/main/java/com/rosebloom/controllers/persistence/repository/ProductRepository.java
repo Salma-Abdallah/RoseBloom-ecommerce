@@ -20,7 +20,7 @@ public class ProductRepository  {
       
         Category c=new Category();
         c.setCategoryId(id);
-        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories  where p.isDeleted=0").setParameter(1, c);
+        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories").setParameter(1, c);
        
         List<Product> result = (List<Product>) query.getResultList();
         return result;

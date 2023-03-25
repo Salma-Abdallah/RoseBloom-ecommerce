@@ -271,7 +271,7 @@
                             <div class="productList">
                                 <div class="category-description">
                                     <h3 id="categoryName">
-                                        <jsp:getProperty name="category" property="categoryName" />
+                                        ${categoryName}
                                     </h3>
 
                                 </div>
