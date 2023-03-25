@@ -2,7 +2,7 @@ package com.rosebloom.controllers.persistence.repository;
 
 import java.util.List;
 
-import com.mysql.cj.xdevapi.Result;
+
 import com.rosebloom.controllers.persistence.connection.EntityManagerFactorySingleton;
 import com.rosebloom.controllers.persistence.entities.Category;
 
@@ -46,16 +46,17 @@ public class CategoryRepository {
     }
 
     // public void setCategory(String categoryName, int productId) {
-    //     Query query = entityManager.createQuery("select c from Category c join c.products p  where p.id =?1 ")
-    //             .setParameter(1,
-    //                     productId);
-    //     List<Category> result = query.getResultList();
-    //     for (Category category : result) {
-    //         if (category.getCategoryName().equals(categoryName)) {
-    //             return;
-    //         }
-    //     }
-    //     getParentByCategoryName(categoryName);
+    // Query query = entityManager.createQuery("select c from Category c join
+    // c.products p where p.id =?1 ")
+    // .setParameter(1,
+    // productId);
+    // List<Category> result = query.getResultList();
+    // for (Category category : result) {
+    // if (category.getCategoryName().equals(categoryName)) {
+    // return;
+    // }
+    // }
+    // getParentByCategoryName(categoryName);
     // }
 
     public List<Category> getParentByCategoryName(String categoryName) {
@@ -63,7 +64,10 @@ public class CategoryRepository {
         Query query = entityManager.createQuery("select c from Category c   where c.categoryName =?1 ")
                 .setParameter(1,
                         categoryName);
+
         List<Category> result = query.getResultList();
+        Category parent = result.get(0).getCategory();
+        result.add(parent);
         return result;
     }
 
