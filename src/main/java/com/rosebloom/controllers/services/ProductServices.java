@@ -1,9 +1,12 @@
 package com.rosebloom.controllers.services;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.rosebloom.controllers.mappers.ProductMapper;
+import com.rosebloom.controllers.persistence.entities.Category;
 import com.rosebloom.controllers.persistence.entities.Product;
 import com.rosebloom.controllers.persistence.repository.CategoryRepository;
 import com.rosebloom.controllers.persistence.repository.ProductRepository;
@@ -59,5 +62,15 @@ public class ProductServices {
          System.out.println(product);
       }
       return productDto;
+   }
+   public void updateProduct(String categoryName,ProductDto productDto) {
+      CategoryRepository categoryRepository=new CategoryRepository();
+      List<Category> category=categoryRepository.getParentByCategoryName(categoryName);
+      Set<Category> setCategories = new HashSet<>(category);
+      ProductMapper productMapper=new ProductMapper();
+      Product product=productMapper.toEntity(productDto);
+      product.setCategories(setCategories);
+      ProductRepository pRepository=new ProductRepository();
+      pRepository.editProduct(product);
    }
 }

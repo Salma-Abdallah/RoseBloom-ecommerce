@@ -30,10 +30,10 @@ public class ProductServlet extends HttpServlet {
         ProductServices productServices=new ProductServices();
         List<ProductDto> products=productServices.getProducts(categoryName);
        
-        // JSONObject productsJson = new JSONObject();
-        // productsJson.put("productsJson", products);
-      //  productsJson.put("categoryName", categoryName);
-        // System.out.println(productsJson);
+    //     JSONObject productsJson = new JSONObject();
+    //     productsJson.put("productsJson", products);
+    //   //  productsJson.put("categoryName", categoryName);
+    //     System.out.println(productsJson);
         // PrintWriter out = response.getWriter();
 
 
@@ -43,4 +43,5 @@ public class ProductServlet extends HttpServlet {
        
         request.getRequestDispatcher("view/html/product_grid.jsp").forward(request, response);
     }
+
 }

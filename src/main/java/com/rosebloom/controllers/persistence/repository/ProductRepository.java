@@ -20,7 +20,7 @@ public class ProductRepository  {
       
         Category c=new Category();
         c.setCategoryId(id);
-        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories").setParameter(1, c);
+        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories  where p.isDeleted=0").setParameter(1, c);
        
         List<Product> result = (List<Product>) query.getResultList();
         return result;
@@ -28,16 +28,36 @@ public class ProductRepository  {
 
    
     public Product getProductById(int id) {
-        Query query = entityManager.createQuery("from Product p where id=?1").setParameter(1, id);
+        Product product=entityManager.find(Product.class,id);  
+        // Query query = entityManager.createQuery("from Product p where id=?1").setParameter(1, id);
        
-        List<Product> result = (List<Product>) query.getResultList();
-        return result.get(0);
+        // List<Product> result = (List<Product>) query.getResultList();
+        return product;
     }
     public List<Product> getAllProduct() {
         Query query = entityManager.createQuery("from Product p ");
        
         List<Product> result = (List<Product>) query.getResultList();
         return result;
+    }
+  
+    public void editProduct(Product product) {
+        Product product1=entityManager.find(Product.class,product.getId());  
+        
+         entityManager.getTransaction().begin();
+        // product1.setCategory(product.getCategory());
+         product1.setName(product.getName());
+         product1.setPrice(product.getPrice());
+         product1.setOldPrice(product.getOldPrice());
+         product1.setQuantity(product.getQuantity());
+         product1.setDescription(product.getDescription());
+        // product1.setProductImages(product.getProductImages());
+         product1.setCategories(product.getCategories());
+         product1.setCreatedAt(product.getCreatedAt());
+         product1.setSize(product.getSize());
+         product1.setColor(product.getColor());
+         //product1.setPlantdescription(product.getPlantdescription());
+         entityManager.getTransaction().commit();
     }
 
     // @Override
@@ -47,10 +67,6 @@ public class ProductRepository  {
     // }
 
 
-    // @Override
-    // public void editProduct(Product product) {
-    //     // TODO Auto-generated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'editProduct'");
-    // }
+  
 
 }

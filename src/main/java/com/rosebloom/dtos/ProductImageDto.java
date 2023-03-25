@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * A DTO for the {@link ProductImage} entity
  */
-public class ProductImageDto implements Serializable {
+public class ProductImageDto implements Serializable ,  Comparable<ProductImageDto> {
     private String image;
     
     public ProductImageDto() {
@@ -41,4 +41,8 @@ public class ProductImageDto implements Serializable {
         return getClass().getSimpleName() + "(" +
                 "image = " + image + ")";
     }
+    @Override
+	public int compareTo(ProductImageDto p) {
+		return this.getImage().compareTo(p.getImage());
+	}
 }

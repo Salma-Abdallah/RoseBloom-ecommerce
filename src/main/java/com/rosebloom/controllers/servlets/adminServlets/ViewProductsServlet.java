@@ -19,6 +19,7 @@ public class ViewProductsServlet extends HttpServlet {
         List<ProductDto> products = productServices.getAllProducts();
         request.setAttribute("products", products);
 
+        
         request.getRequestDispatcher("adminView/html/viewProducts.jsp").forward(request, response);
     }
 
