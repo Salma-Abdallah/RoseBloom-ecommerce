@@ -20,7 +20,8 @@ public class userProfileServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        System.out.println("Signup page");
+        System.out.println("user Profile page");
+
         String name = request.getParameter("userName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -40,6 +41,9 @@ public class userProfileServlet extends HttpServlet {
             UserDto user= new UserDto(mainUser.getId(),name,password,email,address,birthday,phoneNo,creditLimit,job);
             userServices.UpdateUserDetails(user);
             user = userServices.getUserByEmail(email,password);
+            session.removeAttribute("User");
+            
+            session.setAttribute("User", user);
 
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.forward(request, response);

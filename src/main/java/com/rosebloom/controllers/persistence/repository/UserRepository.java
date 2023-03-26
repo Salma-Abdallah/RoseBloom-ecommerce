@@ -55,7 +55,16 @@ public class UserRepository {
         entityManager.getTransaction().begin();
         Integer pk = user.getId();
         User newUser = entityManager.find(User.class,pk);
+
         newUser.setPassword(user.getPassword());
+        newUser.setName(user.getName());
+        newUser.setEmail(user.getEmail());
+        newUser.setAddress(user.getAddress());
+        newUser.setBirthdate(user.getBirthdate());
+        newUser.setPhone(user.getPhone());
+        newUser.setCreditLimit(user.getCreditLimit());
+        newUser.setJob(user.getJob());
+
         entityManager.persist(newUser);
         entityManager.getTransaction().commit();
 
