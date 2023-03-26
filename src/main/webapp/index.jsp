@@ -16,12 +16,12 @@
 <link rel="stylesheet" href="view/style/plugins.css">
 <!-- Bootstap CSS -->
 <link rel="stylesheet" href="view/style/bootstrap.min.css">
-<link rel="stylesheet" href="view/style/bootstrap.css">
+
 <!-- Main Style CSS -->
 <link rel="stylesheet" href="view/style/style.css">
 <link rel="stylesheet" href="view/style/responsive.css">
 
-<link rel="stylesheet" href="view/style/main-style.css" type="text/css" media="all">
+<link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">
 
 <!-- Style-CSS -->
 <!--<link href="view/style/font-awesome.min.css" rel="stylesheet">-->
@@ -32,6 +32,7 @@
 <div id="pre-loader">
     <img src="view/images/loader.gif" alt="Loading..." />
 </div>
+
 <div class="pageWrapper">
 	<!--Search Form Drawer-->
 
