@@ -76,7 +76,13 @@ public class User  implements java.io.Serializable {
        this.categories = categories;
     }
    
-     @Id @GeneratedValue(strategy=IDENTITY)
+     public User(Integer id2, String name2, String password2, String email2, String address2, Date birthdate2,
+            String phone2, int creditLimit2, String job2, int isAdmin2, Integer isDeleted2, Object object,
+            Object object2, Object object3) {
+    }
+
+
+    @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="id", unique=true, nullable=false)
