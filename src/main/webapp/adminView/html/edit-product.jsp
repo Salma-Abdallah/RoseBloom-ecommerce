@@ -206,7 +206,7 @@
                       onclick="document.getElementById('fileInput2').click();"></i>
                   </div>
                   <div class="custom-file mt-3 mb-3">
-                    <input id="fileInput2" type="file" style="display:none;" accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img2');"/>
+                    <input id="fileInput2" name="fileInput2" type="file" style="display:none;" accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img2');"/>
                     <input type="button" class="btn btn-primary btn-block mx-auto" value="CHANGE IMAGE NOW"
                       onclick="document.getElementById('fileInput2').click();" />
                   </div>
@@ -219,18 +219,21 @@
               <div class="collapse" id="collapseExample3">
                 <div class="card card-body">
                   <div class="tm-product-img-edit mx-auto">
-                    <img src=${product.productImages[2].image} id="img3" alt="Product image" class="img-fluid d-block mx-auto">
+                    <img src='${product.productImages[2].image}' id="img3" alt="Product image" class="img-fluid d-block mx-auto">
                     <i class="fas fa-cloud-upload-alt tm-upload-icon"
                       onclick="document.getElementById('fileInput3').click();"></i>
                   </div>
                   <div class="custom-file mt-3 mb-3">
-                    <input id="fileInput3" type="file" style="display:none;" accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img3');"/>
+                    <input id="fileInput3" name="fileInput3" type="file" style="display:none;" accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img3');"/>
                     <input type="button" class="btn btn-primary btn-block mx-auto" value="CHANGE IMAGE NOW"
                       onclick="document.getElementById('fileInput3').click();" />
                   </div>
                 </div>
               </div>
             </div>
+            <input type="text" name="img1" value='${product.productImages[0].image}' style="display: none;">
+            <input type="text" name="img2" value='${product.productImages[1].image}' style="display: none;">
+            <input type="text" name="img3" value='${product.productImages[2].image}' style="display: none;">
             <div class="col-12">
               <button type="submit" class="btn btn-primary btn-block text-uppercase">Update Now</button>
             </div>

@@ -5,7 +5,8 @@ import java.util.List;
 import com.rosebloom.controllers.persistence.connection.EntityManagerFactorySingleton;
 import com.rosebloom.controllers.persistence.entities.Category;
 import com.rosebloom.controllers.persistence.entities.Product;
-
+import com.rosebloom.controllers.persistence.entities.ProductImage;
+import com.rosebloom.dtos.ProductImageDto;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -51,13 +52,25 @@ public class ProductRepository  {
          product1.setOldPrice(product.getOldPrice());
          product1.setQuantity(product.getQuantity());
          product1.setDescription(product.getDescription());
-        // product1.setProductImages(product.getProductImages());
+        product1.setProductImages(product.getProductImages());
+        for (ProductImage img : product.getProductImages()) {
+            System.out.println(img.getImage());
+
+        }
+        for (ProductImage img : product1.getProductImages()) {
+            System.out.println(img.getImage());
+            
+        }
          product1.setCategories(product.getCategories());
          product1.setCreatedAt(product.getCreatedAt());
          product1.setSize(product.getSize());
          product1.setColor(product.getColor());
          //product1.setPlantdescription(product.getPlantdescription());
          entityManager.getTransaction().commit();
+         for (ProductImage img : product1.getProductImages()) {
+            System.out.println(img.getImage());
+            
+        }
     }
 
     // @Override

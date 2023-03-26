@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
+
 
 /**
  * A DTO for the {@link Product} entity
