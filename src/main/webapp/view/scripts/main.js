@@ -1028,17 +1028,17 @@
 	/*-----------------------------------
 	  33. Infinite Scroll js
 	  -------------------------------------*/
-	// function load_more(){
-    //     $(".product-load-more .item").slice(0, 16).show();
-    //     $(".loadMore").on('click', function (e) {
-    //         e.preventDefault();
-    //         $(".product-load-more .item:hidden").slice(0, 4).slideDown();
-    //         if ($(".product-load-more .item:hidden").length == 0) {
-    //             $(".infinitpagin").html('<div class="btn loadMore">no more products</div>');
-    //         }
-    //     });
-    // }
-	// load_more();
+	function load_more(){
+        $(".product-load-more .item").slice(0, 16).show();
+        $(".loadMore").on('click', function (e) {
+            e.preventDefault();
+            $(".product-load-more .item:hidden").slice(0, 4).slideDown();
+            if ($(".product-load-more .item:hidden").length == 0) {
+                $(".infinitpagin").html('<div class="btn loadMore">no more products</div>');
+            }
+        });
+    }
+	load_more();
 	
 	function load_more_post(){
         $(".blog--grid-load-more .article").slice(0, 3).show();
