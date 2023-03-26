@@ -77,16 +77,11 @@ public class User  implements java.io.Serializable {
        this.categories = categories;
     }
    
-<<<<<<< Updated upstream
-     @Id @GeneratedValue(strategy=IDENTITY)
-=======
     
 
 
-    @Id @GeneratedValue(strategy=IDENTITY)
->>>>>>> Stashed changes
-
-    
+    @Id 
+    @GeneratedValue(strategy=IDENTITY)
     @Column(name="id", unique=true, nullable=false)
     public Integer getId() {
         return this.id;
