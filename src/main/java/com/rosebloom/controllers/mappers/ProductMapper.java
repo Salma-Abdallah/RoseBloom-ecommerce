@@ -54,6 +54,9 @@ public class ProductMapper {
 
         return product;
     }
+
+
+
 }
 
 // import org.mapstruct.*;

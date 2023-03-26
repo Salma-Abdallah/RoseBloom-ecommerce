@@ -2,7 +2,7 @@ package com.rosebloom.controllers.services;
 
 import com.rosebloom.controllers.enums.OrderStatus;
 
-import com.rosebloom.controllers.mappersImpl.OrdersMapper;
+import com.rosebloom.controllers.mappers.OrdersMapper;
 import com.rosebloom.controllers.persistence.repository.OrderRepository;
 import com.rosebloom.controllers.utils.CustomValidationMessage;
 
