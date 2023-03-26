@@ -73,4 +73,9 @@ public class ProductServices {
       ProductRepository pRepository=new ProductRepository();
       pRepository.editProduct(product);
    }
+   public void deleteProduct(int id) {
+      System.out.println(id);
+      productRepository=new ProductRepository();
+      productRepository.deleteProduct(id);
+   }
 }

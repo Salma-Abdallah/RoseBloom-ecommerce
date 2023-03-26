@@ -109,14 +109,16 @@
                     <tbody>
 
                       <tr>
-                        <th scope="row"><input type="checkbox" /></th>
+                        <th scope="row">
+                          <!-- <input type="checkbox" /> -->
+                        </th>
                         <td class="tm-product-name"><a href="editProduct?productId=${current.id}">${current.name}</a>
                         </td>
                         <td>${current.quantity}</td>
                         <td>${current.price}</td>
                         <td>${current.category}</td>
                         <td>
-                          <a href="#" class="tm-product-delete-link">
+                          <a href="#" class="tm-product-delete-link" onclick="SomeDeleteRowFunction('${current.id}',event);" >
                             <i class="far fa-trash-alt tm-product-delete-icon"></i>
                           </a>
                         </td>
@@ -130,9 +132,9 @@
               </div>
               <!-- table container -->
               <a href="add-product.html" class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-              <button class="btn btn-primary btn-block text-uppercase">
+              <!-- <button class="btn btn-primary btn-block text-uppercase">
                 Delete selected products
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -151,6 +153,7 @@
       <script src="adminView/js/jquery-3.3.1.min.js"></script>
       <!-- https://jquery.com/download/ -->
       <script src="adminView/js/bootstrap.min.js"></script>
+      <script src="adminView/js/product.js"></script>
       <!-- https://getbootstrap.com/ -->
       <!-- <script>
     $(function () {
