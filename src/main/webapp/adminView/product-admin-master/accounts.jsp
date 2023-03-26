@@ -7,17 +7,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Accounts - Product Admin Template</title>
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="view/images/leaf2.png" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700"
     />
     <!-- https://fonts.google.com/specimen/Roboto -->
-    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="adminView/css/fontawesome.min.css" />
     <!-- https://fontawesome.com/ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="adminView/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
-    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="adminView/css/templatemo-style.css">
     <!--
 	Product Admin CSS Template
 	https://templatemo.com/tm-524-product-admin
@@ -126,10 +127,10 @@
                       <th scope="col">User NAME</th>
                       <th scope="col">EMAIL</th>
                       <th scope="col">ADDRESS</th>
+                      <th scope="col">BIRTHDATE</th>
                       <th scope="col">PHONE NO.</th>
                       <th scope="col">CREDIT LIMIT</th>
                       <th scope="col">JOB</th>
-                      <th scope="col">&nbsp;</th>
                     </tr>
                   </thead>
                   <c:forEach items="${users}" var="current">
@@ -138,20 +139,16 @@
 
                       <tr>
                         <th scope="row"><input type="checkbox" /></th>
-                        <td class="tm-product-name"><a href="editProduct?productId=${current.id}">${current.id}</a>
+                        <td class="tm-product-name"><a >${current.id}</a>
                         </td>
-                        <td>${current.name}</td>
+                        <td># ${current.name}</td>
                         <td>${current.email}</td>
                         <td>${current.address}</td>
                         <td>${current.birthdate}</td>
                         <td>${current.phone}</td>
                         <td>${current.creditLimit}</td>
                         <td>${current.job}</td>
-                        <td>
-                          <a href="#" class="tm-product-delete-link">
-                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                          </a>
-                        </td>
+                        
                       </tr>
 
 
