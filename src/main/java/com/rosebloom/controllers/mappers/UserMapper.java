@@ -6,12 +6,14 @@ import com.rosebloom.dtos.UserDto;
 public class UserMapper{
     public UserDto toDto(User user){
         UserDto userDto = new UserDto(user.getId(),user.getName(), user.getPassword(), user.getEmail(), user.getAddress(), user.getBirthdate(), user.getPhone(), user.getCreditLimit(), user.getJob(), user.getIsAdmin(), user.getIsDeleted(), null, null, null);
-
+       
         return userDto;
     }
 
     public User toEntity(UserDto userDto){
-        User user= new User(userDto.getName(), userDto.getPassword(), userDto.getEmail(), userDto.getAddress(), userDto.getBirthdate(), userDto.getPhone(), userDto.getCreditLimit(), userDto.getJob(),userDto.getIsAdmin(), userDto.getIsDeleted(), null,null,null );
+        System.out.println("in Mapper (userDto.getId)-> "+userDto.getId());
+        User user= new User(userDto.getId(),userDto.getName(), userDto.getPassword(), userDto.getEmail(), userDto.getAddress(), userDto.getBirthdate(), userDto.getPhone(), userDto.getCreditLimit(), userDto.getJob(),userDto.getIsAdmin(), userDto.getIsDeleted(), null,null,null );
+        System.out.println("in Mapper (user.getId)-> "+user.getId());
 
         return user;
     }
