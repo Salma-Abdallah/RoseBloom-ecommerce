@@ -41,4 +41,31 @@
     </servlet-mapping>
 
 
+<<<<<<< Updated upstream
+=======
+    <servlet>
+        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.EditProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditProductServlet</servlet-name>
+        <url-pattern>/editProduct</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewUsers</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.ViewUsers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewUsers</servlet-name>
+        <url-pattern>/ViewUsers</url-pattern>
+    </servlet-mapping>
+
+
+<!-- <welcome-file-list>
+    <welcome-file>
+        adminView\html\adminIndex.html
+    </welcome-file>
+</welcome-file-list> -->
+>>>>>>> Stashed changes
 </web-app>
