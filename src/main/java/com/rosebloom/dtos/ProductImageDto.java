@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class ProductImageDto implements Serializable ,  Comparable<ProductImageDto> {
     private String image;
-    
+
     public ProductImageDto() {
     }
 
@@ -34,7 +34,7 @@ public class ProductImageDto implements Serializable ,  Comparable<ProductImageD
         return Objects.equals(this.image, entity.image);
     }
 
-  
+
 
     @Override
     public String toString() {
@@ -42,7 +42,7 @@ public class ProductImageDto implements Serializable ,  Comparable<ProductImageD
                 "image = " + image + ")";
     }
     @Override
-	public int compareTo(ProductImageDto p) {
-		return this.getImage().compareTo(p.getImage());
-	}
+    public int compareTo(ProductImageDto p) {
+        return this.getImage().compareTo(p.getImage());
+    }
 }

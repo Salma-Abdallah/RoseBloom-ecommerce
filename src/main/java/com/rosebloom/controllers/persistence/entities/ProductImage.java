@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name="product_image"
-    ,catalog="rosebloom"
+        ,catalog="rosebloom"
 )
 public class ProductImage  implements java.io.Serializable {
 
@@ -34,41 +34,41 @@ public class ProductImage  implements java.io.Serializable {
     }
 
     public ProductImage(ProductImageId id, Product product, String image) {
-       this.id = id;
-       this.product = product;
-       this.image = image;
+        this.id = id;
+        this.product = product;
+        this.image = image;
     }
-   
-     @EmbeddedId
 
-    
+    @EmbeddedId
+
+
     @AttributeOverrides( {
-        @AttributeOverride(name="imgId", column=@Column(name="img_id", nullable=false) ), 
-        @AttributeOverride(name="productId", column=@Column(name="product_id", nullable=false) ) } )
+            @AttributeOverride(name="imgId", column=@Column(name="img_id", nullable=false) ),
+            @AttributeOverride(name="productId", column=@Column(name="product_id", nullable=false) ) } )
     public ProductImageId getId() {
         return this.id;
     }
-    
+
     public void setId(ProductImageId id) {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="product_id", nullable=false, insertable=false, updatable=false)
     public Product getProduct() {
         return this.product;
     }
-    
+
     public void setProduct(Product product) {
         this.product = product;
     }
 
-    
+
     @Column(name="image", nullable=false)
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -77,5 +77,4 @@ public class ProductImage  implements java.io.Serializable {
 
 
 }
-
 

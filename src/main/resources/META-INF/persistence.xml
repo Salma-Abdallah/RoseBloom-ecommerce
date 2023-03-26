@@ -20,7 +20,7 @@
 
         <property name="hibernate.show_sql" value="true"/>
         <property name="hibernate.format_sql" value="true"/>
-        <property name="hibernate.connection.pool_size" value="1000"/>
+        <property name="hibernate.connection.pool_size" value="1500"/>
         <property name="hibernate.connection.timeout" value="1500"/>
 
         <property name="jakarta.persistence.lock.timeout" value="100"/>
