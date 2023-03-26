@@ -376,7 +376,7 @@
                 </div>
         
                 <div class="button">
-                    <input type="button" value="Update Your Profile ">
+                    <input type="submit" value="Update Your Profile ">
                 </div>
         
         
