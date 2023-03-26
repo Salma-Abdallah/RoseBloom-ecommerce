@@ -71,6 +71,8 @@ public class UserRepository {
         newUser.setOrderses(user.getOrderses());
         newUser.setCategories(user.getCategories());
         
+        newUser.setPhone(user.getPhone());
+
         entityManager.persist(newUser);
         entityManager.getTransaction().commit();
 

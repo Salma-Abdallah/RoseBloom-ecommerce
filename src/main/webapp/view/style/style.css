@@ -306,7 +306,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder { opacity:1; -ms-fil
 	#siteNav.medium > li > a .anm { display:none; }
 	
 	#siteNav > li > a:hover:hover,
-	#siteNav > li > a:hover { color:#44AA2F; }
+	#siteNav > li > a:hover { color:#339498; }
 	
 	#siteNav > li .megamenu { opacity:0; visibility:hidden; padding:25px 25px 0; width:100%; position:absolute; top:59px; left:0; z-index:999; background-color:#fff; box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.3); -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.3); pointer-events:none; -ms-transition:all 0.3s ease; -webkit-transition:all 0.3s ease; transition:all 0.3s ease; border:1px solid #eee; max-height:600px; overflow:auto; }
 	#siteNav > li .megamenu ul { padding:0; list-style:none; }

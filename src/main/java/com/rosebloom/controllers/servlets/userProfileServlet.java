@@ -20,7 +20,8 @@ public class userProfileServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        System.out.println("Signup page");
+        System.out.println("user Profile page");
+
         String name = request.getParameter("userName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -42,6 +43,9 @@ public class userProfileServlet extends HttpServlet {
             
             userServices.UpdateUserDetails(user);
             user = userServices.getUserByEmail(email,password);
+            session.removeAttribute("User");
+            
+            session.setAttribute("User", user);
 
             session.removeAttribute("User");
             session.setAttribute("User", user);

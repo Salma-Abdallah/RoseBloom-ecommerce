@@ -60,8 +60,9 @@ public class User  implements java.io.Serializable {
         this.creditLimit = creditLimit;
         this.isAdmin = isAdmin;
     }
-    public User(String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, int isAdmin, Integer isDeleted, Set<Cart> carts, Set<Orders> orderses, Set<Category> categories) {
-       this.name = name;
+    public User(Integer id,String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, int isAdmin, Integer isDeleted, Set<Cart> carts, Set<Orders> orderses, Set<Category> categories) {
+       this.id=id;
+        this.name = name;
        this.password = password;
        this.email = email;
        this.address = address;
@@ -76,13 +77,6 @@ public class User  implements java.io.Serializable {
        this.categories = categories;
     }
    
-     public User(Integer id2, String name2, String password2, String email2, String address2, Date birthdate2,
-            String phone2, int creditLimit2, String job2, int isAdmin2, Integer isDeleted2, Object object,
-            Object object2, Object object3) {
-    }
-
-
-    @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="id", unique=true, nullable=false)
