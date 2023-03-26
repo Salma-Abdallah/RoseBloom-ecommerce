@@ -41,8 +41,6 @@
     </servlet-mapping>
 
 
-<<<<<<< Updated upstream
-=======
     <servlet>
         <servlet-name>EditProductServlet</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.adminServlets.EditProductServlet</servlet-class>
@@ -67,5 +65,4 @@
         adminView\html\adminIndex.html
     </welcome-file>
 </welcome-file-list> -->
->>>>>>> Stashed changes
 </web-app>

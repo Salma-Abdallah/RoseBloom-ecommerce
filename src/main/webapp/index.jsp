@@ -34,14 +34,9 @@
 </div>
 
 <div class="pageWrapper">
-<<<<<<< Updated upstream
 	<!--Search Form Drawer-->
 
     <%@ include file ="view/html/header.jsp" %>
-=======
-	
-    <%@ include file ="view/html/header.html" %>
->>>>>>> Stashed changes
 
     <!--Body Content-->
     <div id="page-content">
