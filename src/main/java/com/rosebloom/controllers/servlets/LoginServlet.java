@@ -34,8 +34,17 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("loggedIn", new String("true"));
             session.setAttribute("User",user);
 
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-            rd.forward(request, response);
+            System.out.println(user.getId());
+
+            if(user.getIsAdmin()==0){
+                RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+                rd.forward(request, response);
+            }else{
+                RequestDispatcher rd = request.getRequestDispatcher("/adminView/product-admin-master/index.html");
+                rd.forward(request, response);
+            }
+
+            
 
         }else{
             System.out.println("invalid User  :(");

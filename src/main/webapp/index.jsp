@@ -36,7 +36,7 @@
 <div class="pageWrapper">
 	<!--Search Form Drawer-->
 
-    <%@ include file ="view/html/header.html" %>
+    <%@ include file ="view/html/header.jsp" %>
 
     <!--Body Content-->
     <div id="page-content">
