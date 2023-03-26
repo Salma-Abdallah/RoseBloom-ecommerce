@@ -60,8 +60,9 @@ public class User  implements java.io.Serializable {
         this.creditLimit = creditLimit;
         this.isAdmin = isAdmin;
     }
-    public User(String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, int isAdmin, Integer isDeleted, Set<Cart> carts, Set<Orders> orderses, Set<Category> categories) {
-       this.name = name;
+    public User(Integer id,String name, String password, String email, String address, Date birthdate, String phone, int creditLimit, String job, int isAdmin, Integer isDeleted, Set<Cart> carts, Set<Orders> orderses, Set<Category> categories) {
+       this.id=id;
+        this.name = name;
        this.password = password;
        this.email = email;
        this.address = address;
@@ -76,7 +77,14 @@ public class User  implements java.io.Serializable {
        this.categories = categories;
     }
    
+<<<<<<< Updated upstream
      @Id @GeneratedValue(strategy=IDENTITY)
+=======
+    
+
+
+    @Id @GeneratedValue(strategy=IDENTITY)
+>>>>>>> Stashed changes
 
     
     @Column(name="id", unique=true, nullable=false)

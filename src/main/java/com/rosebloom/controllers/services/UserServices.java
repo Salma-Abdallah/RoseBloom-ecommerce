@@ -1,5 +1,8 @@
 package com.rosebloom.controllers.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.rosebloom.controllers.mappers.UserMapper;
 import com.rosebloom.controllers.persistence.repository.UserRepository;
 import com.rosebloom.controllers.persistence.entities.User;
@@ -48,4 +51,23 @@ public class UserServices {
     }
 
     //getAllUsers
+    public List<UserDto> getAllUsers(){
+        UserRepository userRepository = new UserRepository();
+
+        List<User> users = userRepository.getAllUsers();
+
+        List<UserDto> userDtos = new ArrayList<>();
+        UserMapper mapper = new UserMapper();
+
+        for(User user :users){
+            userDtos.add(mapper.toDto(user));
+        }
+
+        for(UserDto userDto :userDtos){
+            System.out.println(userDto);
+        }
+
+
+        return userDtos;
+    }
 }
