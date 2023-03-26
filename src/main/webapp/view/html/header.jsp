@@ -40,10 +40,20 @@
             <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
                 <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                 <ul class="customer-links list-inline">
-                    <li><a href="userProfile.jsp">User Profile</a></li>
-                    <li><a href="login2.html">Login</a></li>
-                    <li><a href="signup2.html">Create Account</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <!-- loggedIn -->
+                      
+
+                    <% if ( "${loggedIn}" == "true") { %>
+                        <li><a href="userProfile.jsp">User Profile</a></li>
+                        <li><a href="wishlist.html">Logout</a></li>
+                    <% } else { %>
+                        <li><a href="login2.html">Login</a></li>
+                        <!-- <li><a href="signup2.html">Create Account</a></li> -->
+                        <li><a href="userProfile.jsp">User Profile</a></li>
+                        
+                    <%}%>
+                    
+                    
                 </ul>
             </div>
         </div>
