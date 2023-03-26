@@ -24,12 +24,12 @@ public class ProductImage  implements java.io.Serializable {
 
     private ProductImageId id;
     private Product product;
-    private byte[] image;
+    private String image;
 
     public ProductImage() {
     }
 
-    public ProductImage(ProductImageId id, Product product, byte[] image) {
+    public ProductImage(ProductImageId id, Product product, String image) {
        this.id = id;
        this.product = product;
        this.image = image;
@@ -61,11 +61,11 @@ public class ProductImage  implements java.io.Serializable {
 
     
     @Column(name="image", nullable=false)
-    public byte[] getImage() {
+    public String getImage() {
         return this.image;
     }
     
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

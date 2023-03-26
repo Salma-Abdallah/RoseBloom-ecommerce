@@ -4,5 +4,49 @@
     version="5.0"
     metadata-complete="true">
 
+    <servlet>
+        <servlet-name>cart</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.ShoppingCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>changeQuantity</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.changeQuantityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>changeQuantity</servlet-name>
+        <url-pattern>/changeQuantity</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteCartItem</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.deleteCartItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteCartItem</servlet-name>
+        <url-pattern>/deleteCartItem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Checkout</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Checkout</servlet-name>
+        <url-pattern>/Checkout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewOrder</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.NewOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewOrder</servlet-name>
+        <url-pattern>/NewOrder</url-pattern>
+    </servlet-mapping>
 
 </web-app>

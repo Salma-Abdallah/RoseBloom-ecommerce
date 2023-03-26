@@ -9,20 +9,20 @@ import java.util.Objects;
  * A DTO for the {@link ProductImage} entity
  */
 public class ProductImageDto implements Serializable {
-    private byte[] image;
+    private String image;
 
     public ProductImageDto() {
     }
 
-    public ProductImageDto(byte[] image) {
+    public ProductImageDto(String image) {
         this.image = image;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
