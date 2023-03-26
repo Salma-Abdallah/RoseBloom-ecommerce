@@ -41,7 +41,9 @@ public class ProductServlet extends HttpServlet {
 
         request.setAttribute("products", products);
        
+        request.setAttribute("categoryName", categoryName);
+       
         request.getRequestDispatcher("view/html/product_grid.jsp").forward(request, response);
     }
-
 }
+

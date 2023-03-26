@@ -248,7 +248,7 @@ public class Product  implements java.io.Serializable {
         this.orderDetailses = orderDetailses;
     }
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="product")
+    @OneToMany(fetch=FetchType.EAGER, mappedBy="product")
     public Set<ProductImage> getProductImages() {
         return this.productImages;
     }
