@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.rosebloom.controllers.persistence.connection.EntityManagerFactorySingleton;
 import com.rosebloom.controllers.persistence.entities.Category;
+import com.rosebloom.controllers.persistence.entities.Plantdescription;
 import com.rosebloom.controllers.persistence.entities.Product;
 import com.rosebloom.controllers.persistence.entities.ProductImage;
 import com.rosebloom.controllers.persistence.entities.ProductImageId;
@@ -77,25 +78,25 @@ public class ProductRepository {
 
         }
     }
-    private void editProductImage(List<ProductImage> productImages,int pId) {
+
+    private void editProductImage(List<ProductImage> productImages, int pId) {
         Query query = entityManager.createQuery("from ProductImage p where p.product.id=?1").setParameter(1, pId);
-       
+
         List<ProductImage> result = (List<ProductImage>) query.getResultList();
         System.out.println(result.size());
         System.out.println(productImages.size());
-        for (int i=0;i<result.size();i++) {
-            ProductImageId productImageId=new ProductImageId(result.get(i).getId().getImgId(), pId);
-            ProductImage productImg=entityManager.find(ProductImage.class,productImageId); 
+        for (int i = 0; i < result.size(); i++) {
+            ProductImageId productImageId = new ProductImageId(result.get(i).getId().getImgId(), pId);
+            ProductImage productImg = entityManager.find(ProductImage.class, productImageId);
             entityManager.getTransaction().begin();
             productImg.setImage(productImages.get(i).getImage());
             entityManager.getTransaction().commit();
-           // System.out.println(productImage.getId().getImgId());
+            // System.out.println(productImage.getId().getImgId());
         }
-        if(productImages.size()>result.size()) {
-            for(int i=result.size(); i<productImages.size();i++)
-            {
+        if (productImages.size() > result.size()) {
+            for (int i = result.size(); i < productImages.size(); i++) {
                 System.out.println(productImages.get(i));
-                ProductImageId productImageId=new ProductImageId();
+                ProductImageId productImageId = new ProductImageId();
                 productImageId.setProductId(pId);
                 productImages.get(i).setId(productImageId);
                 entityManager.getTransaction().begin();
@@ -103,10 +104,8 @@ public class ProductRepository {
                 entityManager.getTransaction().commit();
             }
         }
-        
-    }
 
-   
+    }
 
     public void deleteProduct(int pId) {
         System.out.println(pId);
@@ -117,14 +116,34 @@ public class ProductRepository {
         System.out.println(pId);
 
     }
-   
+
     public void addProduct(Product product) {
         entityManager.getTransaction().begin();
         entityManager.persist(product);
         System.out.println(product.getId());
+       
+        //entityManager.persist(product);
+        ProductImage productImage = new ProductImage();
+       
         product.getPlantdescription().setProductId(product.getId());
-        entityManager.persist(product);
-        System.out.println(product.getId());
+        Plantdescription plantdescription =new Plantdescription();
+        plantdescription.setProductId(26);
+        //entityManager.persist(plantdescription);
+        //System.out.println(product.getId());
+        entityManager.getTransaction().commit();
+        entityManager.getTransaction().begin();
+        List<ProductImage> productImages = new ArrayList<>(product.getProductImages());
+        for (ProductImage productImage2 : productImages) {
+            System.out.println(productImage2);
+        }
+        for (int i = 0; i < product.getProductImages().size(); i++) {
+            productImage = productImages.get(i);
+            ProductImageId productImageId = new ProductImageId();
+            productImageId.setProductId(product.getId());
+            productImage.setId(productImageId);
+            entityManager.persist(productImage);
+            
+        }
         entityManager.getTransaction().commit();
     }
 
