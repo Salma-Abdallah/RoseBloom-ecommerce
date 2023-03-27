@@ -117,10 +117,15 @@ public class ProductRepository {
         System.out.println(pId);
 
     }
-    // @Override
-    // public void addProduct(Product product) {
-    // // TODO Auto-generated method stub
-    // throw new UnsupportedOperationException("Unimplemented method 'addProduct'");
-    // }
+   
+    public void addProduct(Product product) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(product);
+        System.out.println(product.getId());
+        product.getPlantdescription().setProductId(product.getId());
+        entityManager.persist(product);
+        System.out.println(product.getId());
+        entityManager.getTransaction().commit();
+    }
 
 }

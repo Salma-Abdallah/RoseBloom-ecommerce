@@ -57,11 +57,12 @@ public class Plantdescription  implements java.io.Serializable {
 
 
     public Plantdescription() {
+       
     }
 
 	
     public Plantdescription(Product product) {
-        this.product = product;
+       
     }
     public Plantdescription(Product product, String sun, String soil, String growthCycle, String growthRate, String maintenance, String water) {
        this.product = product;
