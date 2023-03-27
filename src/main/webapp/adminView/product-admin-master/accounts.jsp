@@ -119,6 +119,7 @@
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products">
               <div class="tm-product-table-container">
+                <h2 class="tm-block-title">Users List</h2>
                 <table class="table table-hover tm-table-small tm-product-table">
                   <thead>
                     <tr>
@@ -139,9 +140,9 @@
 
                       <tr>
                         <th scope="row"><input type="checkbox" /></th>
-                        <td class="tm-product-name"><a >${current.id}</a>
+                        <td class="tm-product-name"><a ># ${current.id}</a>
                         </td>
-                        <td># ${current.name}</td>
+                        <td>${current.name}</td>
                         <td>${current.email}</td>
                         <td>${current.address}</td>
                         <td>${current.birthdate}</td>

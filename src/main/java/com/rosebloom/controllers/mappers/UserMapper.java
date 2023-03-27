@@ -12,7 +12,7 @@ public class UserMapper{
 
     public User toEntity(UserDto userDto){
         User user= new User(userDto.getId(),userDto.getName(), userDto.getPassword(), userDto.getEmail(), userDto.getAddress(), userDto.getBirthdate(), userDto.getPhone(), userDto.getCreditLimit(), userDto.getJob(),userDto.getIsAdmin(), userDto.getIsDeleted(), null,null,null );
-
+        System.out.println("in Mapper (user.getId)-> "+user.getId());
         return user;
     }
 }

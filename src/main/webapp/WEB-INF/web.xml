@@ -59,6 +59,23 @@
         <url-pattern>/ViewUsers</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.DeleteProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <url-pattern>/deleteProduct</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewAllOrders</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.ViewOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewAllOrders</servlet-name>
+        <url-pattern>/ViewOrders</url-pattern>
+    </servlet-mapping>
 
 <!-- <welcome-file-list>
     <welcome-file>
