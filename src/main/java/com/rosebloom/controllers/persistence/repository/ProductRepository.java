@@ -118,6 +118,7 @@ public class ProductRepository {
     }
 
     public void addProduct(Product product) {
+        product.setIsDeleted(0);
         entityManager.getTransaction().begin();
         entityManager.persist(product);
         System.out.println(product.getId());
