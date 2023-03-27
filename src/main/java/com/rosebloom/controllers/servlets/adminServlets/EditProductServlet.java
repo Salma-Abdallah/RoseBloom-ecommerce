@@ -1,6 +1,7 @@
 package com.rosebloom.controllers.servlets.adminServlets;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import com.rosebloom.dtos.PlantdescriptionDto;
 import com.rosebloom.dtos.ProductDto;
 import com.rosebloom.dtos.ProductImageDto;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
@@ -28,6 +30,7 @@ public class EditProductServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         System.out.println(request.getParameter("productId"));
         int productId = Integer.parseInt(request.getParameter("productId"));
         CategoryServices categoryServices = new CategoryServices();
@@ -43,57 +46,13 @@ public class EditProductServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        ServletContext servletContext = getServletContext();
+        String contextPath = servletContext.getRealPath(File.separator) + "/view/images/";
+        System.out.println(contextPath);
         response.setContentType("text/html;charset=UTF-8");
-        List<ProductImageDto> productImageDto = new ArrayList<>();
-        for (int i = 1; i <= 3; i++) {
-            String inFileName = "fileInput" + (i);
-            System.out.println(inFileName);
-            final Part filePart = request.getPart(inFileName);
-            final String fileName = getFileName(filePart);
-            if (fileName.equals("")) {
-                String img = "img" + i;
-                if (!request.getParameter(img).equals("")) {
-                    ProductImageDto productImageDto2 = new ProductImageDto(request.getParameter(img));
-                    productImageDto.add(productImageDto2);
-                }
-            } else {
-                filePart.write(path + fileName);
-                ProductImageDto productImageDto2 = new ProductImageDto("view/images/" + fileName);
-                productImageDto.add(productImageDto2);
-            }
-        }
-        for (ProductImageDto productImageDto2 : productImageDto) {
-            System.out.println(productImageDto2);
-        }
-
-        System.out.println("**");
-        // System.out.println(path + fileName);
-        String categoryName = (request.getParameter("categoryOption"));
-        ProductDto productDto = new ProductDto();
-        productDto.setId(Integer.parseInt(request.getParameter("productId")));
-        productDto.setName(request.getParameter("name"));
-        productDto.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-        productDto.setDescription(request.getParameter("description"));
-        productDto.setPrice(Integer.parseInt(request.getParameter("price")));
-        productDto.setOldPrice(Integer.parseInt(request.getParameter("oldPrice")));
-        productDto.setColor(request.getParameter("color"));
-        productDto.setSize(Integer.parseInt(request.getParameter("size")));
-        productDto.setPlantdescription(new PlantdescriptionDto());
-        productDto.setProductImages(productImageDto);
-        productDto.setQuantity(Integer.parseInt(request.getParameter("stock")));
         ProductServices productServices = new ProductServices();
-        productServices.updateProduct(categoryName, productDto);
-        System.out.println(request.getParameter("img1"));
+        productServices.getAddProductRequest(request, contextPath,false);
 
     }
 
-    private String getFileName(final Part part) {
-        for (String content : part.getHeader("content-disposition").split(";")) {
-            if (content.trim().startsWith("filename")) {
-                return content.substring(
-                        content.indexOf('=') + 1).trim().replace("\"", "");
-            }
-        }
-        return null;
-    }
 }

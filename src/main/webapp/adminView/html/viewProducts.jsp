@@ -92,7 +92,7 @@
                         <th scope="row">
                           <!-- <input type="checkbox" /> -->
                         </th>
-                        <td class="tm-product-name"><a href="editProduct?productId=${current.id}">${current.name}</a>
+                        <td class="tm-product-name"><a href="editProduct?productId=${current.id}" style="color: white;">${current.name}</a>
                         </td>
                         <td>${current.quantity}</td>
                         <td>${current.price}</td>
@@ -111,7 +111,7 @@
                 </table>
               </div>
               <!-- table container -->
-              <a href="add-product.html" class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
+              <a href="addProduct" class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
               <!-- <button class="btn btn-primary btn-block text-uppercase">
                 Delete selected products
               </button> -->

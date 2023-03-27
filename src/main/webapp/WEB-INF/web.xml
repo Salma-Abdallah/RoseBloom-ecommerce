@@ -3,7 +3,7 @@
     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
     version="5.0"
     metadata-complete="true">
-    
+
     <servlet>
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.ProductServlet</servlet-class>
@@ -128,7 +128,7 @@
         <url-pattern>/ViewUsers</url-pattern>
     </servlet-mapping>
 
-<servlet>
+    <servlet>
         <servlet-name>DeleteProductServlet</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.adminServlets.DeleteProductServlet</servlet-class>
     </servlet>
@@ -136,7 +136,15 @@
         <servlet-name>DeleteProductServlet</servlet-name>
         <url-pattern>/deleteProduct</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>AddProductServlet</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.AddProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddProductServlet</servlet-name>
+        <url-pattern>/addProduct</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>ViewOrders</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.adminServlets.ViewOrders</servlet-class>
