@@ -23,6 +23,9 @@
             <link rel="stylesheet" href="view/style/responsive.css">
 
             <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">
+            <style>
+                .flex-i img{height: 100%;width:100%;object-fit: cover;}
+            </style>
         </head>
 
         <body class="template-collection belle">
@@ -337,19 +340,19 @@
                                             <c:forEach items="${products}" var="current">
                                                 <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
 
-                                                    <div class="product-image" style="height:200px">
+                                                    <div class="product-image" >
 
                                                         <a href="productDetails?productId=${current.id}">
 
                                                             <img class="primary blur-up lazyload"
                                                                 data-src="${current.productImages[0].image}"
                                                                 src="${current.productImages[0].image}" alt="image"
-                                                                title="product" style="height: 180px;">
+                                                                title="product" style="min-height: 200px; max-height: 200px;" >
 
-                                                            <img class="hover blur-up lazyload"
+                                                                <img class="hover blur-up lazyload"
                                                                 data-src="${current.productImages[1].image}"
                                                                 src="${current.productImages[1].image}" alt="image"
-                                                                title="product">
+                                                                title="product" style="min-height: 200px; max-height: 200px;">
                                                         </a>
                                                         <!-- end product image -->
                                                         <!-- Start product button -->
