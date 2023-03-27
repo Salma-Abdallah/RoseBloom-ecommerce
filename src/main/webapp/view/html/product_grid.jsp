@@ -13,7 +13,7 @@
             <meta name="description" content="description">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <!-- Favicon -->
-            <link rel="shortcut icon" href="view/images/rosebloom.png" />
+            <link rel="shortcut icon" href="view/images/leaf2.png" />
             <!-- Plugins CSS -->
             <link rel="stylesheet" href="view/style/plugins.css">
             <!-- Bootstap CSS -->
