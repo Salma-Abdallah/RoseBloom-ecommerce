@@ -8,9 +8,11 @@ import com.rosebloom.controllers.persistence.entities.Product;
 import com.rosebloom.controllers.persistence.entities.User;
 import com.rosebloom.controllers.utils.CustomValidationMessage;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class OrderRepository {
     EntityManager entityManager;
@@ -51,6 +53,15 @@ public class OrderRepository {
         entityManager.persist(order);
         entityManager.getTransaction().commit();
         return new CustomValidationMessage(true,null);
+    }
+
+    public List<Orders> getAllOrders(){
+        String query ="from Orders o";
+        Query q = entityManager.createQuery(query);
+
+        List<Orders> orders =(List<Orders>) q.getResultList();
+
+        return orders;
     }
 }
 

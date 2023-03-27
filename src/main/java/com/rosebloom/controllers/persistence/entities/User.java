@@ -77,6 +77,8 @@ public class User  implements java.io.Serializable {
        this.categories = categories;
     }
    
+    
+
 
     @Id 
     @GeneratedValue(strategy=IDENTITY)
