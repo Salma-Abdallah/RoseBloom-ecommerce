@@ -50,7 +50,6 @@ public class UserRepository {
     }
 
 
-    //Want to Check it by real data
     public void UpdateUserDetails(User user) {
         entityManager.getTransaction().begin();
         // Integer pk = user.getId();
@@ -88,6 +87,12 @@ public class UserRepository {
         return users;
     }
 
+    public User getUserById(int id) {
+        String query="from User u where u.id like ?1";
+        Query q = entityManager.createQuery(query).setParameter(1,id);
+        User user =(User) q.getSingleResult();
 
+        return user;
+    }
 
 }

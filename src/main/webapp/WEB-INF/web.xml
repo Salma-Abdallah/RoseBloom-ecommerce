@@ -136,6 +136,25 @@
         <servlet-name>DeleteProductServlet</servlet-name>
         <url-pattern>/deleteProduct</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewOrders</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.ViewOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewOrders</servlet-name>
+        <url-pattern>/ViewOrders</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewUserProfile</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.adminServlets.ViewUserProfile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewUserProfile</servlet-name>
+        <url-pattern>/ViewUserProfile</url-pattern>
+    </servlet-mapping>
+
 <!-- <welcome-file-list>
     <welcome-file>
         adminView\html\adminIndex.html

@@ -73,4 +73,14 @@ public class UserServices {
 
         return userDtos;
     }
+
+    public UserDto getUserById(int id) {
+        UserRepository userRepository = new UserRepository();
+        User user = userRepository.getUserById(id);
+        UserMapper userMapper = new UserMapper();
+
+        UserDto userDto = userMapper.toDto(user);
+
+        return userDto;
+    }
 }
