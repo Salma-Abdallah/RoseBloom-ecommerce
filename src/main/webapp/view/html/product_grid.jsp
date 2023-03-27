@@ -21,12 +21,15 @@
             <!-- Main Style CSS -->
             <link rel="stylesheet" href="view/style/style.css">
             <link rel="stylesheet" href="view/style/responsive.css">
+
+            <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">
         </head>
 
         <body class="template-collection belle">
-            <div class="pageWrapper">
+            <%@ include file="header.jsp" %>
+                <div class="pageWrapper" style="margin-top: 130px;">
 
-                <!--
+                    <!--
 
         <div id="page-content">
 
@@ -41,74 +44,86 @@
             </div>
             -->
 
-                <div class="container">
-                    <div class="row">
-                        <!--Sidebar-->
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar">
-                            <div class="closeFilter d-block d-md-none d-lg-none"><i
-                                    class="icon icon anm anm-times-l"></i>
-                            </div>
-                            <div class="sidebar_tags">
-                                <!--Categories-->
-                                <div class="sidebar_widget categories filter-widget">
-                                    <div class="widget-title">
-                                        <h2>Categories</h2>
-                                    </div>
-                                    <div class="widget-content">
-                                        <ul class="sidebar_categories">
-                                            <li class="level1 sub-level"><a href="#;" class="site-nav">Plants</a>
-                                                <ul class="sublinks">
-                                                    <li class="level2"><a href="#;" class="site-nav">Outdoors</a></li>
-                                                    <li class="level2"><a href="#;" class="site-nav">Indoors</a></li>
-                                                    <li class="level2"><a href="#;" class="site-nav">Trees</a></li>
-                                                    <li class="level2"><a href="#;" class="site-nav">Cacti &
-                                                            succulents</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level1 sub-level"><a href="#;" class="site-nav">Pots</a>
-                                                <ul class="sublinks">
-                                                    <li class="level2"><a href="#;" class="site-nav">Ring</a></li>
-                                                    <li class="level2"><a href="#;" class="site-nav">Neckalses</a></li>
-                                                    <li class="level2"><a href="#;" class="site-nav">Eaarings</a></li>
-                                                    <li class="level2"><a href="#;" class="site-nav">View All
-                                                            Jewellery</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="lvl-1"><a href="#;" class="site-nav">supplies</a></li>
-                                            <li class="lvl-1"><a href="#;" class="site-nav">Gifts</a></li>
+                    <div class="container">
+                        <div class="row">
+                            <!--Sidebar-->
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar" style="margin-top: 50px;">
+                                <div class="closeFilter d-block d-md-none d-lg-none"><i
+                                        class="icon icon anm anm-times-l"></i>
+                                </div>
+                                <div class="sidebar_tags">
+                                    <!--Categories-->
+                                    <div class="sidebar_widget categories filter-widget">
+                                        <div class="widget-title">
+                                            <h2>Categories</h2>
+                                        </div>
+                                        <div class="widget-content">
+                                            <ul class="sidebar_categories">
+                                                <li class="level1 sub-level"><a href="#" class="site-nav"><a href="#">Plants</a></a>                                                    <ul class="sublinks">
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Outdoors" class="site-nav">Outdoors</a>
+                                                        </li>
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Indoors" class="site-nav">Indoors</a>
+                                                        </li>
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Trees" class="site-nav">Trees</a></li>
+                                                        <!-- <li class="level2"><a href="ProductServlet?categoryName=Cacti" class="site-nav">Cacti &
+                                                                succulents</a>
+                                                        </li> -->
+                                                    </ul>
+                                                </li>
+              
+                                                <li class="level1 sub-level"><a href="#" class="site-nav">Pots</a>
+                                                    <ul class="sublinks">
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Clay Pots" class="site-nav">Clay Pots</a></li>
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Plastic Pots" class="site-nav">Plastic Pots</a>
+                                                            <li class="level2"><a href="ProductServlet?categoryName=Hanging Pots" class="site-nav">Hanging Pots</a>
+                                                                <li class="level2"><a href="ProductServlet?categoryName=Table-top Pots" class="site-nav">Table-top Pots</a>
+                                                        </li>
+                                                    
+                                                    </ul>
+                                                </li>
+                                                <li class="level1 sub-level"><a href="#" class="site-nav">Garden Supplies</a>
+                                                    <ul class="sublinks">
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Gardening Tools" class="site-nav">Gardening Tools</a></li>
+                                                        <li class="level2"><a href="ProductServlet?categoryName=Soil" class="site-nav">Soil</a>
+                                                            <li class="level2"><a href="ProductServlet?categoryName=Fertilizer" class="site-nav">Fertilizer</a>
+                                                              
+                                                        </li>
+                                                    
+                                                    </ul>
+                                                </li>
+                                               
+                                                <li class="lvl-1"><a href="ProductServlet?categoryName=Gifts" class="site-nav">Gifts</a></li>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--Categories-->
-                                <!--Price Filter-->
-                                <div class="sidebar_widget filterBox filter-widget">
-                                    <div class="widget-title">
-                                        <h2>Price</h2>
-                                    </div>
-                                    <form action="#" method="post" class="price-filter">
-                                        <div id="slider-range"
-                                            class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                            <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                                            <span class="ui-slider-handle ui-state-default ui-corner-all"
-                                                tabindex="0"></span>
-                                            <span class="ui-slider-handle ui-state-default ui-corner-all"
-                                                tabindex="0"></span>
+                                            </ul>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="no-margin"><input id="amount" type="text"></p>
-                                            </div>
-                                            <div class="col-6 text-right margin-25px-top">
-                                                <button class="btn btn-secondary btn--small">filter</button>
-                                            </div>
+                                    </div>
+                                    <!--Categories-->
+                                    <!--Price Filter-->
+                                    <div class="sidebar_widget filterBox filter-widget">
+                                        <div class="widget-title">
+                                            <h2>Price</h2>
                                         </div>
-                                    </form>
-                                </div>
-                                <!--End Price Filter-->
-                                <!--Size Swatches-->
+                                        <form action="#" method="post" class="price-filter">
+                                            <div id="slider-range"
+                                                class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                                                <span class="ui-slider-handle ui-state-default ui-corner-all"
+                                                    tabindex="0"></span>
+                                                <span class="ui-slider-handle ui-state-default ui-corner-all"
+                                                    tabindex="0"></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="no-margin"><input id="amount" type="text"></p>
+                                                </div>
+                                                <div class="col-6 text-right margin-25px-top">
+                                                    <button class="btn btn-secondary btn--small">filter</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--End Price Filter-->
+                                    <!-- Size Swatches
                                 <div class="sidebar_widget filterBox filter-widget size-swacthes">
                                     <div class="widget-title">
                                         <h2>Size</h2>
@@ -127,9 +142,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <!--End Size Swatches-->
+                                End Size Swatches -->
 
-                                <!--Color Swatches-->
+                                    <!-- Color Swatches
                                 <div class="sidebar_widget filterBox filter-widget">
                                     <div class="widget-title">
                                         <h2>Color</h2>
@@ -153,8 +168,8 @@
                                         <span class="swacth-btn khaki"></span>
                                     </div>
                                 </div>
-                                <!--End Color Swatches-->
-                                <!--Brand-->
+                                End Color Swatches-->
+                                    <!--Brand
                                 <div class="sidebar_widget filterBox filter-widget">
                                     <div class="widget-title">
                                         <h2>Brands</h2>
@@ -182,8 +197,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <!--End Brand-->
-                                <!--Popular Products-->
+                                End Brand-->
+                                    <!--Popular Products
                                 <div class="sidebar_widget">
                                     <div class="widget-title">
                                         <h2>Popular Products</h2>
@@ -258,158 +273,161 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--End Popular Products-->
+                                End Popular Products-->
 
 
-
-                            </div>
-                        </div>
-                        <!--End Sidebar-->
-                        <!--Main Content-->
-                        <jsp:useBean id="category" class="com.rosebloom.dtos.CategoryDto" scope="session" />
-                        <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col shop-grid-5">
-                            <div class="productList">
-                                <div class="category-description">
-                                    <h3 id="categoryName">
-                                        ${categoryName}
-                                    </h3>
 
                                 </div>
-                                <hr>
-                                <!--Toolbar-->
-                                <button type="button" class="btn btn-filter d-block d-md-none d-lg-none"> Product
-                                    Filters</button>
-                                <div class="toolbar">
-                                    <div class="filters-toolbar-wrapper">
-                                        <div class="row">
-                                            <div
-                                                class="col-4 col-md-4 col-lg-4 filters-toolbar__item collection-view-as d-flex justify-content-start align-items-center">
-                                                <a href="shop-left-sidebar.html" title="Grid View"
-                                                    class="change-view change-view--active">
-                                                    <img src="view/images/grid.jpg" alt="Grid" />
-                                                </a>
-                                                <a href="shop-listview.html" title="List View" class="change-view">
-                                                    <img src="view/images/list.jpg" alt="List" />
-                                                </a>
-                                            </div>
+                            </div>
+                            <!--End Sidebar-->
+                            <!--Main Content-->
+                            <jsp:useBean id="category" class="com.rosebloom.dtos.CategoryDto" scope="session" />
+                            <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col shop-grid-5">
+                                <div class="productList">
+                                    <div class="category-description">
+                                        <h3 id="categoryName">
+                                            ${categoryName}
+                                        </h3>
 
-                                            <div class="col-4 col-md-4 col-lg-4 text-right">
-                                                <div class="filters-toolbar__item">
-                                                    <label for="SortBy" class="hidden">Sort</label>
-                                                    <select name="SortBy" id="SortBy"
-                                                        class="filters-toolbar__input filters-toolbar__input--sort">
-                                                        <option value="title-ascending" selected="selected">Sort
-                                                        </option>
-                                                        <option>Best Selling</option>
-                                                        <option>Alphabetically, A-Z</option>
-                                                        <option>Alphabetically, Z-A</option>
-                                                        <option>Price, low to high</option>
-                                                        <option>Price, high to low</option>
-                                                        <option>Date, new to old</option>
-                                                        <option>Date, old to new</option>
-                                                    </select>
-                                                    <input class="collection-header__default-sort" type="hidden"
-                                                        value="manual">
+                                    </div>
+                                    <hr>
+                                    <!--Toolbar-->
+                                    <button type="button" class="btn btn-filter d-block d-md-none d-lg-none"> Product
+                                        Filters</button>
+                                    <!-- <div class="toolbar">
+                                        <div class="filters-toolbar-wrapper">
+                                            <div class="row">
+                                                <div
+                                                    class="col-4 col-md-4 col-lg-4 filters-toolbar__item collection-view-as d-flex justify-content-start align-items-center">
+                                                    <a href="shop-left-sidebar.html" title="Grid View"
+                                                        class="change-view change-view--active">
+                                                        <img src="view/images/grid.jpg" alt="Grid" />
+                                                    </a>
+                                                    <a href="shop-listview.html" title="List View" class="change-view">
+                                                        <img src="view/images/list.jpg" alt="List" />
+                                                    </a>
                                                 </div>
+
+                                                <div class="col-4 col-md-4 col-lg-4 text-right">
+                                                    <div class="filters-toolbar__item">
+                                                        <label for="SortBy" class="hidden">Sort</label>
+                                                        <select name="SortBy" id="SortBy"
+                                                            class="filters-toolbar__input filters-toolbar__input--sort">
+                                                            <option value="title-ascending" selected="selected">Sort
+                                                            </option>
+                                                            <option>Best Selling</option>
+                                                            <option>Alphabetically, A-Z</option>
+                                                            <option>Alphabetically, Z-A</option>
+                                                            <option>Price, low to high</option>
+                                                            <option>Price, high to low</option>
+                                                            <option>Date, new to old</option>
+                                                            <option>Date, old to new</option>
+                                                        </select>
+                                                        <input class="collection-header__default-sort" type="hidden"
+                                                            value="manual">
+                                                    </div>
+                                                </div>
+
                                             </div>
+                                        </div>
+                                    </div> -->
+                                    <!--End Toolbar-->
+                                    <div class="grid-products grid--view-items">
+                                        <div class="row" id="grid--view-items">
+                                            <c:forEach items="${products}" var="current">
+                                                <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
+
+                                                    <div class="product-image" style="height:200px">
+
+                                                        <a href="productDetails?productId=${current.id}">
+
+                                                            <img class="primary blur-up lazyload"
+                                                                data-src="${current.productImages[0].image}"
+                                                                src="${current.productImages[0].image}" alt="image"
+                                                                title="product" style="height: 180px;">
+
+                                                            <img class="hover blur-up lazyload"
+                                                                data-src="${current.productImages[1].image}"
+                                                                src="${current.productImages[1].image}" alt="image"
+                                                                title="product">
+                                                        </a>
+                                                        <!-- end product image -->
+                                                        <!-- Start product button -->
+                                                        <form class="variants add" action="#"
+                                                            onclick="productDetails.jsp" method="post">
+                                                            <button class="btn btn-addto-cart" type="button">ADD TO
+                                                                CART</button>
+                                                        </form>
+                                                        <div class="button-set">
+                                                            <a href="javascript:void(0)" title="Quick View"
+                                                                class="quick-view-popup quick-view" data-toggle="modal"
+                                                                data-target="#content_quickview">
+                                                                <i class="icon anm anm-search-plus-r"></i>
+                                                            </a>
+                                                            <div class="wishlist-btn">
+                                                                <a class="wishlist add-to-wishlist" href="#"
+                                                                    title="Add to Wishlist">
+                                                                    <i class="icon anm anm-heart-l"></i>
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- end product button -->
+                                                    </div>
+                                                    <!-- end product image -->
+
+                                                    <!--start product details -->
+                                                    <div class="product-details text-center">
+
+                                                        <div class="product-name">
+                                                            <a href="#">${current.name} </a>
+                                                        </div>
+                                                        <!-- End product name -->
+                                                        <!-- product price -->
+                                                        <div class="product-price">
+
+                                                            <!-- // '<span class="old-price">EGP '+dataa.productsJson[i].oldPrice+'</span>' + -->
+                                                            <span class="price">EGP ${current.price}</span>
+                                                        </div>
+                                                        <!-- End product price -->
+
+                                                        <div class="product-review">
+                                                            <i class="font-13 fa fa-star"></i>
+                                                            <i class="font-13 fa fa-star"></i>
+                                                            <i class="font-13 fa fa-star"></i>
+                                                            <i class="font-13 fa fa-star-o"></i>
+                                                            <i class="font-13 fa fa-star-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End product details -->
+                                                </div>
+                                            </c:forEach>
 
                                         </div>
                                     </div>
                                 </div>
-                                <!--End Toolbar-->
-                                <div class="grid-products grid--view-items">
-                                    <div class="row" id="grid--view-items">
-                                        <c:forEach items="${products}" var="current">
-                                            <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
-
-                                                <div class="product-image" style="height:200px">
-
-                                                    <a href="productDetails?productId=${current.id}">
-
-                                                        <img class="primary blur-up lazyload"
-                                                            data-src="${current.productImages[0].image}"
-                                                            src="${current.productImages[0].image}"
-                                                            alt="image" title="product">
-
-                                                        <img class="hover blur-up lazyload"
-                                                            data-src="${current.productImages[1].image}"
-                                                            src="${current.productImages[1].image}"
-                                                            alt="image" title="product">
-                                                    </a>
-                                                    <!-- end product image -->
-                                                    <!-- Start product button -->
-                                                    <form class="variants add" action="#" onclick="productDetails.jsp"
-                                                        method="post">
-                                                        <button class="btn btn-addto-cart" type="button">ADD TO
-                                                            CART</button>
-                                                    </form>
-                                                    <div class="button-set">
-                                                        <a href="javascript:void(0)" title="Quick View"
-                                                            class="quick-view-popup quick-view" data-toggle="modal"
-                                                            data-target="#content_quickview">
-                                                            <i class="icon anm anm-search-plus-r"></i>
-                                                        </a>
-                                                        <div class="wishlist-btn">
-                                                            <a class="wishlist add-to-wishlist" href="#"
-                                                                title="Add to Wishlist">
-                                                                <i class="icon anm anm-heart-l"></i>
-                                                            </a>
-                                                        </div>
-
-                                                    </div>
-                                                    <!-- end product button -->
-                                                </div>
-                                                <!-- end product image -->
-
-                                                <!--start product details -->
-                                                <div class="product-details text-center">
-
-                                                    <div class="product-name">
-                                                        <a href="#">${current.name} </a>
-                                                    </div>
-                                                    <!-- End product name -->
-                                                    <!-- product price -->
-                                                    <div class="product-price">
-
-                                                        <!-- // '<span class="old-price">EGP '+dataa.productsJson[i].oldPrice+'</span>' + -->
-                                                        <span class="price">EGP ${current.price}</span>
-                                                    </div>
-                                                    <!-- End product price -->
-
-                                                    <div class="product-review">
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star-o"></i>
-                                                        <i class="font-13 fa fa-star-o"></i>
-                                                    </div>
-                                                </div>
-                                                <!-- End product details -->
-                                            </div>
-                                        </c:forEach>
-
-                                    </div>
-                                </div>
                             </div>
                         </div>
+
                     </div>
+                    <!--Footer-->
+                    <%@ include file="footer.html" %>
+                        <!--End Footer-->
+                        <!--End Quick View popup-->
+
+                        <!-- Including Jquery -->
+                        <script src="view/scripts/vendor/jquery-3.3.1.min.js"></script>
+                        <script src="view/scripts/vendor/jquery.cookie.js"></script>
+                        <script src="view/scripts/vendor/modernizr-3.6.0.min.js"></script>
+                        <script src="view/scripts/vendor/wow.min.js"></script>
+                        <!-- Including Javascript -->
+                        <script src="view/scripts/bootstrap.min.js"></script>
+                        <script src="view/scripts/plugins.js"></script>
+                        <script src="view/scripts/popper.min.js"></script>
+                        <script src="view/scripts/lazysizes.js"></script>
+                        <script src="view/scripts/main.js"></script>
+                        <script src="view/scripts/product.js"></script>
                 </div>
-
-                <!--End Quick View popup-->
-
-                <!-- Including Jquery -->
-                <script src="view/scripts/vendor/jquery-3.3.1.min.js"></script>
-                <script src="view/scripts/vendor/jquery.cookie.js"></script>
-                <script src="view/scripts/vendor/modernizr-3.6.0.min.js"></script>
-                <script src="view/scripts/vendor/wow.min.js"></script>
-                <!-- Including Javascript -->
-                <script src="view/scripts/bootstrap.min.js"></script>
-                <script src="view/scripts/plugins.js"></script>
-                <script src="view/scripts/popper.min.js"></script>
-                <script src="view/scripts/lazysizes.js"></script>
-                <script src="view/scripts/main.js"></script>
-                <script src="view/scripts/product.js"></script>
-            </div>
 
         </body>
 

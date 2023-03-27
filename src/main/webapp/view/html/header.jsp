@@ -75,26 +75,26 @@
                                 <ul class="grid grid--uniform mmWrapper">
                                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Plants Types</a>
                                         <ul class="subLinks">
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Indoor</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">OutDoor</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Trees</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Cacti & succulents</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Seeds</a></li>
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Indoors" class="site-nav lvl-2">Indoors</a></li>
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Outdoors" class="site-nav lvl-2">Outdoors</a></li>
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Trees" class="site-nav lvl-2">Trees</a></li>
+                                            <!-- <li class="lvl-2"><a href="ProductServlet?categoryName=Cacti" class="site-nav lvl-2">Cacti & succulents</a></li> -->
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Seeds" class="site-nav lvl-2">Seeds</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="#">Pots <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Pots">Pots <i class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style2">
                                 <ul class="grid mmWrapper">
                                     <li class="grid__item one-whole">
                                         <ul class="grid">
                                             <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Pots Types</a>
                                                 <ul class="subLinks">
-                                                    <li class="lvl-2"><a href="" class="site-nav lvl-2">Clay Pots</a></li>
-                                                    <li class="lvl-2"><a href="" class="site-nav lvl-2">Plastic Pots</a></li>
-                                                    <li class="lvl-2"><a href="" class="site-nav lvl-2">Hanging Pots</a></li>
+                                                    <li class="lvl-2"><a href="ProductServlet?categoryName=Clay Pots" class="site-nav lvl-2">Clay Pots</a></li>
+                                                    <li class="lvl-2"><a href="ProductServlet?categoryName=Plastic Pots" class="site-nav lvl-2">Plastic Pots</a></li>
+                                                    <li class="lvl-2"><a href="ProductServlet?categoryName=Hanging Pots" class="site-nav lvl-2">Hanging Pots</a></li>
                                                     <li class="lvl-2"><a href="" class="site-nav lvl-2">Table-top Pots</a></li>
                                                 </ul>
                                             </li>
@@ -103,21 +103,21 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="#">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Clay Pots">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style2">
                                 <ul class="grid mmWrapper">
                                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Supplies Types</a>
                                         <ul class="subLinks">
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Gardening Tools</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Soil</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Fertilizer</a></li>
-                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Table-top Pots</a></li>
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Gardening Tools" class="site-nav lvl-2">Gardening Tools</a></li>
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Soil" class="site-nav lvl-2">Soil</a></li>
+                                            <li class="lvl-2"><a href="ProductServlet?categoryName=Fertilizer" class="site-nav lvl-2">Fertilizer</a></li>
+                                            
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="#">Gifts<i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Gifts">Gifts<i class="anm anm-angle-down-l"></i></a>
                         </li>
                         <li class="lvl1 parent megamenu"><a href="#">Guides<i class="anm anm-angle-down-l"></i></a>
                         </li>
@@ -221,34 +221,34 @@
         <li class="lvl1 parent megamenu"><a href="index.html">Home </a>
         </li>
 
-        <li class="lvl1 parent megamenu"><a href="#">Plants<i class="anm anm-plus-l"></i></a>
+        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Plants">Plants<i class="anm anm-plus-l"></i></a>
             <ul>
-                <li><a href="" class="site-nav">InDoor</a></li>
-                <li><a href="" class="site-nav">OutDoor</a></li>
-                <li><a href="" class="site-nav">Trees</a></li>
-                <li><a href="" class="site-nav">Cacti & succulents</a></li>
-                <li><a href="" class="site-nav">Seeds</a></li>
+                <li><a href="ProductServlet?categoryName=Indoors" class="site-nav">InDoor</a></li>
+                <li><a href="ProductServlet?categoryName=Outdoors" class="site-nav">OutDoor</a></li>
+                <li><a href="ProductServlet?categoryName=Trees" class="site-nav">Trees</a></li>
+                <!-- <li><a href="ProductServlet?categoryName=Cacti" class="site-nav">Cacti & succulents</a></li> -->
+                <li><a href="ProductServlet?categoryName=Seeds" class="site-nav">Seeds</a></li>
 
             </ul>
         </li>
-        <li class="lvl1 parent megamenu"><a href="product-layout-1.html">Pots<i class="anm anm-plus-l"></i></a>
+        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Pots">Pots<i class="anm anm-plus-l"></i></a>
             <ul>
-                <li><a href="" class="site-nav">Clay Pots</a></li>
-                <li><a href="" class="site-nav">Plastic Pots</a></li>
-                <li><a href="" class="site-nav">Hanging Pots</a></li>
-                <li><a href="" class="site-nav">Table-top Pots</a></li>
+                <li><a href="ProductServlet?categoryName=Clay Pots" class="site-nav">Clay Pots</a></li>
+                <li><a href="ProductServlet?categoryName=Plastic Pots" class="site-nav">Plastic Pots</a></li>
+                <li><a href="ProductServlet?categoryName=Hanging Pots" class="site-nav">Hanging Pots</a></li>
+                <li><a href="ProductServlet?categoryName=Table-top Pots" class="site-nav">Table-top Pots</a></li>
 
             </ul>
         </li>
-        <li class="lvl1 parent megamenu"><a href="about-us.html">Garden Supplies<i class="anm anm-plus-l"></i></a>
+        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Garden Supplies">Garden Supplies<i class="anm anm-plus-l"></i></a>
             <ul>
-                <li><a href="" class="site-nav">Gardening Tools</a></li>
-                <li><a href="" class="site-nav">Soil</a></li>
-                <li><a href="" class="site-nav">Fertilizer</a></li>
+                <li><a href="ProductServlet?categoryName=Gardening Tools" class="site-nav">Gardening Tools</a></li>
+                <li><a href="ProductServlet?categoryName=Soil" class="site-nav">Soil</a></li>
+                <li><a href="ProductServlet?categoryName=Fertilizer" class="site-nav">Fertilizer</a></li>
 
             </ul>
         </li>
-        <li class="lvl1 parent megamenu"><a href="blog-left-sidebar.html">Gifts </a>
+        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Gifts">Gifts </a>
         <li class="lvl1 parent megamenu"><a href="blog-left-sidebar.html">Guids </a>
             <!-- </li>
                 <li class="lvl1"><a href="#"><b>Buy Now!</b></a>
