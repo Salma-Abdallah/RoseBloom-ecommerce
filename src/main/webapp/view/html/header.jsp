@@ -14,23 +14,10 @@
         <div class="row">
             <div class="col-10 col-sm-8 col-md-5 col-lg-4">
                 <div class="currency-picker">
-                    <span class="selected-currency">USD</span>
-                    <ul id="currencies">
-                        <li data-currency="INR" class="">INR</li>
-                        <li data-currency="GBP" class="">GBP</li>
-                        <li data-currency="CAD" class="">CAD</li>
-                        <li data-currency="USD" class="selected">USD</li>
-                        <li data-currency="AUD" class="">AUD</li>
-                        <li data-currency="EUR" class="">EUR</li>
-                        <li data-currency="JPY" class="">JPY</li>
-                    </ul>
+                    <span class="selected-currency">EGY</span>
                 </div>
                 <div class="language-dropdown">
                     <span class="language-dd">English</span>
-                    <ul id="language">
-                        <li class="">German</li>
-                        <li class="">French</li>
-                    </ul>
                 </div>
                 <p class="phone-no"><i class="anm anm-phone-s"></i> +440 0(111) 044 833</p>
             </div>
@@ -43,7 +30,7 @@
                     <!-- loggedIn -->
                       
 
-                    <% if ( "${loggedIn}" == "true") { %>
+                    <% if ( "${loggedIn}" == "true" ) { %>
                         <li><a href="userProfile.jsp">User Profile</a></li>
                         <li><a href="wishlist.html">Logout</a></li>
                     <% } else { %>
@@ -150,7 +137,9 @@
             <div class="col-4 col-sm-3 col-md-3 col-lg-2">
                 <div class="site-cart">
                     <a href="#;" class="site-header__cart" title="Cart">
-                        <i class="icon anm anm-bag-l"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3-fill" viewBox="0 0 16 16">
+                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
+                          </svg>
                         <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
                     </a>
                     <!--Minicart Popup-->

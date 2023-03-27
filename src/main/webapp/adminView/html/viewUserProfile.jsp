@@ -91,7 +91,7 @@
                     <label for="name">User Name </label>
                     <input id="name" name="name" type="text" 
                      value="${userProfile.name}" 
-                     class="form-control validate"/>
+                     class="form-control validate" />
                     
                      <br>
                     <label for="name">Email</label>
