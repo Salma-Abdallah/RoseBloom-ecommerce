@@ -35,25 +35,30 @@ public class userProfileServlet extends HttpServlet {
         UserDto mainUser = (UserDto)session.getAttribute("User");
 
         UserServices userServices = new UserServices();
-
-        if(!userServices.checkByEmailIfValid(email) || mainUser.getEmail()==email) {
+// mainUser.getEmail()==email || !userServices.checkByEmailIfValid(email)  
+        if(true) {
             System.out.println("Update User ;) ");
             UserDto user= new UserDto(mainUser.getId(),name,password,email,address,birthday,phoneNo,creditLimit,job);
+            System.out.println("in servlet (userDto.getId)-> "+user.getId());
+            
             userServices.UpdateUserDetails(user);
             user = userServices.getUserByEmail(email,password);
             session.removeAttribute("User");
             
             session.setAttribute("User", user);
 
+            session.removeAttribute("User");
+            session.setAttribute("User", user);
+
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.forward(request, response);
-
-
-        }else{
-            System.out.println("this User is already used :( ");
-            RequestDispatcher rd = request.getRequestDispatcher("/signup2.html");
-            rd.forward(request, response);
         }
+
+        // }else{
+        //     System.out.println("this User is already used :( ");
+        //     // RequestDispatcher rd = request.getRequestDispatcher("/signup2.html");
+        //     // rd.forward(request, response);
+        // }
 
 
 

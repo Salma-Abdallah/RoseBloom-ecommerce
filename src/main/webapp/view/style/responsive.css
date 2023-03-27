@@ -297,7 +297,7 @@
 	.cart tr, .cart tbody { width:100%; display:table; } 
 	.cart tbody { display:block; }
 	.cart-flex { display:block; width:100%; }
-	.cart-flex-item { display:table-cell; min-width:0; }
+	.cart-flex-item { display:inline-block; min-width:0; }
 	.cart__price-wrapper { text-align:right; }
 	
 	#content_quickview.modal { overflow:auto; }

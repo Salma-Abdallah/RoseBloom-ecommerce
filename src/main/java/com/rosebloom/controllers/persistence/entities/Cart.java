@@ -27,23 +27,32 @@ public class Cart  implements java.io.Serializable {
     private CartId id;
     private Product product;
     private User user;
+
+    private Integer quantity;
     private Integer isDeleted;
 
     public Cart() {
     }
 
-	
     public Cart(CartId id, Product product, User user) {
         this.id = id;
         this.product = product;
         this.user = user;
     }
-    public Cart(CartId id, Product product, User user, Integer isDeleted) {
+    public Cart(CartId id, Product product, User user, Integer quantity) {
+        this.id = id;
+        this.product = product;
+        this.user = user;
+        this.quantity = quantity;
+    }
+    public Cart(CartId id, Product product, User user, Integer quantity, Integer isDeleted) {
        this.id = id;
        this.product = product;
        this.user = user;
-       this.isDeleted = isDeleted;
+        this.quantity = quantity;
+        this.isDeleted = isDeleted;
     }
+
    
     @EmbeddedId
     @AttributeOverrides( {
@@ -57,7 +66,7 @@ public class Cart  implements java.io.Serializable {
         this.id = id;
     }
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="product_id", nullable=false, insertable=false, updatable=false)
     public Product getProduct() {
         return this.product;
@@ -87,6 +96,10 @@ public class Cart  implements java.io.Serializable {
         this.isDeleted = isDeleted;
     }
 
+    @Column(name="quantity")
+    public Integer getQuantity() { return quantity; }
+
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
 }
 
 

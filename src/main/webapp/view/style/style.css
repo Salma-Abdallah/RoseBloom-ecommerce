@@ -79,7 +79,7 @@ audio:not([controls]) { display:none; height:0; }
 html, button, input, select, textarea { font-family:'Poppins', sans-serif; }
 input:focus, textarea:focus, select:focus { border-color:#cdcfd3; }
 input, textarea { padding:10px 18px; }
-select { -webkit-appearance:none; -moz-appearance:none; appearance:none; background-position:right center; background-image:url(../images/arrow-select.png) !important; background-repeat:no-repeat !important; 
+select { -webkit-appearance:none; -moz-appearance:none; appearance:none; background-position:right center; background-image:url(/roseBloom/view/images/arrow-select.png) !important; background-repeat:no-repeat !important;
 	background-position:right 10px center !important; line-height:1.2; text-indent:0.01px; text-overflow: ''; cursor:pointer; padding-bottom:8px 28px 8px 15px; }
 
 iframe { border:0; width:100%; }
@@ -849,12 +849,13 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 .product-template__container .product-action { width:100%; display:block; margin-bottom:15px; padding:0 5px; }
 .product-template__container .product-form__item--quantity { float:left; margin:0 10px 10px 0; }
 .wrapQtyBtn { float:left; }
-.qtyField { display:table; margin:0 auto; }
+.qtyField { display:inline-block; margin:0 auto; }
+
 .qtyField .qty { width:40px; }
 .qtyField .qtyBtn, .qtyField .qty { padding:10px 6px; width:30px; height:42px; border-radius:0; float:left; }
 .qtyField a { background-color:#eee; color:#000; }
 .qtyField a .fa { font-size:12px; line-height:21px; }
-.qtyField > a, .qtyField > span, .qtyField input { display:table-cell; line-height:normal; text-align:center; padding:3px 6px; border:1px solid #f5f5f5; }
+.qtyField > a, .qtyField > span, .qtyField input {display:table-cell; line-height:normal; text-align:center; border:1px solid #f5f5f5; }
 .product-template__container .product-form__item--submit { width:auto; overflow:hidden; }
 .product-template__container .product-form__item--submit .btn { width:100%; padding:6px 15px; min-height:42px; }
 .product-template__container .shopify-payment-button .shopify-payment-button__button--unbranded { border-radius:0; -ms-transition:all 0.3s ease-in-out; -webkit-transition:all 0.3s ease-in-out; transition:all 0.3s ease-in-out; color:#fff; background-color:#e95144; float:right; }
@@ -1113,12 +1114,13 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 .card-header:before{ content:"\f078"; font-family:'FontAwesome'; font-size:13px; position:absolute; right:10px; top:9px; color:#555; }
 .payment-accordion .card .card-header { background-color:#fff; }
 .payment-accordion .card .card-header a { display:block; font-size:16px; font-weight:500; text-transform:uppercase; }
-.order-button-payment .btn { font-size:18px; font-size:700; padding: 10px 20px; }
+.order-button-payment .btn { font-size:18px; padding: 10px 20px; }
 .customer-box .discount-coupon, .customer-box .customer-info { background-color:#f7f7f7; padding:20px; }
 .create-ac-content, .your-order-payment { border:1px solid #ddd; padding:20px; }
 .create-ac-content .form-check { margin-left:15px; }
 .customer-box input[type="email"], .customer-box input[type="text"], .customer-box input[type="password"] { background-color:#fff; }
 .order-button-payment { margin-top:30px; }
+.UserInfolabels{font-size:18px;}
 /* End Checkout Page ------------------------------------------*/
 
 /*Collection Page ---------------------------------------------*/
@@ -1133,18 +1135,22 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 /*======================================================================
   24. Cart Pages
 ========================================================================*/
+.cart___table{border: 3px solid black;}
+.cart__qty, money { display: inline-block}
 .cart__row { position:relative; }
-.cart th { font-weight:400; padding:10px 0 8px; background:#f2f2f2; text-transform:uppercase; padding-left:15px; padding-right:15px; letter-spacing:1px; }
-.cart td { padding:10px; }
-.cart .cart__meta { padding-right:15px; }
+.cart th { font-weight:400; padding:10px 0 8px; background:#f2f2f2; text-transform:uppercase; padding-left:15px; padding-right:15px; letter-spacing:1px; border: 3px solid black;}
+td { padding:10px; border: 3px solid black;}
+.inlineDivs{display: inline-block;     }
+.marginsoforDivs{ margin: 0px 10px 0px 10px;}
+.cart .cart__meta { padding-right:15px; border: 3px solid black;}
 .cart th.cart__meta, .cart td.cart__meta { text-align:left; }
 .cart__image-wrapper a { display:block; }
 .cart .list-view-item__title { color:#000; font-size:1.15385em; min-width:100px; }
 .cart__image-wrapper { width:120px; }
-.cart .qtyField a { height:36px; line-height:34px; padding:0; }
+.cart .qtyField a { height:36px; line-height:34px;  padding: 4px 10px;}
 .cart .qtyField .cart__qty-input { height:36px; width:40px; float:left; }
 .cart .qtyField a .icon { line-height:33px; font-size:10px; }
-.cart .cart__remove { border:0; margin-top:4px; font-size:14px; padding:0; height:25px; width:25px; text-align:center; vertical-align:middle; line-height:25px; }
+.cart .cart__remove { border:0; margin-top:4px; font-size:14px; background-color: #f87f7f; padding:0; height:25px; width:25px; text-align:center; vertical-align:middle; line-height:25px; }
 .cart .cart__remove .icon { line-height:24px; }
 .cart table tfoot .icon { vertical-align:middle; }
 .style2 .cart__footer .cart-note { margin-bottom:30px; }
@@ -1162,7 +1168,7 @@ input.checkbox { height:auto; vertical-align:middle; padding:0; box-shadow:none;
 .cart-variant1 .cart table td { border:1px solid #f2f2f2; }
 .cart-variant1 .cart th.text-right,
 .cart-variant1 .cart .text-right.cart-price { text-align:center !important; }
-.cart__meta-text { color:#a2a2a2; font-size:12px; }
+.cart__meta-text { color:#a2a2a2; font-size:14px; }
 
 /*======================================================================
   25. Quick View

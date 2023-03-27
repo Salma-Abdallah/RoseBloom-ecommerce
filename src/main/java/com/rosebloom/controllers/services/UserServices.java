@@ -43,10 +43,13 @@ public class UserServices {
 
     // UpdateUserDetails
     public void UpdateUserDetails(UserDto userDto){
+        System.out.println("in services (userDto.getId)-> "+userDto.getId());
+
         UserRepository userRepository = new UserRepository();
         UserMapper userMapper= new UserMapper();
         User userEntity= userMapper.toEntity(userDto);
 
+        System.out.println("in services (user.getId)-> "+userEntity.getId());
         userRepository.UpdateUserDetails(userEntity);
     }
 
