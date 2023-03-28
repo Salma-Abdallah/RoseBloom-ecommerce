@@ -1,6 +1,6 @@
 <%@ page import="java.util.Enumeration" %>
 
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
         <!DOCTYPE html>
         <html class="no-js" lang="en">
 
@@ -337,7 +337,7 @@
                                     <!--End Toolbar-->
                                     <div class="grid-products grid--view-items">
                                         <div class="row" id="grid--view-items">
-                                            <c:forEach items="${products}" var="current">
+                                            <f:forEach items="${products}" var="current">
                                                 <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
 
                                                     <div class="product-image" >
@@ -404,7 +404,7 @@
                                                     </div>
                                                     <!-- End product details -->
                                                 </div>
-                                            </c:forEach>
+                                            </f:forEach>
 
                                         </div>
                                     </div>
