@@ -1,5 +1,6 @@
 package com.rosebloom.controllers.servlets;
 
+import com.google.gson.Gson;
 import com.rosebloom.controllers.enums.OrderStatus;
 import com.rosebloom.controllers.services.CartServices;
 import com.rosebloom.controllers.services.OrderServices;
@@ -16,6 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -58,7 +60,10 @@ public class NewOrderServlet extends HttpServlet {
 
         OrderServices orderServices = new OrderServices();
         CustomValidationMessage customValidationMessage = orderServices.createNewOrder(ordersDto,userId);
-        if(customValidationMessage.isSuccess()) System.out.println("Placed");
+
+            PrintWriter out = response.getWriter();
+            System.out.println(new Gson().toJson(customValidationMessage).toString());
+            out.print(new Gson().toJson(customValidationMessage));
 
 
 //        request.setAttribute("cartList",cartList);

@@ -105,6 +105,7 @@ ol, ul { padding:0; margin:0; }
 .list-items { margin-left:15px; }
 .hide { display:none !important; }
 
+
 /*======================================================================
   3. Typography
 ========================================================================*/
@@ -183,7 +184,7 @@ th { font-family:"Roboto Slab",Helvetica,Tahoma,Arial,serif; font-weight:700; }
   6. Button
 ========================================================================*/
 .btn, .shopify-payment-button__button--unbranded { -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; user-select:none; -webkit-appearance:none; -moz-appearance:none; appearance:none; display:inline-block; width:auto; height:auto; 
-	text-decoration:none; text-align:center; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:0; padding:8px 15px 8px; background-color:#000; color:#fff; font-family:Poppins,Helvetica,Tahoma,Arial,sans-serif; 
+	text-decoration:none; text-align:center; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:0; padding:8px 15px 8px; background-color:#00A300; color:#fff; font-family:Poppins,Helvetica,Tahoma,Arial,sans-serif;
 	font-weight:400; text-transform:uppercase; letter-spacing:1px; line-height:normal; white-space:normal; font-size:13px; -ms-transition:all 0.3s ease-in-out; -webkit-transition:all 0.3s ease-in-out; transition:all 0.3s ease-in-out; }
 .btn:hover, .btn:focus, .shopify-payment-button__button--unbranded:hover, .shopify-payment-button__button--unbranded:focus { background-color:#1a1a1a; opacity:0.8; color:#fff; text-decoration:none; }
 .btn--small { padding:8px 10px; font-size:0.92308em; line-height:1; }
@@ -849,16 +850,16 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 .product-template__container .product-action { width:100%; display:block; margin-bottom:15px; padding:0 5px; }
 .product-template__container .product-form__item--quantity { float:left; margin:0 10px 10px 0; }
 .wrapQtyBtn { float:left; }
-.qtyField { display:inline-block; margin:0 auto; }
+.qtyField { display:block; margin:0 ; justify-content: right; align-items:  }
 
 .qtyField .qty { width:40px; }
-.qtyField .qtyBtn, .qtyField .qty { padding:10px 6px; width:30px; height:42px; border-radius:0; float:left; }
+.qtyBtn, .qty { padding:10px 6px; width:30px; height:42px; border-radius:0; float:left; }
 .qtyField a { background-color:#eee; color:#000; }
 .qtyField a .fa { font-size:12px; line-height:21px; }
 .qtyField > a, .qtyField > span, .qtyField input {display:table-cell; line-height:normal; text-align:center; border:1px solid #f5f5f5; }
 .product-template__container .product-form__item--submit { width:auto; overflow:hidden; }
 .product-template__container .product-form__item--submit .btn { width:100%; padding:6px 15px; min-height:42px; }
-.product-template__container .shopify-payment-button .shopify-payment-button__button--unbranded { border-radius:0; -ms-transition:all 0.3s ease-in-out; -webkit-transition:all 0.3s ease-in-out; transition:all 0.3s ease-in-out; color:#fff; background-color:#e95144; float:right; }
+.product-template__container .shopify-payment-button .shopify-payment-button__button--unbranded { border-radius:0; -ms-transition:all 0.3s ease-in-out; -webkit-transition:all 0.3s ease-in-out; transition:all 0.3s ease-in-out; color:#fff; background-color:#00A300; float:right; }
 .shopify-payment-button__button { cursor:pointer; display:block; font-size:1em; font-weight:500; line-height:1; text-align:center; width:100%; }
 .shopify-payment-button__button--unbranded { padding:1em 2em; }
 
@@ -1135,13 +1136,18 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 /*======================================================================
   24. Cart Pages
 ========================================================================*/
-.cart___table{border: 3px solid black;}
+.cart___table{border: 0px solid black;TEXT-ALIGN: center;}
+.centAllig{text-align: left;}
 .cart__qty, money { display: inline-block}
-.cart__row { position:relative; }
-.cart th { font-weight:400; padding:10px 0 8px; background:#f2f2f2; text-transform:uppercase; padding-left:15px; padding-right:15px; letter-spacing:1px; border: 3px solid black;}
-td { padding:10px; border: 3px solid black;}
-.inlineDivs{display: inline-block;     }
-.marginsoforDivs{ margin: 0px 10px 0px 10px;}
+.vAll{vertical-align: top;}
+.cart__row { position:relative; border-bottom: 1px solid black;}
+.cart th { font-weight:400; padding:10px 0 8px; background:#f2f2f2; text-transform:uppercase; padding-left:15px; padding-right:15px; letter-spacing:1px; border-bottom: 2px;}
+.cart tr { border-bottom: 2px;}
+td { padding:10px; border-bottom: 2px;}
+.inlineDivs{display: inline-block;   }
+.flexDivs{display: flex;}
+.divBlock{display: block;}
+.marginsoforDivs{ margin: 0px 10px 0px 10px; padding: 0px 0px 10px 0px;}
 .cart .cart__meta { padding-right:15px; border: 3px solid black;}
 .cart th.cart__meta, .cart td.cart__meta { text-align:left; }
 .cart__image-wrapper a { display:block; }
@@ -1685,7 +1691,7 @@ body.home15-funiture-template { font-size:14px; }
 ===================================================================== */
 
 
-
+.errorMessage{color: red;}
 /* testimonials */
 .clients {
   background: url(../images/bg1.jpg) no-repeat center;

@@ -18,11 +18,21 @@ public class CartRepository {
     }
 
     public CustomValidationMessage addCartItem(Cart cartItem){
+        //check if cart Item prev exists
+        Cart oldCartItem = entityManager.find(Cart.class,cartItem.getId());
+        if(oldCartItem!=null){
+            oldCartItem.setQuantity(cartItem.getQuantity());
+            cartItem=oldCartItem;
+        }
+
+        //check quantity available
         Product product = entityManager.find(Product.class,cartItem.getId().getProductId());
         if(product==null)return new CustomValidationMessage(false,"Product Not Found\nplease replace your Order");
-
-        if(product.getQuantity()<cartItem.getQuantity())cartItem.setQuantity(product.getQuantity());
+        if(product.getQuantity()<1) return new CustomValidationMessage(false,"Product Out of Stock\nplease replace your Order");
+        if(product.getQuantity()<cartItem.getQuantity()) cartItem.setQuantity(product.getQuantity());
         cartItem.setIsDeleted(0);
+
+
 
         entityManager.getTransaction().begin();
         entityManager.persist(cartItem);
@@ -68,6 +78,25 @@ public class CartRepository {
         entityManager.persist(cartItem);
         entityManager.getTransaction().commit();
         return customValidationMessage;
+    }
+
+    public CustomValidationMessage EmptyCart(int userId){
+        List<Cart> cartList = entityManager.createQuery("from Cart c where c.isDeleted=0 and c.id.userId ="+userId).getResultList();
+        for(Cart cartItem:cartList){
+            cartItem.setIsDeleted(1);
+        }
+        entityManager.getTransaction().begin();
+        for(Cart cartItem:cartList)entityManager.persist(cartItem);
+        entityManager.getTransaction().commit();
+        return new CustomValidationMessage(true,null);
+    }
+
+    public CustomValidationMessage DeleteCartFromDB(int userId){
+        List<Cart> cartList = entityManager.createQuery("from Cart c where c.isDeleted=0 and c.id.userId ="+userId).getResultList();
+        entityManager.getTransaction().begin();
+        for(Cart cartItem:cartList)entityManager.remove(cartItem);
+        entityManager.getTransaction().commit();
+        return new CustomValidationMessage(true,null);
     }
 
     
