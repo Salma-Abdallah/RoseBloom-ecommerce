@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="search">
     <div class="search__form">
         <form class="search-bar__form" action="#">
@@ -66,7 +68,7 @@
         <div class="row align-items-center">
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
-                <a href="index.html">
+                <a href="index.jsp">
                     <img src="view/images/rosebloom2.png" alt="RoseBloom" title="Belle Multipurpose Html Template" />
                 </a>
             </div>
@@ -141,7 +143,7 @@
             <!--Mobile Logo-->
             <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <img src="view/images/rosebloom2.png" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
                     </a>
                 </div>
@@ -151,35 +153,41 @@
                 <div class="site-cart">
                     <a href="#;" class="site-header__cart" title="Cart">
                         <i class="icon anm anm-bag-l"></i>
-                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">${fn:length(cartList)}</span>
                     </a>
                     <!--Minicart Popup-->
                     <div id="header-cart" class="block block-cart">
                         <ul class="mini-products-list">
-                            <li class="item">
-                                <a class="product-image" href="#">
-                                    <img src="assets/images/product-images/cape-dress-1.jpg" alt="3/4 Sleeve Kimono Dress" title="" />
-                                </a>
-                                <div class="product-details">
-                                    <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-                                    <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-                                    <a class="pName" href="cart.html">Sleeve Kimono Dress</a>
-                                    <div class="variant-cart">Black / XL</div>
-                                    <div class="wrapQtyBtn">
-                                        <div class="qtyField">
-                                            <span class="label">Qty:</span>
-                                            <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                            <input type="text" id="Quantity3" name="quantity" value="1" class="product-form__input qty">
-                                            <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                            <c:forEach items="${cartList}" var="cartItem">
+                                <li class="item">
+                                    <a class="product-image" href="#">
+                                        <c:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
+                                            <c:if test="${status.index == 0}">
+                                                <img src="${images.image}" alt="" title="" />
+                                            </c:if>
+                                        </c:forEach>
+                                    </a>
+                                    <div class="product-details">
+                                        <a href="" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+<%--                                        <a href="" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>--%>
+                                        <a class="pName" href="cart.html">${cartItem.product.name}</a>
+                                        <div class="variant-cart">${cartItem.product.color} / ${cartItem.product.size}</div>
+                                        <div class="wrapQtyBtn">
+                                            <div class="qtyField">
+                                                <span class="label">Qty:</span>
+                                                <a class="qtyBtn minus" href="javascript:void(0);" id="qtyPlus_${cartItem.product.id}"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                <input type="text" id="Quantity3" name="quantity" value="${cartItem.quantity}" class="product-form__input qty" id="qty_${cartItem.product.id}" disabled>
+                                                <a class="qtyBtn plus" href="javascript:void(0);" id="qtyMinus_${cartItem.product.id}"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="priceRow">
+                                            <div class="product-price">EGP
+                                                <span class="money" id="totalAmount_${cartItem.product.id}">${cartItem.quantity*cartItem.product.price}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="priceRow">
-                                        <div class="product-price">
-                                            <span class="money">$59.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            </c:forEach>
                             <li class="item">
                                 <a class="product-image" href="#">
                                     <img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
@@ -207,11 +215,11 @@
                         </ul>
                         <div class="total">
                             <div class="total-in">
-                                <span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">$748.00</span></span>
+                                <span class="label">Cart Subtotal:</span><span class="product-price">EGP <span class="money">${total}</span></span>
                             </div>
                             <div class="buttonSet text-center">
-                                <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
-                                <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
+                                <a href="cart" class="btn btn-secondary btn--small">View Cart</a>
+                                <a href="Checkout" class="btn btn-secondary btn--small">Checkout</a>
                             </div>
                         </div>
                     </div>
@@ -229,10 +237,10 @@
 <div class="mobile-nav-wrapper" role="navigation">
     <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
     <ul id="MobileNav" class="mobile-nav">
-        <li class="lvl1 parent megamenu"><a href="index.html">Home </a>
+        <li class="lvl1 parent megamenu"><a href="index.jsp">Home </a>
         </li>
 
-        <li class="lvl1 parent megamenu"><a href="#">Plants<i class="anm anm-plus-l"></i></a>
+        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Plants">Plants<i class="anm anm-plus-l"></i></a>
             <ul>
                 <li><a href="" class="site-nav">InDoor</a></li>
                 <li><a href="" class="site-nav">OutDoor</a></li>

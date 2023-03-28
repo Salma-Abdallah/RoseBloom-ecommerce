@@ -86,6 +86,7 @@
       <version>1.5.3.Final</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+<!--    TODO check if we need these 2 or we remove them-->
     <dependency>
       <groupId>javax.inject</groupId>
       <artifactId>javax.inject</artifactId>
@@ -228,7 +229,7 @@
           <configuration>
             <username>admin</username>
             <password>admin</password>
-            <url>http://localhost:8090/manager/text</url>
+            <url>http://localhost:8888/manager/text</url>
             <path>/roseBloom</path>
           </configuration>
         </plugin>

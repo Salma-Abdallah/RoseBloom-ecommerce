@@ -37,7 +37,8 @@ public class LoginServlet extends HttpServlet {
             System.out.println(user.getId());
 
             if(user.getIsAdmin()==0){
-                RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+                System.out.println( "MOT an ADMIN");
+                RequestDispatcher rd = request.getRequestDispatcher("/");
                 rd.forward(request, response);
             }else{
                 RequestDispatcher rd = request.getRequestDispatcher("/adminView/product-admin-master/index.html");

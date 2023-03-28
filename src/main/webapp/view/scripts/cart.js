@@ -1,4 +1,28 @@
 console.log("START");
+
+function CheckEmptyCart(cartList){
+    if(cartList== undefined || cartList.length==0){
+        let CartMoney = document.getElementById("CartMoney");
+        let parent = CartMoney.parentNode;
+        parent.removeChild(CartMoney);
+
+        let clearCartBtn = document.getElementById("clearCartBtn");
+        let parent2 = clearCartBtn.parentNode;
+        parent2.removeChild(clearCartBtn);
+
+        if (window.XMLHttpRequest) emptyCartRequest = new XMLHttpRequest();
+        else if (window.ActiveXObject) emptyCartRequest = new ActiveXObject(Microsoft.XMLHTTP);
+
+        emptyCartRequest.open("GET", "/roseBloom/view/html/emptyCart.html", true);
+        emptyCartRequest.onload = function() {
+            if (emptyCartRequest.status === 200) {
+                document.getElementById("cartItemsTable").innerHTML = emptyCartRequest.responseText;
+            }
+        };
+        emptyCartRequest.send();
+
+    }
+}
 function changeQuantityHandler(event){
     if(event.keyCode === 13) {
         let id = event.target.id;
@@ -57,6 +81,7 @@ function handleChangeQuantity(newQuantity, productId, data){
             document.getElementById("qty_" + productId).value = parseInt(data.message.split(":")[1]);
             document.getElementById("qtyPlus_" + productId).disabled = true;
             document.getElementById("error_" + productId).innerHTML = data.message;
+            console.log(data.message);
         } else {
             document.getElementById("qty_" + productId).value = newQuantity;
 

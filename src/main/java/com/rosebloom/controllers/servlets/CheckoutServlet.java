@@ -23,22 +23,12 @@ public class CheckoutServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/html/checkout2.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer userId = 1; //TODO get actual userId
-        CartServices cartServices = new CartServices();
-
-
-        List<CartDto> cartList = cartServices.getAllCartItemsByUserId(userId);
-        float sum = 0.0F;
-        for (CartDto cart:cartList)sum+=cart.getQuantity()*cart.getProduct().getPrice();
-
-        request.setAttribute("cartList",cartList);
-        request.setAttribute("total",sum);
-
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/html/checkout2.jsp");
         dispatcher.forward(request, response);

@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Checkout &ndash; Belle Multipurpose Bootstrap 4 Template</title>
+<title>Checkout &ndash; RoseBloom</title>
 <meta name="description" content="description">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Favicon -->
@@ -125,90 +125,17 @@
                         <div class="your-payment">
                             <h2 class="payment-title mb-3">payment method</h2>
                             <div class="payment-method">
-                                <div class="payment-accordion UserInfolabels"> Credit Limit
-<!--                                    <div id="accordion" class="payment-section">-->
-<!--                                        <div class="card mb-2">-->
-<!--                                            <div class="card-header">-->
-<!--                                                <a class="card-link" data-toggle="collapse" href="#collapseOne">Direct Bank Transfer </a>-->
-<!--                                            </div>-->
-<!--                                            <div id="collapseOne" class="collapse" data-parent="#accordion">-->
-<!--                                                <div class="card-body">-->
-<!--                                                    <p class="no-margin font-15">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won't be shipped until the funds have cleared in our account.</p>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="card mb-2">-->
-<!--                                            <div class="card-header">-->
-<!--                                                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Cheque Payment</a>-->
-<!--                                            </div>-->
-<!--                                            <div id="collapseTwo" class="collapse" data-parent="#accordion">-->
-<!--                                                <div class="card-body">-->
-<!--                                                    <p class="no-margin font-15">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="card margin-15px-bottom border-radius-none">-->
-<!--                                            <div class="card-header">-->
-<!--                                                <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree"> PayPal </a>-->
-<!--                                            </div>-->
-<!--                                            <div id="collapseThree" class="collapse" data-parent="#accordion">-->
-<!--                                                <div class="card-body">-->
-<!--                                                    <p class="no-margin font-15">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="card mb-2">-->
-<!--                                            <div class="card-header">-->
-<!--                                                <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour"> Payment Information </a>-->
-<!--                                            </div>-->
-<!--                                            <div id="collapseFour" class="collapse" data-parent="#accordion">-->
-<!--                                                <div class="card-body">-->
-<!--                                                    <fieldset>-->
-<!--                                                        <div class="row">-->
-<!--                                                            <div class="form-group col-md-6 col-lg-6 col-xl-6 required">-->
-<!--                                                                <label for="input-cardname">Name on Card <span class="required-f">*</span></label>-->
-<!--                                                                <input name="cardname" value="" placeholder="Card Name" id="input-cardname" class="form-control" type="text">-->
-<!--                                                            </div>-->
-<!--                                                            <div class="form-group col-md-6 col-lg-6 col-xl-6 required">-->
-<!--                                                                <label for="input-country">Credit Card Type <span class="required-f">*</span></label>-->
-<!--                                                                <select name="country_id" class="form-control">-->
-<!--                                                                    <option value=""> -&#45;&#45; Please Select -&#45;&#45; </option>-->
-<!--                                                                    <option value="1">American Express</option>-->
-<!--                                                                    <option value="2">Visa Card</option>-->
-<!--                                                                    <option value="3">Master Card</option>-->
-<!--                                                                    <option value="4">Discover Card</option>-->
-<!--                                                                </select>-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="row">-->
-<!--                                                            <div class="form-group col-md-6 col-lg-6 col-xl-6 required">-->
-<!--                                                                <label for="input-cardno">Credit Card Number  <span class="required-f">*</span></label>-->
-<!--                                                                <input name="cardno" value="" placeholder="Credit Card Number" id="input-cardno" class="form-control" type="text">-->
-<!--                                                            </div>-->
-<!--                                                            <div class="form-group col-md-6 col-lg-6 col-xl-6 required">-->
-<!--                                                                <label for="input-cvv">CVV Code <span class="required-f">*</span></label>-->
-<!--                                                                <input name="cvv" value="" placeholder="Card Verification Number" id="input-cvv" class="form-control" type="text">-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="row">-->
-<!--                                                            <div class="form-group col-md-6 col-lg-6 col-xl-6 required">-->
-<!--                                                                <label>Expiration Date <span class="required-f">*</span></label>-->
-<!--                                                                <input type="date" name="exdate" class="form-control">-->
-<!--                                                            </div>-->
-<!--                                                            <div class="form-group col-md-6 col-lg-6 col-xl-6 required">-->
-<!--                                                                <img class="padding-25px-top xs-padding-5px-top" src="assets/images/payment-img.jpg" alt="card" title="card" />-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </fieldset>-->
+                                <div class="payment-accordion UserInfolabels">
+                                    Credit Limit<br>
+                                    Availabe: EGP ${SessionScope.User.creditLimit}<br>
 
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
                                 </div>
 
                                 <div class="order-button-payment">
                                     <button class="btn" value="Place order" onclick="placeOrder()">Place order</button>
+                                </div>
+                                <div class="errorMessage" id="placeOrderErrorMessage">
+
                                 </div>
                             </div>
                         </div>
