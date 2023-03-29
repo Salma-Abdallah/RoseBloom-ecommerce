@@ -5,6 +5,15 @@
     metadata-complete="true">
 
     <servlet>
+        <servlet-name>HomePage</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomePage</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.ProductServlet</servlet-class>
     </servlet>
@@ -19,15 +28,6 @@
     <servlet-mapping>
         <servlet-name>productDetails</servlet-name>
         <url-pattern>/productDetails</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>HomePage</servlet-name>
-        <servlet-class>com.rosebloom.controllers.servlets.HomeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HomePage</servlet-name>
-        <url-pattern>/HomePage</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -75,6 +75,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>addToCart</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.AddCartItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addToCart</servlet-name>
+        <url-pattern>/addCartItem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>changeQuantity</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.changeQuantityServlet</servlet-class>
     </servlet>
@@ -108,6 +117,15 @@
     <servlet-mapping>
         <servlet-name>NewOrder</servlet-name>
         <url-pattern>/NewOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>orderPlaced</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.OrderPlacedSuccess</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>orderPlaced</servlet-name>
+        <url-pattern>/orderPlaced</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -162,6 +180,18 @@
         <servlet-name>ViewUserProfile</servlet-name>
         <url-pattern>/ViewUserProfile</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>LoadCartItems</filter-name>
+        <filter-class>com.rosebloom.controllers.filters.LoadCartFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoadCartItems</filter-name>
+        <url-pattern>/*</url-pattern>
+<!--        TODO select specefic servlets-->
+    </filter-mapping>
+
+
 
 <!-- <welcome-file-list>
     <welcome-file>

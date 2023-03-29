@@ -22,13 +22,15 @@
             <link rel="stylesheet" href="view/style/style.css">
             <link rel="stylesheet" href="view/style/responsive.css">
 
-            <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">
+<%--            <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">--%>
             <style>
                 .flex-i img{height: 100%;width:100%;object-fit: cover;}
             </style>
+            <script src="/roseBloom/view/scripts/cart.js"></script>
         </head>
 
         <body class="template-collection belle">
+        <main>
             <%@ include file="header.jsp" %>
                 <div class="pageWrapper" style="margin-top: 130px;">
 
@@ -291,7 +293,7 @@
                                         <h3 id="categoryName">
                                             ${categoryName}
                                         </h3>
-
+                                        <label class="errorMessage" id="errorMessageFieldId"></label><label class="successMessageField" id="successMessageFieldId"></label>
                                     </div>
                                     <hr>
                                     <!--Toolbar-->
@@ -356,11 +358,9 @@
                                                         </a>
                                                         <!-- end product image -->
                                                         <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="productDetails.jsp" method="post">
-                                                            <button class="btn btn-addto-cart" type="button">ADD TO
-                                                                CART</button>
-                                                        </form>
+                                                        <div class="variants add">
+                                                            <button class="btn btn-addto-cart" type="button" id="addToCart_${current.id}" onclick="addToCart(event,'1')">ADD TO CART</button>
+                                                        </div>
                                                         <div class="button-set">
                                                             <a href="javascript:void(0)" title="Quick View"
                                                                 class="quick-view-popup quick-view" data-toggle="modal"
@@ -431,7 +431,7 @@
                         <script src="view/scripts/main.js"></script>
                         <script src="view/scripts/product.js"></script>
                 </div>
-
+        </main>
         </body>
 
         <!-- belle/shop-grid-5.html   11 Nov 2019 12:39:07 GMT -->

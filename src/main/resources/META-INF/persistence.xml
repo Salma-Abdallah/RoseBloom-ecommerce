@@ -16,12 +16,12 @@
         <property name="jakarta.persistence.jdbc.user" value="root"/>
         <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 
-        <property name="jakarta.persistence.jdbc.password" value=""/>
+        <property name="jakarta.persistence.jdbc.password" value="1234"/>
 
         <property name="hibernate.show_sql" value="true"/>
         <property name="hibernate.format_sql" value="true"/>
-        <property name="hibernate.connection.pool_size" value="1500"/>
-        <property name="hibernate.connection.timeout" value="1500"/>
+        <property name="hibernate.connection.pool_size" value="2000"/>
+        <property name="hibernate.connection.timeout" value="2000"/>
 
         <property name="jakarta.persistence.lock.timeout" value="100"/>
         <property name="jakarta.persistence.query.timeout" value="100"/>

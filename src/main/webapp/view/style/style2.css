@@ -849,7 +849,7 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 .product-template__container .product-action { width:100%; display:block; margin-bottom:15px; padding:0 5px; }
 .product-template__container .product-form__item--quantity { float:left; margin:0 10px 10px 0; }
 .wrapQtyBtn { float:left; }
-.qtyField { display:table; margin:0 auto; }
+/*.qtyField { display:table; margin:0 auto; }*/
 .qtyField .qty { width:40px; }
 .qtyField .qtyBtn, .qtyField .qty { padding:10px 6px; width:30px; height:42px; border-radius:0; float:left; }
 .qtyField a { background-color:#eee; color:#000; }
@@ -1134,8 +1134,9 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
   24. Cart Pages
 ========================================================================*/
 .cart__row { position:relative; }
-.cart th { font-weight:400; padding:10px 0 8px; background:#f2f2f2; text-transform:uppercase; padding-left:15px; padding-right:15px; letter-spacing:1px; }
-.cart td { padding:10px; }
+/*.vAll{vertical-align: text-top;}*/
+.cart th { font-weight:400; padding:10px 0 8px; background:#f2f2f2; text-transform:uppercase; padding-left:15px; padding-right:15px; letter-spacing:1px; border:0px}
+.cart td { padding:10px; border:0px}
 .cart .cart__meta { padding-right:15px; }
 .cart th.cart__meta, .cart td.cart__meta { text-align:left; }
 .cart__image-wrapper a { display:block; }
@@ -1144,6 +1145,7 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 .cart .qtyField a { height:36px; line-height:34px; padding:0; }
 .cart .qtyField .cart__qty-input { height:36px; width:40px; float:left; }
 .cart .qtyField a .icon { line-height:33px; font-size:10px; }
+.dsfsdf{width:40px;}
 .cart .cart__remove { border:0; margin-top:4px; font-size:14px; padding:0; height:25px; width:25px; text-align:center; vertical-align:middle; line-height:25px; }
 .cart .cart__remove .icon { line-height:24px; }
 .cart table tfoot .icon { vertical-align:middle; }

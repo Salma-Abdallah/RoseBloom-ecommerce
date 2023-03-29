@@ -29,7 +29,7 @@ public class ProductMapper {
         ProductDto productDto = new ProductDto(product.getId(), product.getPrice(), product.getName(),
                 product.getQuantity(), product.getType(), product.getCategory(), product.getDescription(),
                 product.getColor(),
-                product.getSize(), product.getOldPrice(), product.getCreatedAt(), PlantdescriptionDto, productImageDto2);
+                product.getSize(), product.getOldPrice(), product.getCreatedAt(), product.getIsDeleted(), PlantdescriptionDto, productImageDto2);
 
         return productDto;
     }
@@ -49,7 +49,7 @@ public class ProductMapper {
         Product product = new Product(productDto.getId(), productDto.getPrice(), productDto.getName(),
                 productDto.getQuantity(), productDto.getType(), productDto.getCategory(), productDto.getDescription(),
                 productDto.getColor(),
-                productDto.getSize(), productDto.getOldPrice(), productDto.getCreatedAt(), Plantdescription,
+                productDto.getSize(), productDto.getOldPrice(), productDto.getCreatedAt(), productDto.getIsDeleted(), Plantdescription,
                 productImage);
 
         return product;

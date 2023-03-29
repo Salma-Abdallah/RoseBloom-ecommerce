@@ -35,7 +35,8 @@ public class userProfileServlet extends HttpServlet {
         UserDto mainUser = (UserDto)session.getAttribute("User");
 
         UserServices userServices = new UserServices();
-// mainUser.getEmail()==email || !userServices.checkByEmailIfValid(email)  
+// mainUser.getEmail()==email || !userServices.checkByEmailIfValid(email)
+        //TODO remove if true
         if(true) {
             System.out.println("Update User ;) ");
             UserDto user= new UserDto(mainUser.getId(),name,password,email,address,birthday,phoneNo,creditLimit,job);
