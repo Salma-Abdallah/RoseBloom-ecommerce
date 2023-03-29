@@ -63,7 +63,7 @@
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title">Summer Bikini Collection</h2>
+                                    <h2 class="h1 mega-title slideshow__title">Summer Plants Collection</h2>
                                     <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend only</span>
                                     <span class="btn">Shop now</span>
                                 </div>
@@ -1184,17 +1184,17 @@
         				<div class="col-md-4 services-w3ls-grid">
         					<i class="fa fa-envira" aria-hidden="true"></i>
         					<h4 class="text-wh text-uppercase mt-md-5 mt-4 mb-3">Garden Care</h4>
-        					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+        					<p>All life on earth emanates from the green of the plants.</p>
         				</div>
         				<div class="col-md-4 services-w3ls-grid my-md-0 my-4">
         					<i class="fa fa-tree" aria-hidden="true"></i>
         					<h4 class="text-wh text-uppercase mt-md-5 mt-4 mb-3">Plant Renovation</h4>
-        					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+        					<p>Plants make a positive impact on your environment.</p>
         				</div>
         				<div class="col-md-4 services-w3ls-grid">
         					<i class="fa fa-pagelines" aria-hidden="true"></i>
         					<h4 class="text-wh text-uppercase mt-md-5 mt-4 mb-3">Always Fresh</h4>
-        					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+        					<p>Plant a tree today it will help us breathe tomorrow.</p>
         				</div>
         			</div>
         		</div>
@@ -1242,14 +1242,9 @@
 			<div class="row py-sm-5">
 				<div class="col-lg-6 col-sm-8 col-10">
 					<div class="feedback-top">
-						<p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem ipsum dolor sit amet consectetur
-							adipisicing
-							elit
-							sedc dnmo eiusmod. sed do eiusmod tempor
-							incididunt
-							ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-							laboris nisi</p>
-						<h4 class="mt-4 text-da font-weight-bold mb-4">Mary Jane</h4>
+						<p><i class="fa fa-quote-left" aria-hidden="true"></i>The very best relationship has a gardener and a flower.
+                             The gardener nurtures and the flower blooms</p>
+						<h4 class="mt-4 text-da font-weight-bold mb-4">Carole Radziwill</h4>
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-4 col-2"></div>

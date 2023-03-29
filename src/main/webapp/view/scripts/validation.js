@@ -1,3 +1,13 @@
+function validation(){
+    passwordValidate();
+    confirmPasswordValidate();
+    nameValidate();
+    phoneValidate();
+
+}
+
+
+
 function passwordValidate(){
     let password=document.getElementById("password").value;
     let regex =/(.+){8}/;
@@ -14,7 +24,7 @@ function passwordValidate(){
     }
 }
 
-function cofirmPasswordValidate(){
+function confirmPasswordValidate(){
     let password=document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -41,4 +51,20 @@ function phoneValidate(){
     let result = regex.test(phone);
 
     return result;
+}
+
+function birthdateValidation(){
+
+}
+
+function creditLimitValidation(){
+
+}
+
+function addressValidation(){
+
+}
+
+function emailValidation(){
+    
 }

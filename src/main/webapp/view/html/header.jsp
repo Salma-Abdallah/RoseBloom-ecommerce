@@ -35,8 +35,8 @@
                         <li><a href="wishlist.html">Logout</a></li>
                     <% } else { %>
                         <li><a href="login2.html">Login</a></li>
-                        <!-- <li><a href="signup2.html">Create Account</a></li> -->
-                        <li><a href="userProfile.jsp">User Profile</a></li>
+                        <li><a href="signup2.html">Create Account</a></li>
+                        <!-- <li><a href="userProfile.jsp">User Profile</a></li> -->
                         
                     <%}%>
                     
