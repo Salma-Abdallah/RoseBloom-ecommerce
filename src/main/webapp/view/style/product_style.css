@@ -179,7 +179,7 @@ margin-bottom: 20px;
   width: 22px;
   height: 23px;
   margin: 0;
-  background: #FF5722;
+  background: #28a745;
   text-decoration: none;
   text-align: center;
   line-height: 23px;
@@ -211,7 +211,7 @@ margin-bottom: 20px;
 }
 .quantity__minus:link,
 .quantity__plus:link {
-  color: #8184a1;
+  color: white;
 } 
 .quantity__minus:visited,
 .quantity__plus:visited {
