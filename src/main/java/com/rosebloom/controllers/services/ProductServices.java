@@ -127,7 +127,7 @@ public class ProductServices {
       productDto.setCreatedAt(new Timestamp(System.currentTimeMillis()));
       productDto.setDescription(request.getParameter("description"));
       productDto.setPrice(Integer.parseInt(request.getParameter("price")));
-      productDto.setOldPrice(Integer.parseInt(request.getParameter("oldPrice")));
+  //    productDto.setOldPrice(Integer.parseInt(request.getParameter("oldPrice")));
       productDto.setColor(request.getParameter("color"));
       productDto.setSize(Integer.parseInt(request.getParameter("size")));
       productDto.setPlantdescription(new PlantdescriptionDto());
@@ -166,5 +166,10 @@ public class ProductServices {
       ProductRepository pRepository = new ProductRepository();
      
       pRepository.addProduct(product);
+   }
+   public boolean isPlant(int id){
+      ProductRepository pRepository = new ProductRepository();
+     
+     return pRepository.isPlant(id);
    }
 }

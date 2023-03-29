@@ -1,8 +1,12 @@
 package com.rosebloom.controllers.servlets.adminServlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
+import com.rosebloom.controllers.persistence.entities.Category;
+import com.rosebloom.controllers.persistence.repository.CategoryRepository;
+import com.rosebloom.controllers.persistence.repository.ProductRepository;
 import com.rosebloom.controllers.services.ProductServices;
 import com.rosebloom.dtos.ProductDto;
 
@@ -21,6 +25,26 @@ public class ViewProductsServlet extends HttpServlet {
 
         
         request.getRequestDispatcher("adminView/html/viewProducts.jsp").forward(request, response);
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        ProductServices productServices = new ProductServices();
+        String id=request.getParameter("categoryName");
+        System.out.println(id);
+        PrintWriter out = response.getWriter();
+        CategoryRepository categoryRepository=new CategoryRepository();
+        List<Category> categ=categoryRepository.getParentByCategoryName(id);
+        for (Category category : categ) {
+            // if(category.getCategoryName().equals("Plants")){
+            //     out.println(true);
+            //      break;
+            // }
+            System.out.println(category.getCategoryName());
+        }
+        
+        //boolean isPlant=productServices.isPlant(id);
+
+
     }
 
 }

@@ -98,13 +98,13 @@
           </div>
           <div class="row tm-edit-product-row">
             <div class="col-xl-6 col-lg-6 col-md-12">
-              <form class="tm-edit-product-form" action="editProduct" onsubmit="return validateForm()" method="post"
+              <form class="tm-edit-product-form" action="editProduct" method="post"
                 enctype="multipart/form-data">
                 <input id="productId" name="productId" type="text" value=${product.id} style="display:none;"
                   class="form-control validate" />
                 <div class="form-group mb-3">
                   <label for="name">Product Name</label>
-                  <input id="name" name="name" type="text" value=${product.name} class="form-control validate" />
+                  <input id="nameInput" name="nameInput" type="text" value=${product.name} class="form-control validate" />
                 </div>
                 <div class="form-group mb-3">
                   <label for="description">Description</label>
@@ -244,7 +244,7 @@
             <input type="text" name="img2" value='${product.productImages[1].image}' style="display: none;">
             <input type="text" name="img3" value='${product.productImages[2].image}' style="display: none;">
             <div class="col-12">
-              <button type="submit" class="btn btn-primary btn-block text-uppercase">Update Now</button>
+              <button type="button" onclick="validateForm()" class="btn btn-primary btn-block text-uppercase">Update Now</button>
             </div>
             </form>
           </div>

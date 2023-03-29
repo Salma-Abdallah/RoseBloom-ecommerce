@@ -118,6 +118,7 @@ public class ProductRepository {
     }
 
     public void addProduct(Product product) {
+        product.setIsDeleted(0);
         entityManager.getTransaction().begin();
         entityManager.persist(product);
         System.out.println(product.getId());
@@ -126,8 +127,8 @@ public class ProductRepository {
         ProductImage productImage = new ProductImage();
        
         product.getPlantdescription().setProductId(product.getId());
-        Plantdescription plantdescription =new Plantdescription();
-        plantdescription.setProductId(26);
+        // Plantdescription plantdescription =new Plantdescription();
+        // plantdescription.setProductId(26);
         //entityManager.persist(plantdescription);
         //System.out.println(product.getId());
         entityManager.getTransaction().commit();
@@ -144,7 +145,26 @@ public class ProductRepository {
             entityManager.persist(productImage);
             
         }
+        Plantdescription plantdescription2=new Plantdescription();
+        //plantdescription2.setProductId(product.getId());
+        plantdescription2.setProduct(product);
+        System.out.println(plantdescription2.getProductId()); 
+        System.out.println(plantdescription2.getProduct().getId()); 
+        //entityManager.getTransaction().commit();
+       
+            entityManager.persist(plantdescription2);
+            
+        
         entityManager.getTransaction().commit();
+    }
+    public boolean isPlant(int productId){
+        Query query = entityManager.createQuery("select c.categoryName from Product p join Category c  where p.product.id=?1").setParameter(1, productId);
+        List<String> result = (List<String>) query.getResultList();
+        for (String categoryName : result) {
+            if(categoryName.equals("Plants"))
+                return true;
+        }
+        return false;
     }
 
 }

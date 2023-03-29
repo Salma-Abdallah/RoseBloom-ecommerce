@@ -66,3 +66,43 @@ function SomeDeleteRowFunction(id,event) {
     console.log(tr);
     tr.parentNode.removeChild(tr);
 }
+
+function validateForm() {
+    var name=document.getElementById("name").value;
+    if(name=="")
+        return false;
+}
+const form = document.querySelector('#addForm');
+
+
+form.addEventListener('submit', function (e) {
+    var name=document.getElementById("name").value;
+    if(name=="")
+    // prevent the form from submitting
+        e.preventDefault();
+
+});
+function checkIsPlant() {
+    var e = document.getElementById("categoryOption");
+
+    var categoryName = e.options[e.selectedIndex].text;
+    $.ajax({
+        type: "POST",
+        url: "ViewProductsServlet",
+        
+        data:{
+            categoryName : categoryName
+        },
+        success: function (evt) {
+           
+            if(evt="true") {
+                console.log(evt);
+                document.getElementById("fieldset").style.display = "block";
+            }
+            else
+            {
+                document.getElementById("fieldset").style.display = "none";
+            }
+        }
+    });
+}
