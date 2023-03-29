@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="check" %>
+
 <div class="search">
     <div class="search__form">
         <form class="search-bar__form" action="#">
@@ -13,13 +15,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 col-sm-8 col-md-5 col-lg-4">
-                <div class="currency-picker">
-                    <span class="selected-currency">EGY</span>
-                </div>
-                <div class="language-dropdown">
-                    <span class="language-dd">English</span>
-                </div>
-                <p class="phone-no"><i class="anm anm-phone-s"></i> +440 0(111) 044 833</p>
+                <check:choose>
+                    <check:when test="${loggedIn=='true'}">
+                        <h3 style="color:aliceblue">Welcome ${User.name}</h3>
+                    </check:when>
+                    <check:otherwise>
+                        <div class="currency-picker">
+                            <span class="selected-currency">EGY</span>
+                        </div>
+                        <div class="language-dropdown">
+                            <span class="language-dd">English</span>
+                        </div>
+                        <p class="phone-no"><i class="anm anm-phone-s"></i> +440 0(111) 044 833</p>
+                    </check:otherwise>
+                </check:choose>
+
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
                 <div class="text-center"><p class="top-header_middle-text"> Worldwide Express Shipping</p></div>
@@ -28,17 +38,16 @@
                 <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                 <ul class="customer-links list-inline">
                     <!-- loggedIn -->
-                      
-
-                    <% if ( "${loggedIn}" == "true" ) { %>
+                <check:choose>                   
+                    <check:when test ="${loggedIn=='true'}">
                         <li><a href="userProfile.jsp">User Profile</a></li>
                         <li><a href="wishlist.html">Logout</a></li>
-                    <% } else { %>
+                    </check:when>
+                    <check:otherwise>
                         <li><a href="login2.html">Login</a></li>
                         <li><a href="signup2.html">Create Account</a></li>
-                        <!-- <li><a href="userProfile.jsp">User Profile</a></li> -->
-                        
-                    <%}%>
+                    </check:otherwise>
+                </check:choose> 
                     
                     
                 </ul>
