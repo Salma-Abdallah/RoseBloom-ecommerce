@@ -114,7 +114,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Clay Pots">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Garden Supplies">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style2">
                                 <ul class="grid mmWrapper">
                                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Supplies Types</a>
