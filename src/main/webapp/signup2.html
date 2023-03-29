@@ -47,51 +47,81 @@
 	 rel="stylesheet">
 	<!-- //Web-Fonts -->
 </head>
-<body>
-    <div class="container">
+<body style="padding: 10px ;">
+    <div class="container" style="margin: 10px;">
         <div class="title"> Registration </div>
-        <form action="Signup" method="post">
+        <form action="Signup" method="post" id="form">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
-                    <input type="text" name="userName" placeholder="Enter your name" onblur="nameValidate()" required>
+                    <input type="text" name="userName" id="userName" placeholder="Enter your name" onblur="nameValidate()" required>
                     <label name="msgUsername" id="msgUsername"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Birthday</span>
-                    <input type="date" name="birthday" placeholder="Enter your Birthday" required>
+                    <input type="date" name="birthday" id="birthday" placeholder="Enter your Birthday" onblur="birthdateValidation()" required>
                     <label name="msgBirthday" id="msgBirthday"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" onblur="emailValidation()" required>
                     <label name="msgEmail" id="msgEmail"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Phone Number</span>
-                    <input type="tel" name="phoneNo" placeholder="(01) 555-5555" onblur="phoneValidate()" required>
+                    <input type="tel" name="phoneNo" id="phoneNo" placeholder="(01)123456789" onblur="phoneValidate()" required>
                     <label name="msgPhoneNo" id="msgPhoneNo"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" name="password" placeholder="Enter your Password" onblur="passwordValidate()" required>
+                    <input type="password" name="password" id="password" placeholder="Enter your Password" onblur="passwordValidate()" required>
                     <label name="msgPassword" id="msgPassword"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="password" name="confirmPassword" placeholder="Confirm your password" onblur="cofirmPasswordValidate()" required>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" onblur="confirmPasswordValidate()" required>
                     <label name="msgConfirmPass" id="msgConfirmPass" ></label>
                     
                 </div>
                 <div class="input-box">
                     <span class="details">Address</span>
-                    <input type="text" name="address" placeholder="Enter your address" required>
+                    <input type="text" name="address" id="address" placeholder="Enter your address" onblur="addressValidation()" required>
                     <label name="msgAddress" id="msgAddress"></label>
                 </div>
                 <div class="input-box">
                     <span class="details">Credit Limit  </span>
-                    <input type="number" name="creditLimit" placeholder="Enter your credit limit" required>
+                    <input type="number" name="creditLimit" id="creditLimit" placeholder="Enter your credit limit" onblur="creditLimitValidation()" required>
                     <label name="msgCredit" id="msgCredit"></label>
+                </div>
+                <div class="input-box">
+                    <span class="details">Interests</span>
+                    <select class="custom-select tm-select-accounts" name="categoryOption" id="categoryOption" onblur="checkIsPlant();">
+                        <option value="" disabled selected>Select Category</option>
+                        <optgroup value="1" label="Plants">
+                            <option value="Indoors">Indoors</option>
+                            <option value="Outdoors">Outdoors</option>
+                            <!-- <option value="Cacti & succulents">Cacti & succulents</option> -->
+                            <option value="Trees">Trees</option>
+                            <option value="Seeds">Seeds</option>
+                        </optgroup>
+                        <optgroup value="1" label="Pots">
+                            <option value="Clay Pots">Clay Pots</option>
+                            <option value="Plastic Pots">Plastic Pots</option>
+                            <option value="Hanging Pots">Hanging Pots</option>
+                            <option value="Table-top Pots">Table-top Pots</option>
+
+                        </optgroup>
+
+                        <optgroup value="1" label="Supplies">
+                            <option value="Gardening Tools">Gardening Tools</option>
+                            <option value="Soil">Soil</option>
+                            <option value="Fertilizer">Fertilizer</option>
+
+                        </optgroup>
+
+                        <option value="Gifts">Gifts</option>
+
+                     </select>
                 </div>
             </div>
             <div class="input-box">
@@ -99,9 +129,15 @@
                 <input type="checkbox" id="checkbox">
                 <span class="details">Remember me</span>
             </div>
-            <div class="button">
-                <input type="submit"  data-bs-toggle="modal" data-target="#myModal" value="Submit">
+            <div class="input-box">
+                <br>
+                
+                <label name="msgSubmit" id="msgSubmit"></label>
             </div>
+            <div class="button">
+                <input type="button"  data-bs-toggle="modal"  value="Submit" onclick="validation()">
+            </div>
+
             <div class="have-account">
                 <a href="login2.html" style="color:  #FF5722;">
                     <span class="details">Have an account</span>
@@ -109,26 +145,7 @@
             </div>
 
 
-            <!-- Modal-->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+           
 
         </form>
     </div>
