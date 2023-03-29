@@ -16,6 +16,7 @@ public class UserRepository {
         entityManager = entityManagerFactory.createEntityManager();
     }
     public void insertUser(User user) {
+        entityManager.clear();
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
