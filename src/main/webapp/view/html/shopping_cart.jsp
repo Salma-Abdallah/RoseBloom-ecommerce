@@ -54,61 +54,38 @@
                                     <c:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
                                         <c:if test="${status.index == 0}">
                                             <div class="cart__image-wrapper inlineDivs">
-                                            <a href="">
+                                            <a href="productDetails?productId=${cartItem.product.id}">
                                                 <img class="cart__image" src="${images.image}"
                                                     alt="" width="100" height="100">
                                             </a>
                                             </div>
                                         </c:if>
                                     </c:forEach>
-                                    <!-- assets/images/product-images/product-image30.jpg -->
-<%--                                </td>--%>
-<%--    class="cart__meta small--text-left"--%>
-<%--                                <td class="cart th ">--%>
                                     <div class="list-view-item__title inlineDivs">
                                         <a class="list-view-item__title inlineDivs" href="">${cartItem.product.name} </a> <br>
-<%--                                    </div>--%>
-
                                         <div class="cart__meta-text inlineDivs">
                                             Color: ${cartItem.product.color}<br>
                                             Size: ${cartItem.product.size}<br>
                                         </div>
                                     </div>
                                 </td>
-<%--    class="cart__price-wrapper text-center"--%>
                                 <td class="cart th vAll">
-<%--                                    <span class="money">--%>
                                         EGP ${cartItem.product.price}
-<%--                                    </span>--%>
                                 </td>
-<%--                                cart__update-wrapper--%>
+
                                 <td colspan="1" class="text-right cart th">
-<%--                                    class="cart__qty text-center"--%>
-<%--    class="qtyField"--%>
                                     <div class="qtyField">
                                         <div class="divBlock">
                                             <a class="qtyBtn minus" onclick="decreaseQuantity(event)" id="qtyPlus_${cartItem.product.id}">
-<%--                                                href="javascript:void(0);"--%>
                                                 <i class="icon icon-minus"></i>
                                             </a>
                                             <input class="cart__qty-input qty" type="text"  name="updates[]" id="qty_${cartItem.product.id}"
                                                    value="${cartItem.quantity}" pattern="[0-9]*" onkeydown="changeQuantityHandler(event)" onblur="changeQuantityTo(event)" disabled>
-<%--                                            TODO we may add this functionality--%>
+<%--                                            TODO we may add the functionality to enter a number--%>
                                             <a class="qtyBtn plus" id="qtyMinus_${cartItem.product.id}" onclick="increaseQuantity(event)">
                                                 <i class="icon icon-plus"></i>
                                             </a>
                                         </div>
-
-
-
-<%--                                </td>--%>
-<%--&lt;%&ndash;    small--hide cart-price&ndash;%&gt;--%>
-<%--                                <td class="text-right cart th">--%>
-<%--    class="cart__qty"--%>
-
-<%--                                </td>--%>
-<%--                                <td class="text-center small--hide">--%>
-<%--    class="cart__qty"--%>
                                         <div class="inlineDivs marginsoforDivs">EGP
                                             <div class="">${cartItem.quantity*cartItem.product.price}</div>
                                             <a class="btn btn--secondary cart__remove" title="Remove Item" id="remove_${cartItem.product.id}" onclick="deleteCartItem(event)">
@@ -116,7 +93,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="errorMessage" id = "error_${cartItem.product.id}">dfghfgdhfdgh</div>
+                                    <div class="errorMessage" id = "error_${cartItem.product.id}"></div>
                                 </td>
                             </tr>
                         </c:forEach>

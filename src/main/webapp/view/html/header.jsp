@@ -154,71 +154,56 @@
                     </a>
                     <!--Minicart Popup-->
                     <div id="header-cart" class="block block-cart">
-                        <ul class="mini-products-list">
-                            <ce:forEach items="${cartList}" var="cartItem">
-                                <li class="item">
-                                    <a class="product-image" href="#">
-                                        <ce:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
-                                            <ce:if test="${status.index == 0}">
-                                                <img src="${images.image}" alt="" title="" />
-                                            </ce:if>
-                                        </ce:forEach>
-                                    </a>
-                                    <div class="product-details">
-                                        <a href="" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-<%--                                        <a href="" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>--%>
-                                        <a class="pName" href="cart.html">${cartItem.product.name}</a>
-                                        <div class="variant-cart">${cartItem.product.color} / ${cartItem.product.size}</div>
-                                        <div class="wrapQtyBtn">
-                                            <div class="qtyField">
-                                                <span class="label">Qty:</span>
-                                                <a class="qtyBtn minus" href="javascript:void(0);" id="qtyPlus_${cartItem.product.id}"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity3" name="quantity" value="${cartItem.quantity}" class="product-form__input qty" id="qty_${cartItem.product.id}" disabled>
-                                                <a class="qtyBtn plus" href="javascript:void(0);" id="qtyMinus_${cartItem.product.id}"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                        <ce:choose>
+                            <ce:when test="${fn:length(cartList)>0}">
+                                <ul class="mini-products-list">
+                                    <ce:forEach items="${cartList}" var="cartItem">
+                                        <li class="item" id="head_${cartItem.id}">
+                                            <a class="product-image" href="productDetails?productId=${cartItem.product.id}">
+                                                <ce:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
+                                                    <ce:if test="${status.index == 0}">
+                                                        <img src="${images.image}" alt="" title="" />
+                                                    </ce:if>
+                                                </ce:forEach>
+                                            </a>
+                                            <div class="product-details">
+                                                <a onclick="deleteCartItem(event)" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+        <%--                                        <a href="" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>--%>
+                                                <a class="pName" href="cart.html">${cartItem.product.name}</a>
+                                                <div class="variant-cart">${cartItem.product.color} / ${cartItem.product.size}</div>
+                                                <div class="wrapQtyBtn">
+                                                    <div class="qtyField">
+                                                        <span class="label">Qty:</span>
+<%--                                                        href="javascript:void(0);"--%>
+                                                        <a class="qtyBtn minus" onclick="decreaseQuantity(event)" id="head_qtyPlus_${cartItem.product.id}"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                        <input type="text" id="Quantity3" name="quantity" value="${cartItem.quantity}" class="product-form__input qty" id="head_qty_${cartItem.product.id}" disabled>
+                                                        <a class="qtyBtn plus" onclick="increaseQuantity(event)" id="head_qtyMinus_${cartItem.product.id}"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="priceRow">
+                                                    <div class="product-price">EGP
+                                                        <span class="money" id="totalAmount_${cartItem.product.id}">${cartItem.quantity*cartItem.product.price}</span>
+                                                        <span class="errorMessage" id="head_error_"></span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="priceRow">
-                                            <div class="product-price">EGP
-                                                <span class="money" id="totalAmount_${cartItem.product.id}">${cartItem.quantity*cartItem.product.price}</span>
-                                            </div>
-                                        </div>
+                                        </li>
+                                    </ce:forEach>
+                                </ul>
+                                <div class="total">
+                                    <div class="total-in">
+                                        <span class="label">Cart Subtotal:</span><span class="product-price">EGP <span class="money">${total}</span></span>
                                     </div>
-                                </li>
-                            </ce:forEach>
-                            <li class="item">
-                                <a class="product-image" href="#">
-                                    <img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
-                                </a>
-                                <div class="product-details">
-                                    <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-                                    <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-                                    <a class="pName" href="cart.html">Elastic Waist Dress</a>
-                                    <div class="variant-cart">Gray / XXL</div>
-                                    <div class="wrapQtyBtn">
-                                        <div class="qtyField">
-                                            <span class="label">Qty:</span>
-                                            <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                            <input type="text" id="Quantity2" name="quantity" value="1" class="product-form__input qty">
-                                            <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="priceRow">
-                                        <div class="product-price">
-                                            <span class="money">$99.00</span>
-                                        </div>
+                                    <div class="buttonSet text-center">
+                                        <a href="cart" class="btn btn-secondary btn--small">View Cart</a>
+                                        <a href="Checkout" class="btn btn-secondary btn--small">Checkout</a>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
-                        <div class="total">
-                            <div class="total-in">
-                                <span class="label">Cart Subtotal:</span><span class="product-price">EGP <span class="money">${total}</span></span>
-                            </div>
-                            <div class="buttonSet text-center">
-                                <a href="cart" class="btn btn-secondary btn--small">View Cart</a>
-                                <a href="Checkout" class="btn btn-secondary btn--small">Checkout</a>
-                            </div>
-                        </div>
+                            </ce:when>
+                            <ce:otherwise>
+                                <%@ include file ="emptyCart.html" %>
+                            </ce:otherwise>
+                        </ce:choose>
                     </div>
                     <!--EndMinicart Popup-->
                 </div>

@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="view/style/style.css">
 <link rel="stylesheet" href="view/style/responsive.css">
 
-<link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">
+<%--<link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">--%>
 
 <!-- Style-CSS -->
 <!--<link href="view/style/font-awesome.min.css" rel="stylesheet">-->

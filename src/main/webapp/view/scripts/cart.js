@@ -36,22 +36,47 @@ function increaseQuantity(event){
 
     let id = event.currentTarget.id;
     let productId = id.split("_")[1];
-    let fieldId = "qty_"+productId;
-    let newQuantity = parseInt(document.getElementById(fieldId).value) + 1;
 
-    document.getElementById("qtyMinus_"+productId).disabled = false;
+    let qtyField = document.getElementById("qty_"+productId);
+    if(qtyField == undefined) qtyField = document.getElementById("head_qty_"+productId);
+
+    let newQuantity = parseInt(qtyField.value) + 1;
+
+    let minusBtn = document.getElementById("qtyMinus_"+productId)
+    if(minusBtn != undefined)minusBtn.disabled = false;
+    let minusBtnHead = document.getElementById("head_qtyMinus_"+productId)
+    if(minusBtnHead != undefined)minusBtnHead.disabled = false;
+
     changeQuantityTo(productId, newQuantity)
 }
 function decreaseQuantity(event){
 
     let id = event.currentTarget.id;
-
     let productId = id.split("_")[1];
-    let fieldId = "qty_"+productId;
+
+    let qtyField = document.getElementById("qty_"+productId);
+    if(qtyField == undefined) qtyField = document.getElementById("head_qty_"+productId);
+
     let newQuantity = parseInt(document.getElementById(fieldId).value) - 1;
-    document.getElementById("qtyPlus_"+productId).disabled = false;
+
+    let plusBtn = document.getElementById("qtyPlus_"+productId)
+    if(plusBtn != undefined)plusBtn.disabled = false;
+    let plusBtnHead = document.getElementById("head_qtyPlus_"+productId)
+    if(plusBtnHead != undefined)plusBtnHead.disabled = false;
+
+    let errorMessage = document.getElementById("error_" + productId);
+    if(errorMessage!= undefined)errorMessage.innerHTML = "";
+    let errorMessageHead = document.getElementById("head_error_" + productId);
+    if(errorMessageHead!= undefined)errorMessageHead.innerHTML = "";
+
+
     console.log(newQuantity);
-    if(newQuantity<2) document.getElementById("qtyMinus_"+productId).disabled = true;
+    if(newQuantity<2) {
+        let minusBtn = document.getElementById("qtyMinus_"+productId)
+        if(minusBtn != undefined)minusBtn.disabled = true;
+        let minusBtnHead = document.getElementById("head_qtyMinus_"+productId)
+        if(minusBtnHead != undefined)minusBtnHead.disabled = true;
+    }
     if(newQuantity>0) changeQuantityTo(productId, newQuantity)
 }
 function changeQuantityTo(productId, newQuantity){
@@ -79,9 +104,21 @@ function handleChangeQuantity(newQuantity, productId, data){
     console.log("qty_"+productId);
     if(data.success == true) {
         if (data.message != undefined) {
-            document.getElementById("qty_" + productId).value = parseInt(data.message.split(":")[1]);
-            document.getElementById("qtyPlus_" + productId).disabled = true;
-            document.getElementById("error_" + productId).innerHTML = data.message;
+            let qtyField = document.getElementById("qty_" + productId)
+            if(qtyField != undefined) qtyField.value = parseInt(data.message.split(":")[1]);
+            let qtyFieldHead = document.getElementById("head_qty_" + productId)
+            if(qtyFieldHead != undefined) qtyFieldHead.value = parseInt(data.message.split(":")[1]);
+
+            let plusBtn = document.getElementById("qtyPlus_"+productId)
+            if(plusBtn != undefined)plusBtn.disabled = true;
+            let plusBtnHead = document.getElementById("head_qtyPlus_"+productId)
+            if(plusBtnHead != undefined)plusBtnHead.disabled = true;
+
+            let errorMessage = document.getElementById("error_" + productId);
+            if(errorMessage!= undefined)errorMessage.innerHTML = data.message;
+            let errorMessageHead = document.getElementById("head_error_" + productId);
+            if(errorMessageHead!= undefined)errorMessageHead.innerHTML = data.message;
+
             console.log(data.message);
         } else {
             document.getElementById("qty_" + productId).value = newQuantity;
@@ -111,7 +148,10 @@ function deleteCartItem(event){
 }
 function handleDeleteCartItem(productId, data) {
     if (data.success == true && data.message == undefined) {
-        document.getElementById(productId).remove();
+        let elem1 = document.getElementById(productId);
+        if(elem1 != undefined)elem1.remove();
+        let elem2 = document.getElementById("head_"+productId);
+        if(elem2 != undefined)elem2.remove();
     }
 }
 
