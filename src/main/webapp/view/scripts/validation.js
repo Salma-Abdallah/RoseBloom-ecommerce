@@ -2,7 +2,7 @@ var submit = 0;
 var login = 0;
 
 function SignUpValidation(){
-    if(submit==8){
+    if(submit>=6){
         $("#form").submit();
     }
     else{
@@ -48,11 +48,11 @@ function confirmPasswordValidate(){
     if(password!=confirmPassword){
         document.getElementById("msgConfirmPass").innerHTML="InCorrect Password";
         document.getElementById("msgConfirmPass").style.color="red";
-        submit++;
+        
     }
     else{
         document.getElementById("msgConfirmPass").innerHTML="";
-        
+        submit++;
     }
         
 }
@@ -111,10 +111,11 @@ function birthdateValidation(){
     if(birthday==null){
         document.getElementById("msgBirthday").innerHTML="Please enter your birthdate";
         document.getElementById("msgBirthday").style.color="red";
-        submit++;
+        
     }
     else {
         document.getElementById("msgBirthday").innerHTML="";
+        submit++;
     }
 
 }
@@ -125,10 +126,11 @@ function creditLimitValidation(){
     if(creditLimit==null){
         document.getElementById("msgCredit").innerHTML="Please enter your birthdate";
         document.getElementById("msgCredit").style.color="red";
-        submit++;
+        
     }
     else {
         document.getElementById("msgCredit").innerHTML="";
+        submit++;
     }
 }
 
@@ -138,10 +140,11 @@ function addressValidation(){
     if(creditLimit==null){
         document.getElementById("msgAddress").innerHTML="Please enter your birthdate";
         document.getElementById("msgAddress").style.color="red";
-        submit++;
+        
     }
     else {
         document.getElementById("msgAddress").innerHTML="";
+        submit++;
     }
 }
 
