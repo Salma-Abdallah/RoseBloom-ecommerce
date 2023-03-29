@@ -22,19 +22,28 @@
             <link rel="stylesheet" href="view/style/style.css">
             <link rel="stylesheet" href="view/style/responsive.css">
 
-<%--            <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">--%>
-            <style>
-                .flex-i img{height: 100%;width:100%;object-fit: cover;}
-            </style>
-            <script src="/roseBloom/view/scripts/cart.js"></script>
+            <%-- <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">--%>
+                <style>
+                    .flex-i img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+
+                    .price-filter input[type="text"] {
+
+                        width: 160px;
+                    }
+                </style>
+                <script src="/roseBloom/view/scripts/cart.js"></script>
         </head>
 
         <body class="template-collection belle">
-        <main>
-            <%@ include file="header.jsp" %>
-                <div class="pageWrapper" style="margin-top: 130px;">
+            <main>
+                <%@ include file="header.jsp" %>
+                    <div class="pageWrapper" style="margin-top: 130px;">
 
-                    <!--
+                        <!--
 
         <div id="page-content">
 
@@ -49,86 +58,111 @@
             </div>
             -->
 
-                    <div class="container">
-                        <div class="row">
-                            <!--Sidebar-->
-                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar" style="margin-top: 50px;">
-                                <div class="closeFilter d-block d-md-none d-lg-none"><i
-                                        class="icon icon anm anm-times-l"></i>
-                                </div>
-                                <div class="sidebar_tags">
-                                    <!--Categories-->
-                                    <div class="sidebar_widget categories filter-widget">
-                                        <div class="widget-title">
-                                            <h2>Categories</h2>
-                                        </div>
-                                        <div class="widget-content">
-                                            <ul class="sidebar_categories">
-                                                <li class="level1 sub-level"><a href="#" class="site-nav"><a href="#">Plants</a></a>                                                    <ul class="sublinks">
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Outdoors" class="site-nav">Outdoors</a>
-                                                        </li>
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Indoors" class="site-nav">Indoors</a>
-                                                        </li>
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Trees" class="site-nav">Trees</a></li>
-                                                        <!-- <li class="level2"><a href="ProductServlet?categoryName=Cacti" class="site-nav">Cacti &
+                        <div class="container">
+                            <div class="row">
+                                <!--Sidebar-->
+                                <div class="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar"
+                                    style="margin-top: 50px;">
+                                    <div class="closeFilter d-block d-md-none d-lg-none"><i
+                                            class="icon icon anm anm-times-l"></i>
+                                    </div>
+                                    <div class="sidebar_tags">
+                                        <!--Categories-->
+                                        <div class="sidebar_widget categories filter-widget">
+                                            <div class="widget-title">
+                                                <h2>Categories</h2>
+                                            </div>
+                                            <div class="widget-content">
+                                                <ul class="sidebar_categories">
+                                                    <li class="level1 sub-level"><a href="#" class="site-nav"><a
+                                                                href="#">Plants</a></a>
+                                                        <ul class="sublinks">
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Outdoors"
+                                                                    class="site-nav">Outdoors</a>
+                                                            </li>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Indoors"
+                                                                    class="site-nav">Indoors</a>
+                                                            </li>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Trees"
+                                                                    class="site-nav">Trees</a></li>
+                                                            <!-- <li class="level2"><a href="ProductServlet?categoryName=Cacti" class="site-nav">Cacti &
                                                                 succulents</a>
                                                         </li> -->
-                                                    </ul>
-                                                </li>
-              
-                                                <li class="level1 sub-level"><a href="#" class="site-nav">Pots</a>
-                                                    <ul class="sublinks">
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Clay Pots" class="site-nav">Clay Pots</a></li>
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Plastic Pots" class="site-nav">Plastic Pots</a>
-                                                            <li class="level2"><a href="ProductServlet?categoryName=Hanging Pots" class="site-nav">Hanging Pots</a>
-                                                                <li class="level2"><a href="ProductServlet?categoryName=Table-top Pots" class="site-nav">Table-top Pots</a>
-                                                        </li>
-                                                    
-                                                    </ul>
-                                                </li>
-                                                <li class="level1 sub-level"><a href="#" class="site-nav">Garden Supplies</a>
-                                                    <ul class="sublinks">
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Gardening Tools" class="site-nav">Gardening Tools</a></li>
-                                                        <li class="level2"><a href="ProductServlet?categoryName=Soil" class="site-nav">Soil</a>
-                                                            <li class="level2"><a href="ProductServlet?categoryName=Fertilizer" class="site-nav">Fertilizer</a>
-                                                              
-                                                        </li>
-                                                    
-                                                    </ul>
-                                                </li>
-                                               
-                                                <li class="lvl-1"><a href="ProductServlet?categoryName=Gifts" class="site-nav">Gifts</a></li>
+                                                        </ul>
+                                                    </li>
 
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!--Categories-->
-                                    <!--Price Filter-->
-                                    <div class="sidebar_widget filterBox filter-widget">
-                                        <div class="widget-title">
-                                            <h2>Price</h2>
-                                        </div>
-                                        <form action="#" method="post" class="price-filter">
-                                            <div id="slider-range"
-                                                class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                                <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                                                <span class="ui-slider-handle ui-state-default ui-corner-all"
-                                                    tabindex="0"></span>
-                                                <span class="ui-slider-handle ui-state-default ui-corner-all"
-                                                    tabindex="0"></span>
+                                                    <li class="level1 sub-level"><a href="#" class="site-nav">Pots</a>
+                                                        <ul class="sublinks">
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Clay Pots"
+                                                                    class="site-nav">Clay Pots</a></li>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Plastic Pots"
+                                                                    class="site-nav">Plastic Pots</a>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Hanging Pots"
+                                                                    class="site-nav">Hanging Pots</a>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Table-top Pots"
+                                                                    class="site-nav">Table-top Pots</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+                                                    <li class="level1 sub-level"><a href="#" class="site-nav">Garden
+                                                            Supplies</a>
+                                                        <ul class="sublinks">
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Gardening Tools"
+                                                                    class="site-nav">Gardening Tools</a></li>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Soil"
+                                                                    class="site-nav">Soil</a>
+                                                            <li class="level2"><a
+                                                                    href="ProductServlet?categoryName=Fertilizer"
+                                                                    class="site-nav">Fertilizer</a>
+
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="lvl-1"><a href="ProductServlet?categoryName=Gifts"
+                                                            class="site-nav">Gifts</a></li>
+
+                                                </ul>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <p class="no-margin"><input id="amount" type="text"></p>
-                                                </div>
-                                                <div class="col-6 text-right margin-25px-top">
-                                                    <button class="btn btn-secondary btn--small">filter</button>
-                                                </div>
+                                        </div>
+                                        <!--Categories-->
+                                        <!--Price Filter-->
+                                        <div class="sidebar_widget filterBox filter-widget">
+                                            <div class="widget-title">
+                                                <h2>Price</h2>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <!--End Price Filter-->
-                                    <!-- Size Swatches
+                                            <form action="#" method="post" class="price-filter">
+                                                <div id="slider-range"
+                                                    class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                                    <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                                                    <span class="ui-slider-handle ui-state-default ui-corner-all"
+                                                        tabindex="0"></span>
+                                                    <span class="ui-slider-handle ui-state-default ui-corner-all"
+                                                        tabindex="0"></span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p class="no-margin"><input id="amount" type="text"></p>
+                                                    </div>
+                                                    <div class="col-6 text-right margin-25px-top">
+                                                        <button class="btn btn-secondary btn--small">filter</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!--End Price Filter-->
+                                        <!-- Size Swatches
                                 <div class="sidebar_widget filterBox filter-widget size-swacthes">
                                     <div class="widget-title">
                                         <h2>Size</h2>
@@ -149,7 +183,7 @@
                                 </div>
                                 End Size Swatches -->
 
-                                    <!-- Color Swatches
+                                        <!-- Color Swatches
                                 <div class="sidebar_widget filterBox filter-widget">
                                     <div class="widget-title">
                                         <h2>Color</h2>
@@ -174,7 +208,7 @@
                                     </div>
                                 </div>
                                 End Color Swatches-->
-                                    <!--Brand
+                                        <!--Brand
                                 <div class="sidebar_widget filterBox filter-widget">
                                     <div class="widget-title">
                                         <h2>Brands</h2>
@@ -203,7 +237,7 @@
                                     </ul>
                                 </div>
                                 End Brand-->
-                                    <!--Popular Products
+                                        <!--Popular Products
                                 <div class="sidebar_widget">
                                     <div class="widget-title">
                                         <h2>Popular Products</h2>
@@ -282,24 +316,26 @@
 
 
 
-                                </div>
-                            </div>
-                            <!--End Sidebar-->
-                            <!--Main Content-->
-                            <jsp:useBean id="category" class="com.rosebloom.dtos.CategoryDto" scope="session" />
-                            <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col shop-grid-5">
-                                <div class="productList">
-                                    <div class="category-description">
-                                        <h3 id="categoryName">
-                                            ${categoryName}
-                                        </h3>
-                                        <label class="errorMessage" id="errorMessageFieldId"></label><label class="successMessageField" id="successMessageFieldId"></label>
                                     </div>
-                                    <hr>
-                                    <!--Toolbar-->
-                                    <button type="button" class="btn btn-filter d-block d-md-none d-lg-none"> Product
-                                        Filters</button>
-                                    <!-- <div class="toolbar">
+                                </div>
+                                <!--End Sidebar-->
+                                <!--Main Content-->
+                                <jsp:useBean id="category" class="com.rosebloom.dtos.CategoryDto" scope="session" />
+                                <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col shop-grid-5">
+                                    <div class="productList">
+                                        <div class="category-description">
+                                            <h3 id="categoryName">
+                                                ${categoryName}
+                                            </h3>
+                                            <label class="errorMessage" id="errorMessageFieldId"></label><label
+                                                class="successMessageField" id="successMessageFieldId"></label>
+                                        </div>
+                                        <hr>
+                                        <!--Toolbar-->
+                                        <button type="button" class="btn btn-filter d-block d-md-none d-lg-none">
+                                            Product
+                                            Filters</button>
+                                        <!-- <div class="toolbar">
                                         <div class="filters-toolbar-wrapper">
                                             <div class="row">
                                                 <div
@@ -336,102 +372,107 @@
                                             </div>
                                         </div>
                                     </div> -->
-                                    <!--End Toolbar-->
-                                    <div class="grid-products grid--view-items">
-                                        <div class="row" id="grid--view-items">
-                                            <f:forEach items="${products}" var="current">
-                                                <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
+                                        <!--End Toolbar-->
+                                        <div class="grid-products grid--view-items">
+                                            <div class="row" id="grid--view-items">
+                                                <f:forEach items="${products}" var="current">
+                                                    <div class="col-6 col-sm-6 col-md-4 col-lg-2 item">
 
-                                                    <div class="product-image" >
+                                                        <div class="product-image">
 
-                                                        <a href="productDetails?productId=${current.id}">
+                                                            <a href="productDetails?productId=${current.id}">
 
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="${current.productImages[0].image}"
-                                                                src="${current.productImages[0].image}" alt="image"
-                                                                title="product" style="min-height: 200px; max-height: 200px;" >
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="${current.productImages[0].image}"
+                                                                    src="${current.productImages[0].image}" alt="image"
+                                                                    title="product"
+                                                                    style="min-height: 200px; max-height: 200px;">
 
                                                                 <img class="hover blur-up lazyload"
-                                                                data-src="${current.productImages[1].image}"
-                                                                src="${current.productImages[1].image}" alt="image"
-                                                                title="product" style="min-height: 200px; max-height: 200px;">
-                                                        </a>
-                                                        <!-- end product image -->
-                                                        <!-- Start product button -->
-                                                        <div class="variants add">
-                                                            <button class="btn btn-addto-cart" type="button" id="addToCart_${current.id}" onclick="addToCart(event,'1')">ADD TO CART</button>
-                                                        </div>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
+                                                                    data-src="${current.productImages[1].image}"
+                                                                    src="${current.productImages[1].image}" alt="image"
+                                                                    title="product"
+                                                                    style="min-height: 200px; max-height: 200px;">
                                                             </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#"
-                                                                    title="Add to Wishlist">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
+                                                            <!-- end product image -->
+                                                            <!-- Start product button -->
+                                                            <div class="variants add">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    id="addToCart_${current.id}"
+                                                                    onclick="addToCart(event,'1')">ADD TO CART</button>
                                                             </div>
+                                                            <div class="button-set">
+                                                                <a href="javascript:void(0)" title="Quick View"
+                                                                    class="quick-view-popup quick-view"
+                                                                    data-toggle="modal"
+                                                                    data-target="#content_quickview">
+                                                                    <i class="icon anm anm-search-plus-r"></i>
+                                                                </a>
+                                                                <div class="wishlist-btn">
+                                                                    <a class="wishlist add-to-wishlist" href="#"
+                                                                        title="Add to Wishlist">
+                                                                        <i class="icon anm anm-heart-l"></i>
+                                                                    </a>
+                                                                </div>
 
+                                                            </div>
+                                                            <!-- end product button -->
                                                         </div>
-                                                        <!-- end product button -->
+                                                        <!-- end product image -->
+
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+
+                                                            <div class="product-name">
+                                                                <a href="#">${current.name} </a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+
+                                                                <!-- // '<span class="old-price">EGP '+dataa.productsJson[i].oldPrice+'</span>' + -->
+                                                                <span class="price">EGP ${current.price}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+                                                            <div class="product-review">
+                                                                <i class="font-13 fa fa-star"></i>
+                                                                <i class="font-13 fa fa-star"></i>
+                                                                <i class="font-13 fa fa-star"></i>
+                                                                <i class="font-13 fa fa-star-o"></i>
+                                                                <i class="font-13 fa fa-star-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End product details -->
                                                     </div>
-                                                    <!-- end product image -->
+                                                </f:forEach>
 
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-
-                                                        <div class="product-name">
-                                                            <a href="#">${current.name} </a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-
-                                                            <!-- // '<span class="old-price">EGP '+dataa.productsJson[i].oldPrice+'</span>' + -->
-                                                            <span class="price">EGP ${current.price}</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                            </f:forEach>
-
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+                        <!--Footer-->
+                        <%@ include file="footer.html" %>
+                            <!--End Footer-->
+                            <!--End Quick View popup-->
 
+                            <!-- Including Jquery -->
+                            <script src="view/scripts/vendor/jquery-3.3.1.min.js"></script>
+                            <script src="view/scripts/vendor/jquery.cookie.js"></script>
+                            <script src="view/scripts/vendor/modernizr-3.6.0.min.js"></script>
+                            <script src="view/scripts/vendor/wow.min.js"></script>
+                            <!-- Including Javascript -->
+                            <script src="view/scripts/bootstrap.min.js"></script>
+                            <script src="view/scripts/plugins.js"></script>
+                            <script src="view/scripts/popper.min.js"></script>
+                            <script src="view/scripts/lazysizes.js"></script>
+                            <script src="view/scripts/main.js"></script>
+                            <script src="view/scripts/product.js"></script>
                     </div>
-                    <!--Footer-->
-                    <%@ include file="footer.html" %>
-                        <!--End Footer-->
-                        <!--End Quick View popup-->
-
-                        <!-- Including Jquery -->
-                        <script src="view/scripts/vendor/jquery-3.3.1.min.js"></script>
-                        <script src="view/scripts/vendor/jquery.cookie.js"></script>
-                        <script src="view/scripts/vendor/modernizr-3.6.0.min.js"></script>
-                        <script src="view/scripts/vendor/wow.min.js"></script>
-                        <!-- Including Javascript -->
-                        <script src="view/scripts/bootstrap.min.js"></script>
-                        <script src="view/scripts/plugins.js"></script>
-                        <script src="view/scripts/popper.min.js"></script>
-                        <script src="view/scripts/lazysizes.js"></script>
-                        <script src="view/scripts/main.js"></script>
-                        <script src="view/scripts/product.js"></script>
-                </div>
-        </main>
+            </main>
         </body>
 
         <!-- belle/shop-grid-5.html   11 Nov 2019 12:39:07 GMT -->
