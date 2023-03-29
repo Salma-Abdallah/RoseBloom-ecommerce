@@ -24,7 +24,7 @@ public class ProductRepository {
 
         Category c = new Category();
         c.setCategoryId(id);
-        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories and p.isDeleted=0")
+        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories and p.isDeleted=0 and p.quantity>0")
                 .setParameter(1, c);
 
         List<Product> result = (List<Product>) query.getResultList();
@@ -53,11 +53,11 @@ public class ProductRepository {
 
         entityManager.getTransaction().begin();
         // product1.setCategory(product.getCategory());
-        product1.setName(product.getName());
+        //product1.setName(product.getName());
         product1.setPrice(product.getPrice());
-        product1.setOldPrice(product.getOldPrice());
+        //product1.setOldPrice(product.getOldPrice());
         product1.setQuantity(product.getQuantity());
-        product1.setDescription(product.getDescription());
+        //product1.setDescription(product.getDescription());
         // product1.setProductImages(product.getProductImages());
         // for (ProductImage img : product.getProductImages()) {
         // System.out.println(img.getImage());
@@ -67,10 +67,10 @@ public class ProductRepository {
         // System.out.println(img.getImage());
 
         // }
-        product1.setCategories(product.getCategories());
-        product1.setCreatedAt(product.getCreatedAt());
-        product1.setSize(product.getSize());
-        product1.setColor(product.getColor());
+        //product1.setCategories(product.getCategories());
+        //product1.setCreatedAt(product.getCreatedAt());
+        //product1.setSize(product.getSize());
+        //product1.setColor(product.getColor());
         // product1.setPlantdescription(product.getPlantdescription());
         entityManager.getTransaction().commit();
         for (ProductImage img : product1.getProductImages()) {
