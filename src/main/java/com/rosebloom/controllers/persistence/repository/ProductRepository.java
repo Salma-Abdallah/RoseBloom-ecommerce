@@ -41,7 +41,7 @@ public class ProductRepository {
     }
 
     public List<Product> getAllProduct() {
-        Query query = entityManager.createQuery("from Product p where p.isDeleted=0 ");
+        Query query = entityManager.createQuery("from Product p where p.isDeleted=0  order by p.createdAt desc");
 
         List<Product> result = (List<Product>) query.getResultList();
         return result;
@@ -124,7 +124,7 @@ public class ProductRepository {
         System.out.println(product.getId());
        
         //entityManager.persist(product);
-        ProductImage productImage = new ProductImage();
+       // ProductImage productImage = new ProductImage();
        
         product.getPlantdescription().setProductId(product.getId());
         // Plantdescription plantdescription =new Plantdescription();
@@ -132,22 +132,37 @@ public class ProductRepository {
         //entityManager.persist(plantdescription);
         //System.out.println(product.getId());
         entityManager.getTransaction().commit();
-        entityManager.getTransaction().begin();
+        
         List<ProductImage> productImages = new ArrayList<>(product.getProductImages());
         for (ProductImage productImage2 : productImages) {
             System.out.println(productImage2);
         }
         for (int i = 0; i < product.getProductImages().size(); i++) {
-            productImage = productImages.get(i);
+            ProductImage productImage  = new ProductImage();
+         //   productImages.get(i);
+            productImage.setImage(productImages.get(i).getImage());
+            //productImage.setProduct(product);
             ProductImageId productImageId = new ProductImageId();
             productImageId.setProductId(product.getId());
-            productImage.setId(productImageId);
+           productImage.setId(productImageId);
+           // productImage.setProduct(product);
+            entityManager.getTransaction().begin();
             entityManager.persist(productImage);
+            entityManager.getTransaction().commit();
+           
+            entityManager.clear();
             
         }
+        entityManager.getTransaction().begin();
         Plantdescription plantdescription2=new Plantdescription();
         //plantdescription2.setProductId(product.getId());
         plantdescription2.setProduct(product);
+        plantdescription2.setGrowthCycle(product.getPlantdescription().getGrowthCycle());
+        plantdescription2.setSoil(product.getPlantdescription().getSoil());
+        plantdescription2.setGrowthRate(product.getPlantdescription().getGrowthRate());
+        plantdescription2.setSun(product.getPlantdescription().getSun());
+        plantdescription2.setWater(product.getPlantdescription().getWater());
+        plantdescription2.setMaintenance(product.getPlantdescription().getMaintenance());
         System.out.println(plantdescription2.getProductId()); 
         System.out.println(plantdescription2.getProduct().getId()); 
         //entityManager.getTransaction().commit();

@@ -51,7 +51,11 @@ public class EditProductServlet extends HttpServlet {
         System.out.println(contextPath);
         response.setContentType("text/html;charset=UTF-8");
         ProductServices productServices = new ProductServices();
-        productServices.getAddProductRequest(request, contextPath,false);
+        productServices.getAddProductRequest(request, contextPath, false);
+        List<ProductDto> products = productServices.getAllProducts();
+        request.setAttribute("products", products);
+
+        request.getRequestDispatcher("adminView/html/viewProducts.jsp").forward(request, response);
 
     }
 

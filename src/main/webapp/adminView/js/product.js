@@ -49,7 +49,7 @@ function update() {
 }
 // input.addEventListener('fileInput2', updateImageDisplay);
 // input.addEventListener('fileInput3', updateImageDisplay);
-function SomeDeleteRowFunction(id,event) {
+function SomeDeleteRowFunction(id, event) {
     $.ajax({
         type: "Get",
         url: "/roseBloom/deleteProduct?ProductId=" + id,
@@ -68,39 +68,117 @@ function SomeDeleteRowFunction(id,event) {
 }
 
 function validateForm() {
-    var name=document.getElementById("name").value;
-    if(name=="")
-        return false;
+    console.log("ss");
+    var name = document.getElementById("nameInput").value;
+    var desc = document.getElementById("description").value;
+    var price = document.getElementById("price").value;
+    var categoryOption = document.getElementById("categoryOption").value;
+    var stock = document.getElementById("stock").value;
+    var img1=document.getElementById("img1").getAttribute('src');
+    var img2=document.getElementById("img2").getAttribute('src');
+    var img3=document.getElementById("img3").getAttribute('src');
+  //  console.log(img1.getAttribute('src'));
+    if (name == "" || desc==""|| price==""||categoryOption == "Select Category" || stock=="") {
+       // return false;
+    }
+   
+   else if(img1=="" && img2=="" && img3=="") {
+    //return false;
+   }
+   else {
+    $("#addForm").submit();
+   }
 }
 const form = document.querySelector('#addForm');
 
+var namee = document.getElementById("name");
+form.addEventListener('input', function (e) {
+    console.log(e.target.value);
+    if (e.target.id == "nameInput") {
+        if (e.target.value == "") {
+            document.getElementById('nameReq').style.display = "block";
+        }
 
-form.addEventListener('submit', function (e) {
-    var name=document.getElementById("name").value;
-    if(name=="")
-    // prevent the form from submitting
-        e.preventDefault();
+        else {
+            document.getElementById('nameReq').style.display = "none";
+        }
+    }
+    if (e.target.id == "categoryOption") {
+        if (e.target.options[e.target.selectedIndex].text == "Select Category") {
+            document.getElementById('catReq').style.display = "block";
+        }
 
+        else {
+            document.getElementById('catReq').style.display = "none";
+        }
+    }
+    if (e.target.id == "price") {
+        if (e.target.value == "") {
+            document.getElementById('priceReq').style.display = "block";
+        }
+
+        else {
+            document.getElementById('priceReq').style.display = "none";
+        }
+    }
+    if (e.target.id == "stock") {
+        if (e.target.value == "") {
+            document.getElementById('stockReq').style.display = "block";
+        }
+
+        else {
+            document.getElementById('stockReq').style.display = "none";
+        }
+    }
+    if (e.target.id == "description") {
+        if (e.target.value == "") {
+            document.getElementById('descReq').style.display = "block";
+        }
+
+        else {
+            document.getElementById('descReq').style.display = "none";
+        }
+    }
 });
-function checkIsPlant() {
+// const form2 = document.querySelector('#addForm');
+// form2.addEventListener('submit', function (e) {
+//     console.log("ss");
+//     var name = document.getElementById("name").value;
+//     var desc = document.getElementById("description").value;
+//     var price = document.getElementById("price").value;
+//     var categoryOption = document.getElementById("categoryOption").value;
+//     var stock = document.getElementById("stock").value;
+//     if (name == "" || desc==""|| price==""||categoryOption.options[categoryOption.selectedIndex].text == "Select Category" || stock=="") {
+//         e.preventDefault();
+//     }
+//     var img1=document.getElementById("img1").src;
+//     var img2=document.getElementById("img2").src;
+//     var img3=document.getElementById("img3").src;
+//     console.log(img1);
+//    if(img1=="" && img2=="" && img3=="") {
+//     e.preventDefault();
+//    }
+
+// });
+function checkIsPlant(e) {
     var e = document.getElementById("categoryOption");
 
     var categoryName = e.options[e.selectedIndex].text;
     $.ajax({
         type: "POST",
         url: "ViewProductsServlet",
-        
-        data:{
-            categoryName : categoryName
+
+        data: {
+            categoryName: categoryName
         },
         success: function (evt) {
-           
-            if(evt="true") {
+            const dataa = JSON.parse(evt);
+            console.log(dataa);
+            if (dataa == true) {
                 console.log(evt);
                 document.getElementById("fieldset").style.display = "block";
             }
-            else
-            {
+            else {
                 document.getElementById("fieldset").style.display = "none";
             }
         }

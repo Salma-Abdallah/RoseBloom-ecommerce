@@ -32,16 +32,12 @@ public class ViewProductsServlet extends HttpServlet {
         String id=request.getParameter("categoryName");
         System.out.println(id);
         PrintWriter out = response.getWriter();
-        CategoryRepository categoryRepository=new CategoryRepository();
-        List<Category> categ=categoryRepository.getParentByCategoryName(id);
-        for (Category category : categ) {
-            // if(category.getCategoryName().equals("Plants")){
-            //     out.println(true);
-            //      break;
-            // }
-            System.out.println(category.getCategoryName());
-        }
         
+       
+        boolean isPlant=productServices.isPlant(id);
+      
+        out.println(isPlant);
+        System.out.println(isPlant);
         //boolean isPlant=productServices.isPlant(id);
 
 

@@ -91,8 +91,7 @@ public class ProductServices {
       productRepository.deleteProduct(id);
    }
 
-
-   public void getAddProductRequest(HttpServletRequest request, String contextPath,boolean isAdd)
+   public void getAddProductRequest(HttpServletRequest request, String contextPath, boolean isAdd)
          throws ServletException, IOException {
 
       List<ProductImageDto> productImageDto = new ArrayList<>();
@@ -101,13 +100,13 @@ public class ProductServices {
          System.out.println(inFileName);
          final Part filePart = request.getPart(inFileName);
          final String fileName = getFileName(filePart);
-         if (fileName.equals("")&&!isAdd) {
+         if (fileName.equals("") && !isAdd) {
             String img = "img" + i;
             if (!request.getParameter(img).equals("")) {
                ProductImageDto productImageDto2 = new ProductImageDto(request.getParameter(img));
                productImageDto.add(productImageDto2);
             }
-         } else  if (!fileName.equals("")) {
+         } else if (!fileName.equals("")) {
             filePart.write(contextPath + fileName);
             ProductImageDto productImageDto2 = new ProductImageDto("view/images/" + fileName);
             productImageDto.add(productImageDto2);
@@ -120,14 +119,15 @@ public class ProductServices {
       System.out.println("**");
       // System.out.println(path + fileName);
       String categoryName = (request.getParameter("categoryOption"));
+      
       ProductDto productDto = new ProductDto();
-      if(!isAdd)
-      productDto.setId(Integer.parseInt(request.getParameter("productId")));
-      productDto.setName(request.getParameter("name"));
+      if (!isAdd)
+         productDto.setId(Integer.parseInt(request.getParameter("productId")));
+      productDto.setName(request.getParameter("nameInput"));
       productDto.setCreatedAt(new Timestamp(System.currentTimeMillis()));
       productDto.setDescription(request.getParameter("description"));
       productDto.setPrice(Integer.parseInt(request.getParameter("price")));
-  //    productDto.setOldPrice(Integer.parseInt(request.getParameter("oldPrice")));
+      // productDto.setOldPrice(Integer.parseInt(request.getParameter("oldPrice")));
       productDto.setColor(request.getParameter("color"));
       productDto.setSize(Integer.parseInt(request.getParameter("size")));
       productDto.setPlantdescription(new PlantdescriptionDto());
@@ -135,13 +135,23 @@ public class ProductServices {
       productDto.setQuantity(Integer.parseInt(request.getParameter("stock")));
       productDto.setCategory(categoryName);
       productDto.setType(categoryName);
-      PlantdescriptionDto plantdescriptionDto=new PlantdescriptionDto();
-      productDto.setPlantdescription(plantdescriptionDto);
+      PlantdescriptionDto plantdescriptionDto=new PlantdescriptionDto(); 
+      
       ProductServices productServices = new ProductServices();
-      if(isAdd) {
+     
+      if (isAdd) {
+         if(isPlant(categoryName)) {
+            String sun=request.getParameter("sunOption");
+            String soil=request.getParameter("Soil");
+            String growthCycle=request.getParameter("growthCycle");
+            String growthRate=request.getParameter("growthRate");
+            String maintenance=request.getParameter("maintenance");
+            String water=request.getParameter("water");
+            plantdescriptionDto = new PlantdescriptionDto(sun,soil,growthCycle,growthRate,maintenance,water);
+         }
+         productDto.setPlantdescription(plantdescriptionDto);
          productServices.addProduct(categoryName, productDto);
-      }
-      else
+      } else
          productServices.updateProduct(categoryName, productDto);
       System.out.println(request.getParameter("img1"));
    }
@@ -164,12 +174,24 @@ public class ProductServices {
       Product product = productMapper.toEntity(productDto);
       product.setCategories(setCategories);
       ProductRepository pRepository = new ProductRepository();
-     
+
       pRepository.addProduct(product);
    }
-   public boolean isPlant(int id){
+
+   public boolean isPlant(int id) {
       ProductRepository pRepository = new ProductRepository();
-     
-     return pRepository.isPlant(id);
+
+      return pRepository.isPlant(id);
+   }
+
+   public boolean isPlant(String CategoryName) {
+      CategoryRepository categoryRepository = new CategoryRepository();
+      List<Category> categories = categoryRepository.getParentByCategoryName(CategoryName);
+      for (Category category : categories) {
+         if (category.getCategoryName().equals("Plants")) {
+            return true;
+         }
+      }
+      return false;
    }
 }
