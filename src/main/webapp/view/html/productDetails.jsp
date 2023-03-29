@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="view/style/product_style.css">
 
     <script src="/roseBloom/view/scripts/cart.js"></script>
+    <style>
+        .table td, .table th {
+        border: 1px solid #dee2e6;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,12 +53,12 @@
                        
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
-                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="prod_detail_img" src="${product.productImages.get(0).image}" /></a></li>
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="prod_detail_img" style="height: 100px;" src="${product.productImages.get(0).image}" /></a></li>
                             <cd:if test="${fn:length(product.productImages) >1}">
-                                <li><a data-target="#pic-2" data-toggle="tab"><img class="prod_detail_img" src="${product.productImages.get(1).image}" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab"><img class="prod_detail_img" style="height: 100px;" src="${product.productImages.get(1).image}" /></a></li>
                             </cd:if>
                             <cd:if test="${fn:length(product.productImages) >2}">
-                                <li><a data-target="#pic-3" data-toggle="tab"><img class="prod_detail_img" src="${product.productImages.get(2).image}" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab"><img class="prod_detail_img" style="height: 100px;" src="${product.productImages.get(2).image}" /></a></li>
                             </cd:if>
 
                         </ul>
@@ -102,7 +107,7 @@
                 </div>
             </div>
 
-            <cd:if test="${not empty product.plantdescription}">
+            <cd:if test="${not empty product.plantdescription.sun}">
                 <div class=" mt-5 text-center">
                     <img src="view/images/leaves1.PNG" />
                     <div>
