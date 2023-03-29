@@ -1161,11 +1161,10 @@
         				</div>
         				<div class="col-lg-6 about-right offset-lg-1">
         					<h4 class="sub-tittle-w3layouts let">About Us</h4>
-        					<h3 class="tittle-w3layouts text-uppercase pr-lg-5 mt-2">Duis aute irure olor in cillum solore</h3>
-        					<p class="mt-4 mb-5">Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem Lorem int ipsum
-        						dolor sit
-        						amet
-        						when an unknown printer took a galley of type.Vivamus id tempor felis.</p>
+        					<h3 class="tittle-w3layouts text-uppercase pr-lg-5 mt-2">RoseBloom</h3>
+        					<p class="mt-4 mb-5">RoseBloom is a plant shop web application 
+                                that brings the best plants and trees for you and outstands by providing plant Carefor all our plants to have a nice 
+                                and beautifull relaxing day.</p>
         					<ul class="author list-unstyled d-flex">
         						<li><img class="img-fluid rounded-circle" src="view/images/te1.jpg" alt="">
         						</li>
