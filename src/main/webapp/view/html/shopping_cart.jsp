@@ -179,24 +179,17 @@
         </div>
     </div>
     <%@ include file ="footer.html" %>
-    <!-- <section class="cart-summary">
-      <h2>Cart Summary</h2>
-      <ul>
-        <li>
-          <span>Subtotal:</span>
-          <span>$44.98</span>
-        </li>
-        <li>
-          <span>Tax:</span>
-          <span>$4.50</span>
-        </li>
-        <li>
-          <span>Total:</span>
-          <span>$49.48</span>
-        </li>
-      </ul>
-      <button>Checkout</button>
-    </section> -->
+    <script src="view/scripts/vendor/jquery-3.3.1.min.js"></script>
+    <script src="view/scripts/vendor/jquery.cookie.js"></script>
+    <script src="view/scripts/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="view/scripts/vendor/wow.min.js"></script>
+    <!-- Including Javascript -->
+    <script src="view/scripts/bootstrap.min.js"></script>
+    <script src="view/scripts/plugins.js"></script>
+    <script src="view/scripts/popper.min.js"></script>
+    <script src="view/scripts/lazysizes.js"></script>
+    <script src="view/scripts/main.js"></script>
+    <script src="view/scripts/product.js"></script>
 </main>
 
 <%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"--%>

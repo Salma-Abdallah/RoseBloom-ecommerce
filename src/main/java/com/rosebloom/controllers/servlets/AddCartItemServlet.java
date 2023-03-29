@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class deleteCartItemServlet extends HttpServlet {
+public class AddCartItemServlet extends HttpServlet {
     ServletConfig myConfig;
 
     @Override
@@ -32,22 +32,25 @@ public class deleteCartItemServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request instanceof HttpServletRequest) {
-            HttpSession session = request.getSession();
-            String isLoggedIn = (String) session.getAttribute("loggedIn");
-            if (isLoggedIn != null && isLoggedIn.equals("true")) {
-                UserDto user = (UserDto) session.getAttribute("User");
 
-                Integer productId = Integer.parseInt(request.getParameter("productId"));
-                CartIdDto cartIdDto = new CartIdDto(productId, user.getId());
+        HttpSession session = request.getSession();
+        String isLoggedIn = (String) session.getAttribute("loggedIn");
+        if (isLoggedIn != null && isLoggedIn.equals("true")) {
+            UserDto user = (UserDto) session.getAttribute("User");
 
-                CartServices cartServices = new CartServices();
-                CustomValidationMessage customValidationMessage =cartServices.deleteCartItemByCartId(cartIdDto);
+            System.out.println("\n\n\n\n\nlets try add\n\n\n\n\n");
 
-                PrintWriter out = response.getWriter();
-                out.print(new Gson().toJson(customValidationMessage));
-            }
+            Integer productId = Integer.parseInt(request.getParameter("productId"));
+            Integer quantity = Integer.parseInt(request.getParameter("quantity"));
+            CartIdDto cartIdDto = new CartIdDto(productId, user.getId());
+
+            CartServices cartServices = new CartServices();
+            System.out.println("\n\n\n\n\nok try add\n\n\n\n\n");
+            CustomValidationMessage customValidationMessage = cartServices.addCartItem(cartIdDto, quantity);
+
+            System.out.println("\n\n\nREPLY: "+customValidationMessage);
+            PrintWriter out = response.getWriter();
+            out.print(new Gson().toJson(customValidationMessage));
         }
-
     }
 }

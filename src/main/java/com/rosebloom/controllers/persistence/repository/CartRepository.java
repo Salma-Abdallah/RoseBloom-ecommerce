@@ -17,30 +17,35 @@ public class CartRepository {
         entityManager = EntityManagerFactorySingleton.getInstance().createEntityManager();
     }
 
-    public CustomValidationMessage addCartItem(Cart cartItem){
+    public CustomValidationMessage addCartItem(CartId cartId, Integer quantity){
         //check if cart Item prev exists
-        Cart oldCartItem = entityManager.find(Cart.class,cartItem.getId());
+        Cart cartItem = null;
+        Cart oldCartItem = entityManager.find(Cart.class,cartId);
         if(oldCartItem!=null){
-            oldCartItem.setQuantity(cartItem.getQuantity());
+            if(oldCartItem.getIsDeleted()==0)oldCartItem.setQuantity(quantity + oldCartItem.getQuantity());
+            else oldCartItem.setQuantity(quantity);
             cartItem=oldCartItem;
+        }else{
+            cartItem = new Cart();
+            cartItem.setId(cartId);
+            cartItem.setQuantity(quantity);
         }
 
         //check quantity available
         Product product = entityManager.find(Product.class,cartItem.getId().getProductId());
         if(product==null)return new CustomValidationMessage(false,"Product Not Found\nplease replace your Order");
         if(product.getQuantity()<1) return new CustomValidationMessage(false,"Product Out of Stock\nplease replace your Order");
-        if(product.getQuantity()<cartItem.getQuantity()) cartItem.setQuantity(product.getQuantity());
+        if(product.getQuantity()<cartItem.getQuantity())return new CustomValidationMessage(false,"Only "+product.getQuantity()+" items are left in stock");
         cartItem.setIsDeleted(0);
 
-
-
+        //save
         entityManager.getTransaction().begin();
         entityManager.persist(cartItem);
         entityManager.getTransaction().commit();
         return new CustomValidationMessage(true,null);
     }
     public List<Cart> getAllCartItemsByUserId(Integer userId){
-        List<Cart> cartItemList = entityManager.createQuery("from Cart c where c.isDeleted=0 and c.id.userId ="+userId).getResultList();
+        List<Cart> cartItemList = entityManager.createQuery("from Cart c where c.isDeleted=0 and c.id.userId="+userId).getResultList();
 
         cartItemList.forEach((cartItem)->{
             if(cartItem.getQuantity()>cartItem.getProduct().getQuantity())cartItem.setQuantity(cartItem.getProduct().getQuantity());

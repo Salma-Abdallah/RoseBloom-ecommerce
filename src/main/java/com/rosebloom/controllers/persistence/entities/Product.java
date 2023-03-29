@@ -49,7 +49,7 @@ public class Product  implements java.io.Serializable {
     private Set<Category> categories = new HashSet(0);
 
     public Product(Integer id, int price, String name, int quantity, String type, String category, String description,
-            String color, Integer size, Integer oldPrice, Timestamp createdAt, Plantdescription plantdescription,
+            String color, Integer size, Integer oldPrice, Timestamp createdAt, int isDeleted, Plantdescription plantdescription,
             Set<ProductImage> productImages) {
         this.id = id;
         this.price = price;
@@ -62,6 +62,7 @@ public class Product  implements java.io.Serializable {
         this.size = size;
         this.oldPrice = oldPrice;
         this.createdAt = createdAt;
+        this.isDeleted = isDeleted;
         this.plantdescription = plantdescription;
         this.productImages = productImages;
     }
@@ -221,7 +222,7 @@ public class Product  implements java.io.Serializable {
         this.createdAt = createdAt;
     }
 
-    @OneToOne(fetch=FetchType.LAZY, mappedBy="product")
+    @OneToOne(fetch=FetchType.EAGER, mappedBy="product")
     public Plantdescription getPlantdescription() {
         return this.plantdescription;
     }

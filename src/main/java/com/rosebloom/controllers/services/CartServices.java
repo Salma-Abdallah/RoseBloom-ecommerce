@@ -20,8 +20,8 @@ public class CartServices {
         cartRepository = new CartRepository();
     }
 
-    public CustomValidationMessage addCartItem(CartDto cartItem){
-        return cartRepository.addCartItem(CartMapper.toEntity(cartItem));
+    public CustomValidationMessage addCartItem(CartIdDto cartIdDto, Integer quantity){
+        return cartRepository.addCartItem(CartIdMapper.toEntity(cartIdDto), quantity);
     }
 
     public List<CartDto> getAllCartItemsByUserId(int userId){

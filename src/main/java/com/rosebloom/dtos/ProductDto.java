@@ -23,13 +23,14 @@ public class ProductDto implements Serializable {
     private Integer size;
     private Integer oldPrice;
     private Timestamp createdAt;
+    private int isDeleted;
     private PlantdescriptionDto plantdescription;
     private List<ProductImageDto> productImages;
 
     public ProductDto() {
     }
 
-    public ProductDto(Integer id, int price, String name, int quantity, String type, String category, String description, String color, Integer size, Integer oldPrice, Timestamp createdAt, PlantdescriptionDto plantdescription, List<ProductImageDto> productImages) {
+    public ProductDto(Integer id, int price, String name, int quantity, String type, String category, String description, String color, Integer size, Integer oldPrice, Timestamp createdAt, int isDeleted, PlantdescriptionDto plantdescription, List<ProductImageDto> productImages) {
         this.id = id;
         this.price = price;
         this.name = name;
@@ -43,6 +44,7 @@ public class ProductDto implements Serializable {
         this.createdAt = createdAt;
         this.plantdescription = plantdescription;
         this.productImages = productImages;
+        this.isDeleted = isDeleted;
     }
 
     public Integer getId() {
@@ -133,6 +135,10 @@ public class ProductDto implements Serializable {
         this.createdAt = createdAt;
     }
 
+    public int getIsDeleted() {return isDeleted;}
+
+    public void setIsDeleted(int isDeleted) {this.isDeleted = isDeleted;}
+
     public PlantdescriptionDto getPlantdescription() {
         return plantdescription;
     }
@@ -165,13 +171,14 @@ public class ProductDto implements Serializable {
                 Objects.equals(this.size, entity.size) &&
                 Objects.equals(this.oldPrice, entity.oldPrice) &&
                 Objects.equals(this.createdAt, entity.createdAt) &&
+                Objects.equals(this.isDeleted, entity.isDeleted) &&
                 Objects.equals(this.plantdescription, entity.plantdescription) &&
                 Objects.equals(this.productImages, entity.productImages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, price, name, quantity, type, category, description, color, size, oldPrice, createdAt, plantdescription, productImages);
+        return Objects.hash(id, price, name, quantity, type, category, description, color, size, oldPrice, createdAt, isDeleted, plantdescription, productImages);
     }
 
     @Override
@@ -188,6 +195,7 @@ public class ProductDto implements Serializable {
                 "size = " + size + ", " +
                 "oldPrice = " + oldPrice + ", " +
                 "createdAt = " + createdAt + ", " +
+                "isDeleted = " + isDeleted + ", " +
                 "plantdescription = " + plantdescription + ", " +
                 "productImages = " + productImages + ")";
     }

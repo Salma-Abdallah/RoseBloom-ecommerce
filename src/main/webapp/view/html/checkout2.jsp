@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="/roseBloom/view/style/responsive.css">
 
 <body class="page-template belle">
+<%@ include file="header.jsp" %>
 <div class="pageWrapper">
     <!--Body Content-->
     <div id="page-content">
@@ -32,7 +33,7 @@
         
         <div class="container">
 
-            <div class="row billing-fields">
+            <div class="row billing-fields mar-top">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
                     <div class="create-ac-content bg-light-gray padding-20px-all">
                         <form>
@@ -42,19 +43,19 @@
                                     <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
 <%--                                        TODO Load user data--%>
                                         <label>Name</label><br>
-                                        <label id ="username" class="UserInfolabels"> asdasd</label>
+                                        <label id ="username" class="UserInfolabels"> ${sessionScope.User.name}</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                         <label>Telephone </label><br>
-                                        <label id="phoneNumber" class="UserInfolabels"> aasd</label>
+                                        <label id="phoneNumber" class="UserInfolabels"> ${sessionScope.User.phone}</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                         <label for=>E-Mail</label><br>
-                                        <label id="email" class="UserInfolabels"> asdasd</label>
+                                        <label id="email" class="UserInfolabels"> ${sessionScope.User.email}</label>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -63,7 +64,7 @@
                                         <label>
                                             <input type="radio" name="answer" value="userAddress" id="currentAddressBtn" checked>
                                             Current Address<br>
-                                            <span id="address">asdasdsda</span><br>
+                                            <span id="address">${sessionScope.User.address}</span><br>
                                         </label><br>
                                         <label>
                                             <input type="radio" name="answer" value="userAddress" id="diffAddressBtn" >
@@ -127,7 +128,7 @@
                             <div class="payment-method">
                                 <div class="payment-accordion UserInfolabels">
                                     Credit Limit<br>
-                                    Availabe: EGP ${SessionScope.User.creditLimit}<br>
+                                    Availabe: EGP ${sessionScope.User.creditLimit}<br>
 
                                 </div>
 
@@ -150,7 +151,7 @@
     <!--Scoll Top-->
     <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
     <!--End Scoll Top-->
-    
+    <%@ include file ="footer.html" %>
      <!-- Including Jquery -->
      <script src="/roseBloom/view/scripts/vendor/jquery-3.3.1.min.js"></script>
      <script src="/roseBloom/view/scripts/vendor/jquery.cookie.js"></script>

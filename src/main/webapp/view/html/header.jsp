@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="jakarta.tags.core" %>
+<%@taglib prefix="ce" uri="jakarta.tags.core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="search">
     <div class="search__form">
@@ -21,7 +21,7 @@
                 <div class="language-dropdown">
                     <span class="language-dd">English</span>
                 </div>
-                <p class="phone-no"><i class="anm anm-phone-s"></i> +440 0(111) 044 833</p>
+                <p class="phone-no"><i class="anm anm-phone-s"></i> +20 1011 044 833</p>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
                 <div class="text-center"><p class="top-header_middle-text"> Worldwide Express Shipping</p></div>
@@ -147,14 +147,14 @@
                     <!--Minicart Popup-->
                     <div id="header-cart" class="block block-cart">
                         <ul class="mini-products-list">
-                            <c:forEach items="${cartList}" var="cartItem">
+                            <ce:forEach items="${cartList}" var="cartItem">
                                 <li class="item">
                                     <a class="product-image" href="#">
-                                        <c:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
-                                            <c:if test="${status.index == 0}">
+                                        <ce:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
+                                            <ce:if test="${status.index == 0}">
                                                 <img src="${images.image}" alt="" title="" />
-                                            </c:if>
-                                        </c:forEach>
+                                            </ce:if>
+                                        </ce:forEach>
                                     </a>
                                     <div class="product-details">
                                         <a href="" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
@@ -176,7 +176,7 @@
                                         </div>
                                     </div>
                                 </li>
-                            </c:forEach>
+                            </ce:forEach>
                             <li class="item">
                                 <a class="product-image" href="#">
                                     <img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />

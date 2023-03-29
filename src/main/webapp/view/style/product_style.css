@@ -1,9 +1,11 @@
-/*****************globals*************/
-body {
-    font-family: 'open sans';
-    overflow-x: hidden; }
-  
-  img {
+/*!*****************globals*************!*/
+/*body {*/
+/*    font-family: 'open sans';*/
+/*    overflow-x: hidden; }*/
+
+.prod_detail_img {
+    /*height: 300px;*/
+    /*width: 200px;*/
     max-width: 100%; }
   
   .preview {
@@ -52,7 +54,7 @@ body {
               animation-duration: .3s; }
   
   .card {
-    margin-top: 50px;
+    margin-top: 150px;
     background: #eee;
     padding: 3em;
     line-height: 1.5em; }
@@ -81,9 +83,8 @@ body {
         -ms-flex-positive: 1;
             flex-grow: 1; }
   
-  .product-title, .price, .sizes, .colors {
-    /* text-transform: UPPERCASE; */
-    font-weight: bold; }
+.product-title {font-size: 48px; font-weight: bold; }
+.product-title, .price, .sizes, .colors {font-size: 16px; font-weight: bold; }
   
 
   .checked, .price span {
@@ -411,27 +412,27 @@ nav:after {
 }
 
 /* Positioning the navigation items inline */
-nav ul li {
-  margin: 0px;
-  display: inline-block;
-  float: left;
-}
+/*nav ul li {*/
+/*  margin: 0px;*/
+/*  display: inline-block;*/
+/*  float: left;*/
+/*}*/
 
 /* Styling the links */
-nav a {
-  color: #573e2a;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: 600;
-  text-align: center;
-  display: inline-block;
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -o-transition: 0.5s all;
-  -ms-transition: 0.5s all;
-}
+/*nav a {*/
+/*  color: #573e2a;*/
+/*  font-size: 16px;*/
+/*  letter-spacing: 1px;*/
+/*  text-transform: uppercase;*/
+/*  font-weight: 600;*/
+/*  text-align: center;*/
+/*  display: inline-block;*/
+/*  transition: 0.5s all;*/
+/*  -webkit-transition: 0.5s all;*/
+/*  -moz-transition: 0.5s all;*/
+/*  -o-transition: 0.5s all;*/
+/*  -ms-transition: 0.5s all;*/
+/*}*/
 
 ul.menu li {
   width: 11%;
@@ -442,10 +443,10 @@ ul.menu li:nth-child(4) {
   margin-right: 12%;
 }
 
-nav ul li ul li a:hover {
-  background: #f8f9fa;
-  color: #FF5722;
-}
+/*nav ul li ul li a:hover {*/
+/*  background: #f8f9fa;*/
+/*  color: #FF5722;*/
+/*}*/
 
 
 /* Background color change on Hover */
@@ -462,55 +463,55 @@ nav ul li ul li a:hover {
 
 /* Hide Dropdowns by Default
 * and giving it a position of absolute */
-nav ul ul {
-  display: none;
-  top: 50px;
-  z-index: 9;
-  position: absolute;
-  min-width: 10rem;
-  padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
-  color: #212529;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-}
+/*nav ul ul {*/
+/*  display: none;*/
+/*  top: 50px;*/
+/*  z-index: 9;*/
+/*  position: absolute;*/
+/*  min-width: 10rem;*/
+/*  padding: 0.5rem 0;*/
+/*  margin: 0.125rem 0 0;*/
+/*  font-size: 1rem;*/
+/*  color: #212529;*/
+/*  text-align: left;*/
+/*  list-style: none;*/
+/*  background-color: #fff;*/
+/*  background-clip: padding-box;*/
+/*  border: 1px solid rgba(0, 0, 0, 0.15);*/
+/*  border-radius: 0.25rem;*/
+/*}*/
 
-/* Display Dropdowns on Hover */
-nav ul li:hover>ul {
-  display: inherit;
-}
+/*!* Display Dropdowns on Hover *!*/
+/*nav ul li:hover>ul {*/
+/*  display: inherit;*/
+/*}*/
 
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-  width: 170px !important;
-  float: none;
-  display: list-item;
-  position: relative;
-  margin: 0 !important;
-}
+/*!* Fisrt Tier Dropdown *!*/
+/*nav ul ul li {*/
+/*  width: 170px !important;*/
+/*  float: none;*/
+/*  display: list-item;*/
+/*  position: relative;*/
+/*  margin: 0 !important;*/
+/*}*/
 
-nav ul ul li a {
-  color: #000;
-  padding: 5px 10px;
-  display: block;
-  font-size: 14px;
-}
+/*nav ul ul li a {*/
+/*  color: #000;*/
+/*  padding: 5px 10px;*/
+/*  display: block;*/
+/*  font-size: 14px;*/
+/*}*/
 
-/* Second, Third and more Tiers	
-* We move the 2nd and 3rd etc tier dropdowns to the left
-* by the amount of the width of the first tier.
-*/
-nav ul ul ul li {
-  position: relative;
-  top: -60px;
-  /* has to be the same number as the "width" of "nav ul ul li" */
-  left: 170px;
-}
+/*!* Second, Third and more Tiers	*/
+/** We move the 2nd and 3rd etc tier dropdowns to the left*/
+/** by the amount of the width of the first tier.*/
+/**!*/
+/*nav ul ul ul li {*/
+/*  position: relative;*/
+/*  top: -60px;*/
+/*  !* has to be the same number as the "width" of "nav ul ul li" *!*/
+/*  left: 170px;*/
+/*}*/
 
 
 /* Change ' +' in order to change the Dropdown symbol */

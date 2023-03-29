@@ -1,6 +1,7 @@
 console.log("START");
 
 function CheckEmptyCart(cartList){
+    console.log(cartList);
     if(cartList== undefined || cartList.length==0){
         let CartMoney = document.getElementById("CartMoney");
         let parent = CartMoney.parentNode;
@@ -111,5 +112,38 @@ function deleteCartItem(event){
 function handleDeleteCartItem(productId, data) {
     if (data.success == true && data.message == undefined) {
         document.getElementById(productId).remove();
+    }
+}
+
+function addToCart(event,quantity){
+    let id = event.currentTarget.id;
+    let productId = id.split("_")[1];
+
+    let btn1 = document.getElementById("successMessageFieldId");
+    if(btn1 != undefined)btn1.innerHTML = "";
+    let btn2 = document.getElementById("errorMessageFieldId")
+    if(btn2 != undefined)btn2.innerHTML = "";
+
+        console.log("quantity is: "+quantity);
+    if (window.XMLHttpRequest) addCartItemRequest = new XMLHttpRequest();
+    else if (window.ActiveXObject) addCartItemRequest = new ActiveXObject(Microsoft.XMLHTTP);
+
+    addCartItemRequest.onreadystatechange = function () {
+        if (addCartItemRequest.readyState == 4 && addCartItemRequest.status == 200) {
+            let data = JSON.parse(addCartItemRequest.responseText);
+            handleAddCartItem(productId, data);
+        }
+    }
+
+    url = "addCartItem" + "?timeStamp=" + new Date().getTime();
+    addCartItemRequest.open("POST", url, true);
+    addCartItemRequest.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    addCartItemRequest.send("productId=" + productId+"&quantity="+quantity);
+}
+function handleAddCartItem(productId, data){
+    if (data.success == true && data.message == undefined) {
+        document.getElementById("successMessageFieldId").innerHTML = "Product Added Successfully";
+    }else{
+        document.getElementById("errorMessageFieldId").innerHTML = data.message;
     }
 }

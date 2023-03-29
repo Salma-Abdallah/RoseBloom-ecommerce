@@ -9,7 +9,17 @@
     <meta charset="UTF-8" />
     <meta name="keywords" content="RoseBloom Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     </script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="view/images/leaf2.png" />
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="view/style/plugins.css">
+    <!-- Bootstap CSS -->
+    <link rel="stylesheet" href="view/style/bootstrap.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="view/style/style.css">
+    <link rel="stylesheet" href="view/style/responsive.css">
 
+    <link rel="stylesheet" href="view/style/main-style2.css" type="text/css" media="all">
     <script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -58,8 +68,8 @@
 
     <%@ include file ="view/html/header.jsp" %>
    
-    <div class="mainBody">
-        <div class="detailsContainer" style="margin-top: 120px; align-items: center;">
+    <div class="mainBody d-flex align-items-center justify-content-center">
+        <div class="detailsContainer" style="margin-top: 150px; align-items: center;">
             <div class="title"> Your Profile </div>
 
             <form action="userProfile" method="post">
@@ -121,10 +131,20 @@
         
         </div>
     </div>
-<footer style="margin-top: 100px;">
-    
-    <%@ include file ="view/html/footer.html" %>
-</footer>
+    <footer style="margin-top: 100px;">
+        <%@ include file ="view/html/footer.html" %>
+    </footer>
+    <script src="view/scripts/vendor/jquery-3.3.1.min.js"></script>
+    <script src="view/scripts/vendor/jquery.cookie.js"></script>
+    <script src="view/scripts/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="view/scripts/vendor/wow.min.js"></script>
+    <!-- Including Javascript -->
+    <script src="view/scripts/bootstrap.min.js"></script>
+    <script src="view/scripts/plugins.js"></script>
+    <script src="view/scripts/popper.min.js"></script>
+    <script src="view/scripts/lazysizes.js"></script>
+    <script src="view/scripts/main.js"></script>
+    <script src="view/scripts/product.js"></script>
 </body>
 
 </html>

@@ -1153,10 +1153,10 @@ td { padding:10px; border-bottom: 2px;}
 .cart__image-wrapper a { display:block; }
 .cart .list-view-item__title { color:#000; font-size:1.15385em; min-width:100px; }
 .cart__image-wrapper { width:120px; }
-.cart .qtyField a { height:36px; line-height:34px;  padding: 4px 10px;}
+.cart .qtyField a { height:36px; line-height:34px;  padding: 0px 5px 10px 0px;}
 .cart .qtyField .cart__qty-input { height:36px; width:40px; float:left; }
-.cart .qtyField a .icon { line-height:33px; font-size:10px; }
-.cart .cart__remove { border:0; margin-top:4px; font-size:14px; background-color: #f87f7f; padding:0; height:25px; width:25px; text-align:center; vertical-align:middle; line-height:25px; }
+.cart .qtyField a .icon { line-height:33px; font-size:18px;  font-weight: bold;}
+.cart .cart__remove { border:0; margin-top:4px; font-size:14px; background-color: #f87f7f; padding:4px 0px 4px 0px !important; height:25px; width:30px; text-align:center; vertical-align:middle; line-height:25px; }
 .cart .cart__remove .icon { line-height:24px; }
 .cart table tfoot .icon { vertical-align:middle; }
 .style2 .cart__footer .cart-note { margin-bottom:30px; }
@@ -1175,6 +1175,7 @@ input.checkbox { height:auto; vertical-align:middle; padding:0; box-shadow:none;
 .cart-variant1 .cart th.text-right,
 .cart-variant1 .cart .text-right.cart-price { text-align:center !important; }
 .cart__meta-text { color:#a2a2a2; font-size:14px; }
+.mar-top{margin: 50px;}
 
 /*======================================================================
   25. Quick View
@@ -1692,6 +1693,7 @@ body.home15-funiture-template { font-size:14px; }
 
 
 .errorMessage{color: red;}
+.successMessageField{color: #00A300; font-size: 18;}
 /* testimonials */
 .clients {
   background: url(../images/bg1.jpg) no-repeat center;
