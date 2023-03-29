@@ -52,9 +52,10 @@ public class LoginServlet extends HttpServlet {
 //                RequestDispatcher rd = request.getRequestDispatcher("/Home");
 //                rd.forward(request, response);
             }else{
-//                RequestDispatcher rd = request.getRequestDispatcher("/adminView/product-admin-master/index.jsp");
-                 RequestDispatcher rd = request.getRequestDispatcher("ViewOrders");
+                RequestDispatcher rd = request.getRequestDispatcher("/adminView/product-admin-master/index.jsp");
+                //  RequestDispatcher rd = request.getRequestDispatcher("ViewOrders");
                 rd.forward(request, response);
+                // response.sendRedirect("ViewOrders");
             }
 
             

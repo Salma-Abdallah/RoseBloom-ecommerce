@@ -27,7 +27,7 @@
     <body id="reportsPage">
       <nav class="navbar navbar-expand-xl">
         <div class="container h-100">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="adminView/product-admin-master/index.jsp">
             <h1 class="tm-site-title mb-0">Product Admin</h1>
           </a>
           <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
@@ -60,7 +60,7 @@
             </ul>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link d-block" href="index.jsp">
+                <a class="nav-link d-block" href="LogoutPage">
                   Admin, <b>Logout</b>
                 </a>
               </li>
