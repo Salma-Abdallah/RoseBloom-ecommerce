@@ -1,7 +1,8 @@
 var submit = 0;
+var login = 0;
 
-function validation(){
-    if(submit===8){
+function SignUpValidation(){
+    if(submit==8){
         $("#form").submit();
     }
     else{
@@ -9,6 +10,16 @@ function validation(){
         document.getElementById("msgSubmit").style.color="red";
     }
 
+}
+
+function loginValidation() {
+    if(submit>=2){
+        $("#loginform").submit();
+    }
+    else{
+        document.getElementById("msgLogin").innerHTML="PLease Enter all data ";
+        document.getElementById("msgLogin").style.color="red";
+    }
 }
 
 
@@ -82,14 +93,14 @@ function phoneValidate(){
 function emailValidation(){
     let email = document.getElementById("email").value;
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let result = regex.test.apply(email);
+    let result = regex.test(email);
 
     if(result) {
         document.getElementById("msgEmail").innerHTML="";
         submit++;
     }
     else{
-        document.getElementById("msgEmail").innerHTML="InValid Number";
+        document.getElementById("msgEmail").innerHTML="InValid email";
         document.getElementById("msgEmail").style.color="red";
     }
 

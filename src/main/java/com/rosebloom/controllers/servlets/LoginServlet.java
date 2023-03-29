@@ -4,6 +4,7 @@ import com.rosebloom.controllers.services.UserServices;
 import com.rosebloom.dtos.UserDto;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,6 +23,9 @@ public class LoginServlet extends HttpServlet {
         System.out.println("Login page");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String rememberMe = request.getParameter("checkbox");
+
+        System.out.println(rememberMe);
 //        System.out.println("email : "+email +"\n password : "+password);
 
         UserServices userServices = new UserServices();
@@ -33,6 +37,12 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("loggedIn", new String("true"));
             session.setAttribute("User",user);
+
+            System.out.println(session.getAttribute("loggedIn"));
+            if(rememberMe!=null){
+                Cookie c = new Cookie("user_email", email);
+                response.addCookie(c);
+            }
 
             System.out.println(user.getId());
 

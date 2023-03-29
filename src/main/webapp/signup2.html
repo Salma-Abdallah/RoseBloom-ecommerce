@@ -49,7 +49,7 @@
 </head>
 <body style="padding: 10px ;">
     <div class="container" style="margin: 10px;">
-        <div class="title"> Registration </div>
+        <div class="title"> SignUp </div>
         <form action="Signup" method="post" id="form">
             <div class="user-details">
                 <div class="input-box">
@@ -95,7 +95,7 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Interests</span>
-                    <select class="custom-select tm-select-accounts" name="categoryOption" id="categoryOption" onblur="checkIsPlant();">
+                    <select class="custom-select tm-select-accounts" name="categoryOption" id="categoryOption" >
                         <option value="" disabled selected>Select Category</option>
                         <optgroup value="1" label="Plants">
                             <option value="Indoors">Indoors</option>
@@ -126,16 +126,15 @@
             </div>
             <div class="input-box">
                 <br>
-                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="checkbox" name="checkbox">
                 <span class="details">Remember me</span>
             </div>
             <div class="input-box">
-                <br>
-                
+               <br>
                 <label name="msgSubmit" id="msgSubmit"></label>
             </div>
             <div class="button">
-                <input type="button"  data-bs-toggle="modal"  value="Submit" onclick="validation()">
+                <input type="button" value="Submit" onclick="SignUpValidation()">
             </div>
 
             <div class="have-account">

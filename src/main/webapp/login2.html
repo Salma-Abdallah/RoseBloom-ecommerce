@@ -47,11 +47,11 @@
     <div class="container">
         <div class="title"> Login </div>
 
-        <form action="LoginPage" method="post">
+        <form action="LoginPage" method="post" id="loginform">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="email" name="email"  id="email" placeholder="Enter your email" onblur="submitForm()" required>
+                    <input type="email" name="email"  id="email" placeholder="Enter your email" onblur="emailValidation()"  required>
                     <label name="msgEmail" id="msgEmail"></label>
                 </div>
                 <div>
@@ -59,8 +59,8 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" name="password" placeholder="Enter your Password" required>
-                    <label name="msgId" id="msgId"></label>
+                    <input type="password" name="password" id="password" placeholder="Enter your Password" onblur="passwordValidate()" required>
+                    <label name="msgPassword" id="msgPassword"></label>
                 </div>
                 
             </div>
@@ -69,8 +69,12 @@
                 <input type="checkbox" id="checkbox" name="checkbox">
                 <span class="details">Remember me</span>
             </div>
+            <div class="input-box">
+               <br>
+                <label name="msgSubmit" id="msgLogin"></label>
+            </div>
             <div class="button">
-                <input type="submit" value="Submit" >
+                <input type="button" value="Submit" onclick="loginValidation()" >
             </div>
             <div class="have-account ">
                 <a href="signup2.html" style="color:  #FF5722;">

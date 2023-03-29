@@ -4,6 +4,7 @@ import com.rosebloom.controllers.services.UserServices;
 import com.rosebloom.dtos.UserDto;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,8 +29,10 @@ public class SignUpServlet extends HttpServlet {
         String phoneNo = request.getParameter("phoneNo");
         String address = request.getParameter("address");
         int creditLimit = Integer.parseInt(request.getParameter("creditLimit"));
+        String  interest = request.getParameter("interests");
+        String rememberMe = request.getParameter("checkbox");
 
-//        System.out.println("email : "+email +"\n password : "+password);
+       System.out.println(rememberMe);
 
         UserServices userServices = new UserServices();
         if(!userServices.checkIfUserIsValid(email,password)) {
@@ -42,6 +45,11 @@ public class SignUpServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("loggedIn", new String("true"));
             session.setAttribute("User",user);
+
+            if(rememberMe!=null){
+                Cookie c = new Cookie("user_email", email);
+                response.addCookie(c);
+            }
 
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.forward(request, response);
