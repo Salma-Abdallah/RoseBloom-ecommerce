@@ -43,7 +43,7 @@
                 <check:choose>                   
                     <check:when test ="${loggedIn=='true'}">
                         <li><a href="userProfile.jsp">User Profile</a></li>
-                        <li><a href="wishlist.html">Logout</a></li>
+                        <li><a href="LogoutPage">Logout</a></li>
                     </check:when>
                     <check:otherwise>
                         <li><a href="login2.html">Login</a></li>

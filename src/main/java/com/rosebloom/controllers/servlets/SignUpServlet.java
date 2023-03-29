@@ -50,7 +50,7 @@ public class SignUpServlet extends HttpServlet {
                 Cookie c = new Cookie("user_email", email);
                 response.addCookie(c);
             }
-
+            
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.forward(request, response);
 

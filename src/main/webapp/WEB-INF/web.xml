@@ -181,6 +181,15 @@
         <url-pattern>/ViewUserProfile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>LogoutPage</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.logoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutPage</servlet-name>
+        <url-pattern>/LogoutPage</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>LoadCartItems</filter-name>
         <filter-class>com.rosebloom.controllers.filters.LoadCartFilter</filter-class>
