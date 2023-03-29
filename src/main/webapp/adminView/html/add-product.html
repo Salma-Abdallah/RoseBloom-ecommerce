@@ -18,7 +18,13 @@
   <!--
 	Product Admin CSS Template
 	https://templatemo.com/tm-524-product-admin
+
 	-->
+  <style>
+    input {
+      border: thick solid;
+    }
+  </style>
 </head>
 
 <body>
@@ -90,30 +96,33 @@
   <div class="container tm-mt-big tm-mb-big">
     <div class="row">
       <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
-        <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="tm-block-title d-inline-block">Add new Product</h2>
+        <form class="tm-edit-product-form" action="addProduct" method="post" enctype="multipart/form-data" id="addForm">
+          <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="tm-block-title d-inline-block">Add new Product</h2>
+              </div>
             </div>
-          </div>
-          <div class="row tm-edit-product-row">
-            <div class="col-xl-6 col-lg-6 col-md-12">
-              <form class="tm-edit-product-form" action="addProduct" onsubmit="return validateForm()" method="post"
-                enctype="multipart/form-data" id="addForm">
+            <div class="row tm-edit-product-row">
+              <div class="col-xl-6 col-lg-6 col-md-12">
+
                 <input id="productId" name="productId" type="text" style="display:none;"
                   class="form-control validate" />
                 <div class="form-group mb-3">
-                  <label for="name">Product Name</label>
-                  <input id="name" name="name" type="text" class="form-control validate" />
+                  <label for="name">Product Name*</label>
+                  <input id="nameInput" name="nameInput" type="text" class="form-control validate" required />
+                  <label style="color: red;" id="nameReq">Required</label>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="description">Description</label>
+                  <label for="description">Description*</label>
                   <textarea id="description" name="description" class="form-control validate tm-small" rows="5"
                     required></textarea>
+                  <label style="color: red; " id="descReq">Required</label>
                 </div>
                 <div class="form-group mb-3">
                   <label for="category">Category</label>
-                  <select class="custom-select tm-select-accounts" name="categoryOption" id="categoryOption" onblur="checkIsPlant();">
+                  <select class="custom-select tm-select-accounts" name="categoryOption" id="categoryOption"
+                    onblur="checkIsPlant();">
                     <option value="" disabled selected>Select Category</option>
                     <optgroup value="1" label="Plants">
                       <option value="Indoors">Indoors</option>
@@ -141,6 +150,7 @@
                     <option value="Gifts">Gifts</option>
 
                   </select>
+                  <label style="color: red; " id="catReq">Required</label>
                 </div>
 
                 <!-- <div class="form-group mb-3">
@@ -150,174 +160,192 @@
                 <div class="form-group mb-3">
                   <label for="stock">Units In Stock</label>
                   <input id="stock" name="stock" type="number" class="form-control validate" />
+                  <label style="color: red; " id="stockReq">Required</label>
                 </div>
                 <div class="form-group mb-3">
-                  
-                    <label for="price">Price</label>
-                    <input id="price" name="price" type="number" step="any" class="form-control validate" />
-                  </div>
-                  <!-- <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="price">Price</label>
+                  <input id="price" name="price" type="number" step="any" class="form-control validate" />
+                  <label style="color: red; " id="priceReq">Required</label>
+                </div>
+                <!-- <div class="form-group mb-3 col-xs-12 col-sm-6">
                     <label for="stock">old Price
                     </label>
                     <input id="oldPrice" name="oldPrice" type="text" 
                       class="form-control validate" />
                   </div> -->
 
+                <div class="row">
+                  <div class="form-group mb-3 col-xs-12 col-sm-6">
+                    <label for="price">Size</label>
+                    <input id="size" name="size" type="number" class="form-control validate" />
+
+                  </div>
+                  <div class="form-group mb-3 col-xs-12 col-sm-6">
+                    <label for="stock">Color
+                    </label>
+                    <input id="color" name="color" type="text" class="form-control validate" />
+                  </div>
+                </div>
+                <fieldset style="display: none;" id="fieldset">
+                  <legend style="color: white;">Plant Description*:</legend>
                   <div class="row">
                     <div class="form-group mb-3 col-xs-12 col-sm-6">
-                      <label for="price">Size</label>
-                      <input id="size" name="size" type="number" class="form-control validate" />
+                      <label for="stock">Sun
+                      </label>
+                      <select class="custom-select tm-select-accounts" name="sunOption" id="sunOption">
+                        <option value="Full sun" selected>Full sun</option>
+                        <option value="Partial shade">Indirect Sunlight</option>
+                        <option value="Partial shade">Shade</option>
+                      </select>
+
                     </div>
                     <div class="form-group mb-3 col-xs-12 col-sm-6">
-                      <label for="stock">Color
+                      <label for="stock">Soil
                       </label>
-                      <input id="color" name="color" type="text" class="form-control validate" />
+                      <select class="custom-select tm-select-accounts" name="Soil" id="Soil">
+                        <option value="Full sun" selected>Well-drained soil</option>
+                        <option value="Partial shade">Moist soil</option>
+                        <option value="Partial shade">Sandy soil</option>
+                      </select>
                     </div>
                   </div>
-                  <fieldset style="display: none;" id="fieldset">
-                    <legend style="color: white;">Plant Description:</legend>
-                    <div class="row">
-                      <div class="form-group mb-3 col-xs-12 col-sm-6">
-                        <label for="stock">Sun
-                        </label>
-                        <select class="custom-select tm-select-accounts" name="sunOption" id="sunOption">
-                          <option value="Full sun">Full sun</option>
-                          <option value="Partial shade">Indirect Sunlight</option>
-                          <option value="Partial shade">Shade</option>
-                        </select>
-                      </div>
-                      <div class="form-group mb-3 col-xs-12 col-sm-6">
-                        <label for="stock">Soil
-                        </label>
-                        <select class="custom-select tm-select-accounts" name="Soil" id="Soil">
-                          <option value="Full sun">Well-drained soil</option>
-                          <option value="Partial shade">Moist soil</option>
-                          <option value="Partial shade">Sandy soil</option>
-                        </select>
-                      </div>
+                  <div class="row">
+                    <div class="form-group mb-3 col-xs-12 col-sm-6">
+                      <label for="stock">GrowthCycle
+                      </label>
+                      <select class="custom-select tm-select-accounts" name="growthCycle" id="growthCycle">
+                        <option value="Annual" selected>Annual</option>
+                        <option value="Perennial">Perennial</option>
+                        <option value="Biennial">Biennial</option>
+                      </select>
                     </div>
-                    <div class="row">
-                      <div class="form-group mb-3 col-xs-12 col-sm-6">
-                        <label for="stock">GrowthCycle
-                        </label>
-                        <select class="custom-select tm-select-accounts" name="growthCycle" id="growthCycle">
-                          <option value="Annual">Annual</option>
-                          <option value="Perennial">Perennial</option>
-                          <option value="Biennial">Biennial</option>
-                        </select>
-                      </div>
-                      <div class="form-group mb-3 col-xs-12 col-sm-6">
-                        <label for="stock">GrowthRate
-                        </label>
-                        <select class="custom-select tm-select-accounts" name="growthRate" id="growthRate">
-                          <option value="Full sun">Slow</option>
-                          <option value="Partial shade">Medium</option>
-                          <option value="Partial shade">Fast</option>
-                        </select>
-                      </div>
+                    <div class="form-group mb-3 col-xs-12 col-sm-6">
+                      <label for="stock">GrowthRate
+                      </label>
+                      <select class="custom-select tm-select-accounts" name="growthRate" id="growthRate">
+                        <option value="Full sun" selected>Slow</option>
+                        <option value="Partial shade">Medium</option>
+                        <option value="Partial shade">Fast</option>
+                      </select>
                     </div>
+                  </div>
 
 
-                    <div class="form-group mb-3">
+                  <div class="row">
+                    <div class="form-group mb-3 col-xs-12 col-sm-6">
                       <label for="stock">Maintenance
                       </label>
                       <select class="custom-select tm-select-accounts" name="maintenance" id="maintenance">
-                        <option value="Low">Low</option>
+                        <option value="Low" selected>Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                       </select>
                     </div>
-                  </fieldset>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-
-                  <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample"
-                    role="button" aria-expanded="false" aria-controls="collapseExample">
-                    image 1
-                  </a>
-
-
-                  <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                      <div class="tm-product-img-edit mx-auto">
-                        <img src='' id="img1" alt="Product image" class="img-fluid d-block mx-auto">
-                        <i class="fas fa-cloud-upload-alt tm-upload-icon"
-                          onclick="document.getElementById('fileInput1').click();"></i>
-                      </div>
-                      <div class="custom-file mt-3 mb-3">
-                        <input id="fileInput1" name="fileInput1" type="file" style="display:none;"
-                          accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img1');" />
-                        <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
-                          onclick="document.getElementById('fileInput1').click();" />
-                      </div>
+                    <div class="form-group mb-3 col-xs-12 col-sm-6">
+                      <label for="stock">Maintenance
+                      </label>
+                      <select class="custom-select tm-select-accounts" name="water" id="water">
+                        <option value="Low" selected>Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                      </select>
                     </div>
                   </div>
-                  <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample2"
-                    role="button" aria-expanded="false" aria-controls="collapseExample">
-                    image 2
-                  </a>
-                  <div class="collapse" id="collapseExample2">
-                    <div class="card card-body">
-                      <div class="tm-product-img-edit mx-auto">
-                        <img src='' id="img2" alt="Product image" class="img-fluid d-block mx-auto">
-                        <i class="fas fa-cloud-upload-alt tm-upload-icon"
-                          onclick="document.getElementById('fileInput2').click();"></i>
-                      </div>
-                      <div class="custom-file mt-3 mb-3">
-                        <input id="fileInput2" name="fileInput2" type="file" style="display:none;"
-                          accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img2');" />
-                        <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
-                          onclick="document.getElementById('fileInput2').click();" />
-                      </div>
+                  <!-- </div> -->
+                </fieldset>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+
+                <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample"
+                  role="button" aria-expanded="false" aria-controls="collapseExample">
+                  image 1
+                </a>
+
+
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    <div class="tm-product-img-edit mx-auto">
+                      <img src='' id="img1" alt="Product image" class="img-fluid d-block mx-auto">
+                      <i class="fas fa-cloud-upload-alt tm-upload-icon"
+                        onclick="document.getElementById('fileInput1').click();"></i>
                     </div>
-                  </div>
-                  <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample3"
-                    role="button" aria-expanded="false" aria-controls="collapseExample">
-                    image 3
-                  </a>
-                  <div class="collapse" id="collapseExample3">
-                    <div class="card card-body">
-                      <div class="tm-product-img-edit mx-auto">
-                        <img src='' id="img3" alt="Product image" class="img-fluid d-block mx-auto">
-                        <i class="fas fa-cloud-upload-alt tm-upload-icon"
-                          onclick="document.getElementById('fileInput3').click();"></i>
-                      </div>
-                      <div class="custom-file mt-3 mb-3">
-                        <input id="fileInput3" name="fileInput3" type="file" style="display:none;"
-                          accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img3');" />
-                        <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
-                          onclick="document.getElementById('fileInput3').click();" />
-                      </div>
+                    <div class="custom-file mt-3 mb-3">
+                      <input id="fileInput1" name="fileInput1" type="file" style="display:none;"
+                        accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img1');" />
+                      <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
+                        onclick="document.getElementById('fileInput1').click();" />
                     </div>
                   </div>
                 </div>
-
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Now</button>
+                <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample2"
+                  role="button" aria-expanded="false" aria-controls="collapseExample">
+                  image 2
+                </a>
+                <div class="collapse" id="collapseExample2">
+                  <div class="card card-body">
+                    <div class="tm-product-img-edit mx-auto">
+                      <img src='' id="img2" alt="Product image" class="img-fluid d-block mx-auto">
+                      <i class="fas fa-cloud-upload-alt tm-upload-icon"
+                        onclick="document.getElementById('fileInput2').click();"></i>
+                    </div>
+                    <div class="custom-file mt-3 mb-3">
+                      <input id="fileInput2" name="fileInput2" type="file" style="display:none;"
+                        accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img2');" />
+                      <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
+                        onclick="document.getElementById('fileInput2').click();" />
+                    </div>
+                  </div>
                 </div>
-              </form>
-            </div>
-          </div>
-        </div>
+                <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample3"
+                  role="button" aria-expanded="false" aria-controls="collapseExample">
+                  image 3
+                </a>
+                <div class="collapse" id="collapseExample3">
+                  <div class="card card-body">
+                    <div class="tm-product-img-edit mx-auto">
+                      <img src='' id="img3" alt="Product image" class="img-fluid d-block mx-auto">
+                      <i class="fas fa-cloud-upload-alt tm-upload-icon"
+                        onclick="document.getElementById('fileInput3').click();"></i>
+                    </div>
+                    <div class="custom-file mt-3 mb-3">
+                      <input id="fileInput3" name="fileInput3" type="file" style="display:none;"
+                        accept="image/png, image/gif, image/jpeg" onchange="updateImageDisplay(event,'img3');" />
+                      <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
+                        onclick="document.getElementById('fileInput3').click();" />
+                    </div>
+                  </div>
+                </div>
+                <label style="color: red; ">select at least one image</label>
+              </div>
+
+              <div class="col-12">
+                <button type="button" class="btn btn-primary btn-block text-uppercase" onclick="validateForm()">Add
+                  Now</button>
+              </div>
+        </form>
       </div>
     </div>
-    <footer class="tm-footer row tm-mt-small">
-      <div class="col-12 font-weight-light">
-        <p class="text-center text-white mb-0 px-4 small">
-          Copyright &copy; <b>2018</b> All rights reserved.
+  </div>
+  </div>
+  </div>
+  <footer class="tm-footer row tm-mt-small">
+    <div class="col-12 font-weight-light">
+      <p class="text-center text-white mb-0 px-4 small">
+        Copyright &copy; <b>2018</b> All rights reserved.
 
-          Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-        </p>
-      </div>
-    </footer>
+        Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
+      </p>
+    </div>
+  </footer>
 
-    <script src="adminView/js/jquery-3.3.1.min.js"></script>
-    <!-- https://jquery.com/download/ -->
-    <script src="adminView/jquery-ui-datepicker/jquery-ui.min.js"></script>
-    <!-- https://jqueryui.com/download/ -->
-    <script src="adminView/js/bootstrap.min.js"></script>
-    <script src="adminView/js/product.js"></script>
-    <!-- https://getbootstrap.com/ -->
+  <script src="adminView/js/jquery-3.3.1.min.js"></script>
+  <!-- https://jquery.com/download/ -->
+  <script src="adminView/jquery-ui-datepicker/jquery-ui.min.js"></script>
+  <!-- https://jqueryui.com/download/ -->
+  <script src="adminView/js/bootstrap.min.js"></script>
+  <script src="adminView/js/product.js"></script>
+  <!-- https://getbootstrap.com/ -->
 
 </body>
 

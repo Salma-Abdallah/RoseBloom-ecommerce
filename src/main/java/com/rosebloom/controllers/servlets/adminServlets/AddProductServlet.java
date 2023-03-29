@@ -1,8 +1,10 @@
 package com.rosebloom.controllers.servlets.adminServlets;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import com.rosebloom.controllers.services.ProductServices;
+import com.rosebloom.dtos.ProductDto;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -24,6 +26,12 @@ public class AddProductServlet extends HttpServlet {
                 response.setContentType("text/html;charset=UTF-8");
                 ProductServices productServices = new ProductServices();
                 productServices.getAddProductRequest(request, contextPath,true);
+               
+                List<ProductDto> products = productServices.getAllProducts();
+                request.setAttribute("products", products);
+        
+                
+                request.getRequestDispatcher("adminView/html/viewProducts.jsp").forward(request, response);
             }
     
 }
