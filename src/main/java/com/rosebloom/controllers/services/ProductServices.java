@@ -75,12 +75,12 @@ public class ProductServices {
    }
 
    public void updateProduct(String categoryName, ProductDto productDto) {
-      CategoryRepository categoryRepository = new CategoryRepository();
-      List<Category> category = categoryRepository.getParentByCategoryName(categoryName);
-      Set<Category> setCategories = new HashSet<>(category);
+      //CategoryRepository categoryRepository = new CategoryRepository();
+      //List<Category> category = categoryRepository.getParentByCategoryName(categoryName);
+      //Set<Category> setCategories = new HashSet<>(category);
       ProductMapper productMapper = new ProductMapper();
       Product product = productMapper.toEntity(productDto);
-      product.setCategories(setCategories);
+      //product.setCategories(setCategories);
       ProductRepository pRepository = new ProductRepository();
       pRepository.editProduct(product);
    }

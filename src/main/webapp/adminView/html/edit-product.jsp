@@ -19,6 +19,11 @@
 	Product Admin CSS Template
 	https://templatemo.com/tm-524-product-admin
 	-->
+  <style>
+    .form-control[readonly] {
+    background-color: #54657d;
+}
+  </style>
 </head>
 
 <body onload="setcategory('${category}');">
@@ -104,82 +109,51 @@
                   class="form-control validate" />
                 <div class="form-group mb-3">
                   <label for="name">Product Name</label>
-                  <input id="nameInput" name="nameInput" type="text" value=${product.name} class="form-control validate" />
+                  <input id="nameInput" name="nameInput" type="text" value=${product.name} class="form-control validate" readonly/>
                 </div>
                 <div class="form-group mb-3">
                   <label for="description">Description</label>
                   <textarea id="description" name="description" class="form-control validate tm-small" rows="5"
-                    required>${product.description}</textarea>
+                  readonly>${product.description}</textarea>
                 </div>
                 <div class="form-group mb-3">
                   <label for="category">Category</label>
-                  <select class="custom-select tm-select-accounts" name="categoryOption" id="categoryOption">
-                    <optgroup value="1" label="Plants">
-                      <option value="Indoors">Indoors</option>
-                      <option value="Outdoors" selected>Outdoors</option>
-                      <option value="Cacti & succulents">Cacti & succulents</option>
-                      <option value="Trees">Trees</option>
-                      <option value="Seeds">Seeds</option>
-                    </optgroup>
-                    <optgroup value="1" label="Pots">
-                      <option value="Clay Pots">Clay Pots</option>
-                      <option value="Plastic Pots">Plastic Pots</option>
-                      <option value="Hanging Pots">Hanging Pots</option>
-                      <option value="Table-top Pots">Table-top Pots</option>
-
-                    </optgroup>
-
-                    <optgroup value="1" label="Supplies">
-                      <option value="Gardening Tools">Gardening Tools</option>
-                      <option value="Soil" selected>Soil</option>
-                      <option value="Fertilizer">Fertilizer</option>
-
-
-                    </optgroup>
-
-                    <option value="Gifts">Gifts</option>
-
-                  </select>
+                  <input id="Category" name="Category" type="text" value=${category} class="form-control validate" readonly/>
                 </div>
 
                 <!-- <div class="form-group mb-3">
                   <label for="price">Price</label>
                   <input id="price" name="price" type="text" va class="form-control validate" />
                 </div> -->
-                <div class="form-group mb-3">
-                  <label for="stock">Units In Stock</label>
-                  <input id="stock" name="stock" type="text" value=${product.quantity} class="form-control validate" />
-                </div>
-                <div class="row">
-                  <div class="form-group mb-3 col-xs-12 col-sm-6">
-                    <label for="price">Price</label>
-                    <input id="price" name="price" type="text" value=${product.price} class="form-control validate" />
-                  </div>
-                  <div class="form-group mb-3 col-xs-12 col-sm-6">
-                    <label for="stock">old Price
-                    </label>
-                    <input id="oldPrice" name="oldPrice" type="text" value=${product.oldPrice}
-                      class="form-control validate" />
-                  </div>
-                </div>
                 <div class="row">
                   <div class="form-group mb-3 col-xs-12 col-sm-6">
                     <label for="price">Size</label>
-                    <input id="size" name="size" type="text" value=${product.size} class="form-control validate" />
+                    <input id="size" name="size" type="text" value=${product.size} class="form-control validate readonly" />
                   </div>
                   <div class="form-group mb-3 col-xs-12 col-sm-6">
                     <label for="stock">Color
                     </label>
-                    <input id="color" name="color" type="text" value=${product.color} class="form-control validate" />
+                    <input id="color" name="color" type="text" value=${product.color} class="form-control validate readonly" />
                   </div>
                 </div>
+                
 
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-
+              <div class="form-group mb-3">
+                <label for="stock">Units In Stock</label>
+                <input id="stock" name="stock" type="number" value=${product.quantity} class="form-control validate" />
+              </div>
+              <div class="form-group mb-3">
+                
+                  <label for="price">Price</label>
+                  <input id="price" name="price" type="number" value=${product.price} class="form-control validate" />
+               
+                
+              </div>
               <a class="btn btn-primary btn-block mx-auto" data-toggle="collapse" href="#collapseExample" role="button"
                 aria-expanded="false" aria-controls="collapseExample">
-                image 1
+                Change image 1
               </a>
 
 
@@ -239,12 +213,14 @@
                   </div>
                 </div>
               </div>
+           
+
             </div>
             <input type="text" name="img1" value='${product.productImages[0].image}' style="display: none;">
             <input type="text" name="img2" value='${product.productImages[1].image}' style="display: none;">
             <input type="text" name="img3" value='${product.productImages[2].image}' style="display: none;">
             <div class="col-12">
-              <button type="button" onclick="validateForm()" class="btn btn-primary btn-block text-uppercase">Update Now</button>
+              <button type="submit" onclick="validateForm()" class="btn btn-primary btn-block text-uppercase">Update Now</button>
             </div>
             </form>
           </div>

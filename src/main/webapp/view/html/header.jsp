@@ -114,7 +114,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Clay Pots">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Garden Supplies">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style2">
                                 <ul class="grid mmWrapper">
                                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Supplies Types</a>
@@ -191,13 +191,13 @@
                                 </a>
                                 <div class="product-details">
                                     <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-                                    <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-                                    <a class="pName" href="cart.html">Elastic Waist Dress</a>
-                                    <div class="variant-cart">Gray / XXL</div>
-                                    <div class="wrapQtyBtn">
-                                        <div class="qtyField">
-                                            <span class="label">Qty:</span>
-                                            <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                �   <a h ef="#" �lass="e it-i re�ove"><i class="�nm anm-edit" aria-hidden="true"></i></a>
+                                    <� class= pName" �ref="ca t.html"�Elastic Waist D�ess</a>
+                                    <div class="variant-cart"> ray / X�L</div> 
+                                    <d v class="wrapQtyBtn">
+                                        <div cla s="qtyF eld">
+                                            <span class="label">Qty:</span>
+                                            <a clas ="qtyBt  minus" href="j vascrip :void(0 ;"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
                                             <input type="text" id="Quantity2" name="quantity" value="1" class="product-form__input qty">
                                             <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
                                         </div>
