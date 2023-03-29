@@ -5,35 +5,19 @@
 <html lang="en">
 
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoseBloom Product Detail</title>
 
-    <title>eCommerce Product Detail</title>
-
-<%--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">--%>
-
-<%--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"--%>
-<%--        id="bootstrap-css">--%>
-<%--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">--%>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-<%--    <link rel="stylesheet" href="view/style/product_style.css">--%>
-
-
     <link rel="shortcut icon" href="/roseBloom/view/images/favicon.png"/>
-
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="/roseBloom/view/style/plugins.css">
-
     <!-- Bootstap CSS -->
     <link rel="stylesheet" href="/roseBloom/view/style/bootstrap.min.css">
-
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="/roseBloom/view/style/style.css">
-
     <link rel="stylesheet" href="/roseBloom/view/style/responsive.css">
-
     <link rel="stylesheet" href="view/style/product_style.css">
-
 
     <script src="/roseBloom/view/scripts/cart.js"></script>
 </head>
@@ -53,8 +37,14 @@
                            
 
                             <div class="tab-pane active" id="pic-1"><img class="prod_detail_img" src="${product.productImages.get(0).image}" /></div>
-                            <div class="tab-pane" id="pic-2"><img class="prod_detail_img" src="${product.productImages.get(1).image}" /></div>
-                            <div class="tab-pane" id="pic-3"><img class="prod_detail_img" src="${product.productImages.get(2).image}" /></div>
+                            <cd:if test="${fn:length(product.productImages) >1}">
+                                <div class="tab-pane" id="pic-2"><img class="prod_detail_img" src="${product.productImages.get(1).image}" /></div>
+                            </cd:if>
+                            <cd:if test="${fn:length(product.productImages) >2}">
+                                <div class="tab-pane" id="pic-3"><img class="prod_detail_img" src="${product.productImages.get(2).image}" /></div>
+                            </cd:if>
+
+
                        
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">

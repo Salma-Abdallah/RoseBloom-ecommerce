@@ -30,6 +30,7 @@
         </head>
 
         <body class="template-collection belle">
+        <main>
             <%@ include file="header.jsp" %>
                 <div class="pageWrapper" style="margin-top: 130px;">
 
@@ -430,7 +431,7 @@
                         <script src="view/scripts/main.js"></script>
                         <script src="view/scripts/product.js"></script>
                 </div>
-
+        </main>
         </body>
 
         <!-- belle/shop-grid-5.html   11 Nov 2019 12:39:07 GMT -->

@@ -113,7 +113,6 @@
                                             <li class="lvl-2"><a href="ProductServlet?categoryName=Gardening Tools" class="site-nav lvl-2">Gardening Tools</a></li>
                                             <li class="lvl-2"><a href="ProductServlet?categoryName=Soil" class="site-nav lvl-2">Soil</a></li>
                                             <li class="lvl-2"><a href="ProductServlet?categoryName=Fertilizer" class="site-nav lvl-2">Fertilizer</a></li>
-                                            
                                         </ul>
                                     </li>
                                 </ul>
