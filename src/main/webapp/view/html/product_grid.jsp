@@ -1,5 +1,6 @@
 <%@ page import="java.util.Enumeration" %>
-
+<%@taglib prefix="ce" uri="jakarta.tags.core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
         <!DOCTYPE html>
         <html class="no-js" lang="en">
@@ -382,16 +383,31 @@
 
                                                             <a href="productDetails?productId=${current.id}">
 
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="${current.productImages[0].image}"
-                                                                    src="${current.productImages[0].image}" alt="image"
-                                                                    title="product"
-                                                                    style="min-height: 200px; max-height: 200px;">
+                                                                <ce:choose>
+                                                                    <ce:when test="${fn:length(current.productImages)>1}">
+                                                                        <img class="primary blur-up lazyload"
+                                                                             data-src="${current.productImages[0].image}"
+                                                                             src="${current.productImages[0].image}" alt="image"
+                                                                             title="product"
+                                                                             style="min-height: 200px; max-height: 200px;">
+                                                                        <img class="hover blur-up lazyload"
+                                                                             data-src="${current.productImages[1].image}"
+                                                                             src="${current.productImages[1].image}" alt="image"
+                                                                             title="product" style="min-height: 200px; max-height: 200px;">
+                                                                    </ce:when>
+                                                                    <ce:otherwise>
+                                                                        <img class="primary blur-up lazyload"
+                                                                             data-src="${current.productImages[0].image}"
+                                                                             src="${current.productImages[0].image}" alt="image"
+                                                                             title="product"
+                                                                             style="min-height: 200px; max-height: 200px;">
+                                                                        <img class="hover blur-up lazyload"
+                                                                             data-src="${current.productImages[0].image}"
+                                                                             src="${current.productImages[0].image}" alt="image"
+                                                                             title="product" style="min-height: 200px; max-height: 200px;">
+                                                                    </ce:otherwise>
+                                                                </ce:choose>
 
-                                                                <img class="hover blur-up lazyload"
-                                                                data-src="${current.productImages[1].image}"
-                                                                src="${current.productImages[1].image}" alt="image"
-                                                                title="product" style="min-height: 200px; max-height: 200px;">
                                                         </a>
                                                         <!-- end product image -->
                                                         <!-- Start product button -->
@@ -399,34 +415,12 @@
                                                             <button class="btn btn-addto-cart" type="button" id="addToCart_${current.id}" onclick='addToCart(event,"1", "${current.id}", "${current.name}", "${current.productImages[0].image}" , "${current.color}", "${current.price}")'>ADD TO CART</button>
                                                         </div>
                                                         <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
+<%--                                                            <a href="javascript:void(0)" title="Quick View"--%>
+<%--                                                                class="quick-view-popup quick-view" data-toggle="modal"--%>
+<%--                                                                data-target="#content_quickview">--%>
+<%--                                                                <i class="icon anm anm-search-plus-r"></i>--%>
+<%--                                                            </a>--%>
                                                             <!-- end product image -->
-                                                            <!-- Start product button -->
-                                                            <div class="variants add">
-                                                                <button class="btn btn-addto-cart" type="button"
-                                                                    id="addToCart_${current.id}"
-                                                                    onclick="addToCart(event,'1')">ADD TO CART</button>
-                                                            </div>
-                                                            <div class="button-set">
-                                                                <a href="javascript:void(0)" title="Quick View"
-                                                                    class="quick-view-popup quick-view"
-                                                                    data-toggle="modal"
-                                                                    data-target="#content_quickview">
-                                                                    <i class="icon anm anm-search-plus-r"></i>
-                                                                </a>
-                                                                <div class="wishlist-btn">
-                                                                    <a class="wishlist add-to-wishlist" href="#"
-                                                                        title="Add to Wishlist">
-                                                                        <i class="icon anm anm-heart-l"></i>
-                                                                    </a>
-                                                                </div>
-
-                                                            </div>
-                                                            <!-- end product button -->
                                                         </div>
                                                         <!-- end product image -->
 
