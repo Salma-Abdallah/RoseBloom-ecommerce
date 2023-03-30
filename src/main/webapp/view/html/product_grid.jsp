@@ -156,7 +156,7 @@
                                                         <p class="no-margin"><input id="amount" type="text"></p>
                                                     </div>
                                                     <div class="col-6 text-right margin-25px-top">
-                                                        <button class="btn btn-secondary btn--small">filter</button>
+                                                        <button class="btn btn-secondary btn--small" type="button" onclick="filter();">filter</button>
                                                     </div>
                                                 </div>
                                             </form>

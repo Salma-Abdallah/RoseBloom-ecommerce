@@ -181,5 +181,14 @@ public class ProductRepository {
         }
         return false;
     }
+    public List<Product> filterProduct(int id, int min,int max) {
+        Category c = new Category();
+        c.setCategoryId(id);
+        Query query = entityManager.createQuery("from Product p where ?1 member of p.categories and p.isDeleted=0 and p.quantity>0 and p.price between ?2 and ?3")
+                .setParameter(1, c).setParameter(2, min).setParameter(3, max);
+
+        List<Product> result = (List<Product>) query.getResultList();
+        return result;
+    }
 
 }

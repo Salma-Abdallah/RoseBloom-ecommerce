@@ -229,7 +229,14 @@
         <filter-name>loginFilter</filter-name>
         <url-pattern>/deleteProduct</url-pattern>
     </filter-mapping>
-    
+    <servlet>
+        <servlet-name>filterProducts</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.FilterProducts</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>filterProducts</servlet-name>
+        <url-pattern>/filterProducts</url-pattern>
+    </servlet-mapping>
 
 <!-- <welcome-file-list>
     <welcome-file>
