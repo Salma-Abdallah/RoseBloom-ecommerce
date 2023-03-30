@@ -1,4 +1,4 @@
-function filter(event) {
+function filter() {
 
     console.log($("#categoryName").text());
     var categoryName = JSON.stringify($("#categoryName").text());

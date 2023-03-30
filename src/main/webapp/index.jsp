@@ -51,7 +51,7 @@
                                 <div class="wrap-caption center">
                                         <h2 class="h1 mega-title slideshow__title">Shop Our New Collection</h2>
                                         <span class="mega-subtitle slideshow__subtitle">From Hight to low, classic or modern. We have you covered</span>
-                                        <span class="btn">Shop now</span>
+                                       <a href="ProductServlet?categoryName=Plants"><span class="btn">Shop now</span></a> 
                                     </div>
                             </div>
                         </div>
@@ -59,13 +59,13 @@
                 </div>
                 <div class="slide">
                 	<div class="blur-up lazyload bg-size">
-                        <img class="blur-up lazyload bg-img" data-src="view/images/4.jpg" src="view/images/4.jpg" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                        <img class="blur-up lazyload bg-img" data-src="view/images/4.jpg" src="view/images/4.jpg" alt="Summer Plants Collection" title="Summer plants Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
                                     <h2 class="h1 mega-title slideshow__title">Summer Plants Collection</h2>
                                     <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend only</span>
-                                    <span class="btn">Shop now</span>
+                                    <a href="ProductServlet?categoryName=Plants">  <span class="btn">Shop now</span></a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <div class="wrap-caption center">
                                         <h2 class="h1 mega-title slideshow__title">Shop Our New Collection</h2>
                                         <span class="mega-subtitle slideshow__subtitle">From Hight to low, classic or modern. We have you covered</span>
-                                        <span class="btn">Shop now</span>
+                                        <a href="ProductServlet?categoryName=Plants"><span class="btn">Shop now</span></a>
                                     </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 <div class="wrap-caption center">
                                     <h2 class="h1 mega-title slideshow__title">Summer Bikini Collection</h2>
                                     <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend only</span>
-                                    <span class="btn">Shop now</span>
+                                    <a href="ProductServlet?categoryName=Plants"><span class="btn">Shop now</span></a>
                                 </div>
                             </div>
                         </div>
@@ -1104,7 +1104,7 @@
         	<div class="container-fluid">
 				<div class="collection-grid">
                         <div class="collection-grid-item">
-                            <a href="collection-page.html" class="collection-grid-item__link">
+                            <a href="ProductServlet?categoryName=Plants" class="collection-grid-item__link">
                                 <img data-src="view/images/g3.jpg" src="view/images/g3.jpg" alt="plants" class="blur-up lazyload" height="290"/>
                                 <div class="collection-grid-item__title-wrapper">
                                     <h3 class="collection-grid-item__title btn btn--secondary no-border">Plants</h3>
@@ -1112,7 +1112,7 @@
                             </a>
                         </div>
                         <div class="collection-grid-item">
-                            <a href="collection-page.html" class="collection-grid-item__link">
+                            <a href="ProductServlet?categoryName=Garden Supplies" class="collection-grid-item__link">
                                 <img class="blur-up lazyload" data-src="view/images/gardenSupplies.jpg" src="view/images/gardenSupplies.jpg" alt="Garden Supplies" height="290"/>
                                 <div class="collection-grid-item__title-wrapper">
                                     <h3 class="collection-grid-item__title btn btn--secondary no-border">Garden Supplies</h3>
@@ -1120,7 +1120,7 @@
                             </a>
                         </div>
                         <div class="collection-grid-item blur-up lazyloaded">
-                            <a href="collection-page.html" class="collection-grid-item__link">
+                            <a href="ProductServlet?categoryName=Pots" class="collection-grid-item__link">
                                 <img data-src="view/images/pots.jpg" src="view/images/pots.jpg" alt="pots" class="blur-up lazyload"  height="290"/>
                                 <div class="collection-grid-item__title-wrapper">
                                     <h3 class="collection-grid-item__title btn btn--secondary no-border">Pots</h3>
@@ -1128,7 +1128,7 @@
                             </a>
                         </div>
                         <div class="collection-grid-item">
-                            <a href="collection-page.html" class="collection-grid-item__link">
+                            <a href="ProductServlet?categoryName=Gifts" class="collection-grid-item__link">
                                 <img data-src="view/images/gift.jpg" src="view/images/gift.jpg" alt="gifts" class="blur-up lazyload" height="290"/>
                                 <div class="collection-grid-item__title-wrapper">
                                     <h3 class="collection-grid-item__title btn btn--secondary no-border">Gifts</h3>
