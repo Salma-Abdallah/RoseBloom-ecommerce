@@ -48,7 +48,12 @@ public class SignUpServlet extends HttpServlet {
 
             if(rememberMe!=null){
                 Cookie c = new Cookie("user_email", email);
+                Cookie c2 = new Cookie("password", password);
+
+                c.setMaxAge(30* 24 * 60 * 60);
+                c2.setMaxAge(30* 24 * 60 * 60);
                 response.addCookie(c);
+                response.addCookie(c2);
             }
             
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");

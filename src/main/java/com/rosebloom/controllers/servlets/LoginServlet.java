@@ -41,7 +41,12 @@ public class LoginServlet extends HttpServlet {
             System.out.println(session.getAttribute("loggedIn"));
             if(rememberMe!=null){
                 Cookie c = new Cookie("user_email", email);
+                Cookie c2 = new Cookie("password", password);
+
+                c.setMaxAge(30* 24 * 60 * 60);
+                c2.setMaxAge(30* 24 * 60 * 60);
                 response.addCookie(c);
+                response.addCookie(c2);
             }
 
             System.out.println(user.getId());

@@ -4,6 +4,7 @@
     version="5.0"
     metadata-complete="true">
 
+
     <servlet>
         <servlet-name>HomePage</servlet-name>
         <servlet-class>com.rosebloom.controllers.servlets.HomeServlet</servlet-class>
@@ -191,14 +192,42 @@
     </servlet-mapping>
 
     <filter>
+        <filter-name>CartFilter</filter-name>
+        <filter-class>com.rosebloom.controllers.filters.CartFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CartFilter</filter-name>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/addCartItem</url-pattern>
+        <url-pattern>/changeQuantity</url-pattern>
+        <url-pattern>/deleteCartItem</url-pattern>
+        <url-pattern>/Checkout</url-pattern>
+        <url-pattern>/NewOrder</url-pattern>
+        <url-pattern>/orderPlaced</url-pattern>
+    </filter-mapping>
+
+    <filter>
         <filter-name>LoadCartItems</filter-name>
         <filter-class>com.rosebloom.controllers.filters.LoadCartFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>LoadCartItems</filter-name>
-        <url-pattern>/*</url-pattern>
-<!--        TODO select specefic servlets-->
+        <url-pattern>/Home</url-pattern>
+        <url-pattern>/ProductServlet</url-pattern>
+        <url-pattern>/productDetails</url-pattern>
+        <url-pattern>/LoginPage</url-pattern>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/addCartItem</url-pattern>
+        <url-pattern>/changeQuantity</url-pattern>
+        <url-pattern>/deleteCartItem</url-pattern>
+        <url-pattern>/Checkout</url-pattern>
+        <url-pattern>/NewOrder</url-pattern>
+        <url-pattern>/orderPlaced</url-pattern>
+        <url-pattern>/LogoutPage</url-pattern>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
     </filter-mapping>
+
 
     <filter>
         <filter-name>loginFilter</filter-name>

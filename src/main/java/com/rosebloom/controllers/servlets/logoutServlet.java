@@ -5,12 +5,9 @@ import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
 
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 public class logoutServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,7 +19,13 @@ public class logoutServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("loggedIn");
         session.removeAttribute("User");
-
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                cookie.setMaxAge(0);  // Set the cookie's expiration date to a time in the past
+                response.addCookie(cookie);  // Add the cookie to the response
+            }
+        }
         RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
         rd.forward(request, response);
     }
