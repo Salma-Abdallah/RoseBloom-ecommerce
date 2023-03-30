@@ -194,4 +194,26 @@ public class ProductServices {
       }
       return false;
    }
+   public List<ProductDto> getProductFilterd(String categoryName,int min,int max) {
+      System.out.println(categoryName);
+      categoryRepository = new CategoryRepository();
+      int categoryId = categoryRepository.getCategoryIdByname(categoryName);
+      System.out.println(categoryId);
+      productRepository = new ProductRepository();
+
+      List<Product> result = productRepository.filterProduct(categoryId,min,max);
+      for (Product p : result) {
+         System.out.println(p.getName());
+      }
+      System.out.println("-------------------------");
+      List<ProductDto> productDto = new ArrayList<>();
+      ProductMapper mapper = new ProductMapper();
+      for (Product product : result) {
+         productDto.add(mapper.toDto(product));
+      }
+      for (ProductDto product : productDto) {
+         System.out.println(product);
+      }
+      return productDto;
+   }
 }
