@@ -32,21 +32,19 @@ public class deleteCartItemServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request instanceof HttpServletRequest) {
-            HttpSession session = request.getSession();
-            String isLoggedIn = (String) session.getAttribute("loggedIn");
-            if (isLoggedIn != null && isLoggedIn.equals("true")) {
-                UserDto user = (UserDto) session.getAttribute("User");
+        HttpSession session = request.getSession();
+        String isLoggedIn = (String) session.getAttribute("loggedIn");
+        if (isLoggedIn != null && isLoggedIn.equals("true")) {
+            UserDto user = (UserDto) session.getAttribute("User");
 
-                Integer productId = Integer.parseInt(request.getParameter("productId"));
-                CartIdDto cartIdDto = new CartIdDto(productId, user.getId());
+            Integer productId = Integer.parseInt(request.getParameter("productId"));
+            CartIdDto cartIdDto = new CartIdDto(productId, user.getId());
 
-                CartServices cartServices = new CartServices();
-                CustomValidationMessage customValidationMessage =cartServices.deleteCartItemByCartId(cartIdDto);
+            CartServices cartServices = new CartServices();
+            CustomValidationMessage customValidationMessage =cartServices.deleteCartItemByCartId(cartIdDto);
 
-                PrintWriter out = response.getWriter();
-                out.print(new Gson().toJson(customValidationMessage));
-            }
+            PrintWriter out = response.getWriter();
+            out.print(new Gson().toJson(customValidationMessage));
         }
 
     }

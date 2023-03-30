@@ -359,7 +359,7 @@
                                                         <!-- end product image -->
                                                         <!-- Start product button -->
                                                         <div class="variants add">
-                                                            <button class="btn btn-addto-cart" type="button" id="addToCart_${current.id}" onclick="addToCart(event,'1')">ADD TO CART</button>
+                                                            <button class="btn btn-addto-cart" type="button" id="addToCart_${current.id}" onclick='addToCart(event,"1", "${current.id}", "${current.name}", "${current.productImages[0].image}" , "${current.color}", "${current.price}")'>ADD TO CART</button>
                                                         </div>
                                                         <div class="button-set">
                                                             <a href="javascript:void(0)" title="Quick View"

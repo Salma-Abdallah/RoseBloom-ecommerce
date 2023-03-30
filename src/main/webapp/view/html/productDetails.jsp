@@ -95,7 +95,7 @@
                         <label class="errorMessage" id="errorMessageFieldId"></label><br>
                         <div class="action">
                             <button class="add-to-cart btn btn-default" type="button" id="add_${product.id}"
-                                    onclick="addToCart(event, document.getElementById('quantityFieldId').value)">add to cart</button>
+                                    onclick='addToCart(event, document.getElementById("quantityFieldId").value, "${current.id}", "${current.name}", "${current.productImages[0].image}" , "${current.color}", "${current.price}")'>add to cart</button>
 <%--                            <button class="like btn btn-default" type="button"><span--%>
 <%--                                    class="fa fa-heart"></span></button>--%>
                         </div>
