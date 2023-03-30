@@ -41,7 +41,6 @@
                                 <h2 class="login-title mb-3">Billing details</h2>
                                 <div class="row">
                                     <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-<%--                                        TODO Load user data--%>
                                         <label>Name</label><br>
                                         <label id ="username" class="UserInfolabels"> ${sessionScope.User.name}</label>
                                     </div>

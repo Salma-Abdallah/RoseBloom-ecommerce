@@ -17,7 +17,7 @@
     <script src="/roseBloom/view/scripts/cart.js"></script>
 </head>
 
-<body onload="CheckEmptyCart(${cartList})">
+<body onload="CheckEmptyCart('${cartList}')">
 <!-- <header>
   <h1>Shopping Cart</h1>
 </header> -->
@@ -51,16 +51,12 @@
                             <tr id="${cartItem.product.id}" class="cart__row">
 <%--                                class="cart__image-wrapper cart-flex-item"--%>
                                 <td colspan="2" class="cart th  centAllig">
-                                    <c:forEach var="images" items="${cartItem.product.productImages}" varStatus="status">
-                                        <c:if test="${status.index == 0}">
-                                            <div class="cart__image-wrapper inlineDivs">
-                                            <a href="productDetails?productId=${cartItem.product.id}">
-                                                <img class="cart__image" src="${images.image}"
-                                                    alt="" width="100" height="100">
-                                            </a>
-                                            </div>
-                                        </c:if>
-                                    </c:forEach>
+                                    <div class="cart__image-wrapper inlineDivs">
+                                        <a href="productDetails?productId=${cartItem.product.id}">
+                                            <img class="cart__image" src="${cartItem.product.productImages.get(0).image}"
+                                                    alt="" width="120" height="120">
+                                        </a>
+                                    </div>
                                     <div class="list-view-item__title inlineDivs">
                                         <a class="list-view-item__title inlineDivs" href="">${cartItem.product.name} </a> <br>
                                         <div class="cart__meta-text inlineDivs">
@@ -76,18 +72,18 @@
                                 <td colspan="1" class="text-right cart th">
                                     <div class="qtyField">
                                         <div class="divBlock">
-                                            <a class="qtyBtn minus" onclick="decreaseQuantity(event)" id="qtyPlus_${cartItem.product.id}">
+                                            <a class="qtyBtn minus" onclick="decreaseQuantity(event, '${cartItem.product.price}')" id="qtyPlus_${cartItem.product.id}">
                                                 <i class="icon icon-minus"></i>
                                             </a>
                                             <input class="cart__qty-input qty" type="text"  name="updates[]" id="qty_${cartItem.product.id}"
-                                                   value="${cartItem.quantity}" pattern="[0-9]*" onkeydown="changeQuantityHandler(event)" onblur="changeQuantityTo(event)" disabled>
+                                                   value="${cartItem.quantity}" pattern="[0-9]*" disabled>
 <%--                                            TODO we may add the functionality to enter a number--%>
-                                            <a class="qtyBtn plus" id="qtyMinus_${cartItem.product.id}" onclick="increaseQuantity(event)">
+                                            <a class="qtyBtn plus" id="qtyMinus_${cartItem.product.id}" onclick="increaseQuantity(event,'${cartItem.product.price}')">
                                                 <i class="icon icon-plus"></i>
                                             </a>
                                         </div>
                                         <div class="inlineDivs marginsoforDivs">EGP
-                                            <div class="">${cartItem.quantity*cartItem.product.price}</div>
+                                            <div class="" id="itemTotal_${cartItem.product.id}">${cartItem.quantity*cartItem.product.price}</div>
                                             <a class="btn btn--secondary cart__remove" title="Remove Item" id="remove_${cartItem.product.id}" onclick="deleteCartItem(event)">
                                                 <i class="icon icon anm anm-times-l"></i>
                                             </a>
@@ -135,8 +131,8 @@
                     </div>
                     <div class="row border-bottom pb-2 pt-2">
                         <span class="col-12 col-sm-6 cart__subtotal-title"><strong>Grand Total</strong></span>
-                        <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right">EGP <span
-                                class="money">${total+50}</span></span>
+                        <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right" >EGP <span
+                                class="money" id="totalMoney">${total+50}</span></span>
                     </div>
 <%--                    <div class="cart__shipping">Shipping &amp; taxes calculated at checkout</div>--%>
 <%--                    <p class="cart_tearm">--%>
