@@ -181,6 +181,15 @@
         <url-pattern>/ViewUserProfile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>LogoutPage</servlet-name>
+        <servlet-class>com.rosebloom.controllers.servlets.logoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutPage</servlet-name>
+        <url-pattern>/LogoutPage</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>LoadCartItems</filter-name>
         <filter-class>com.rosebloom.controllers.filters.LoadCartFilter</filter-class>
@@ -191,7 +200,36 @@
 <!--        TODO select specefic servlets-->
     </filter-mapping>
 
-
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.rosebloom.controllers.filters.LogginFilter</filter-class>
+    </filter>
+      
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/editProduct</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/addProduct</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/ViewUserProfile</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/ViewOrders</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/ViewProductsServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/deleteProduct</url-pattern>
+    </filter-mapping>
+    
 
 <!-- <welcome-file-list>
     <welcome-file>

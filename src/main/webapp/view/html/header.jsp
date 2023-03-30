@@ -44,7 +44,7 @@
                 <check:choose>                   
                     <check:when test ="${loggedIn=='true'}">
                         <li><a href="userProfile.jsp">User Profile</a></li>
-                        <li><a href="wishlist.html">Logout</a></li>
+                        <li><a href="LogoutPage">Logout</a></li>
                     </check:when>
                     <check:otherwise>
                         <li><a href="login2.html">Login</a></li>
@@ -115,7 +115,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Clay Pots">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="ProductServlet?categoryName=Garden Supplies">Garden Supplies <i class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style2">
                                 <ul class="grid mmWrapper">
                                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Supplies Types</a>
